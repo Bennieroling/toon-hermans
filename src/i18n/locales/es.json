@@ -21,8 +21,12 @@
   },
   "problem": {
     "label": "El problema",
-    "body_1": "Las quejas recurrentes sobre el WiFi provocan bajas. Un control de acceso que falla hace perder tiempo a tu equipo. Los procesos manuales que ya deberían estar automatizados consumen horas todas las semanas. La mayoría de espacios de coworking funcionan con decisiones tecnológicas que tenían sentido al abrir, pero ya no encajan con cómo opera el espacio de verdad — y cuando algo se rompe, ya te ha costado miembros, ingresos y reputación.",
-    "body_2": "La ayuda que existe no encaja. Los integradores enterprise son demasiado caros. El soporte IT general no entiende tu operación. Los proveedores de software solo miran por su propia plataforma. Necesitas a alguien que entienda todo el stack y también el negocio que lo sostiene."
+    "scenarios": {
+      "s1": "El WiFi se cae el martes por la mañana. Un miembro lo tuitea.",
+      "s2": "El lector de llaveros está roto. Tu equipo abre las puertas a mano.",
+      "s3": "Tu plataforma no se comunica con tu software de contabilidad. Reintroduces cada factura."
+    },
+    "closing": "La mayoría de los espacios de coworking funcionan con decisiones tecnológicas que tenían sentido al abrir, pero ya no encajan con cómo opera el espacio de verdad. Cuando algo se rompe, ya te ha costado miembros, ingresos y reputación."
   },
   "layers": {
     "label": "Qué auditamos",
@@ -149,7 +153,39 @@
       "q3": "Lidiando con tecnología que te quita tiempo o frustra a tus miembros",
       "q4": "Listo para arreglarlo bien, de una vez"
     },
+    "alternatives": "Si ya has probado integradores enterprise, soporte IT generalista o el equipo de soporte de tu proveedor de plataforma — sabes que no encaja.",
     "closing": "Si te ves reflejado aquí, deberíamos hablar."
+  },
+  "whats_next": {
+    "label": "Después de la auditoría",
+    "headline": "Tres caminos. Tú eliges.",
+    "subheadline": "Una auditoría solo sirve si lleva a algún sitio. Así continúan los operadores con los que trabajamos.",
+    "paths": {
+      "team": {
+        "number": "01",
+        "title": "Pásalo a tu equipo",
+        "description": "Hemos terminado. Te llevas el informe y la hoja de ruta, y tu equipo ejecuta desde ahí. Funciona bien si ya tienes manos en las que confías."
+      },
+      "partner": {
+        "number": "02",
+        "title": "Pásalo a un partner verificado",
+        "description": "Mantenemos una pequeña red de implementadores e integradores en los que confiamos. Hacemos la introducción; ellos toman el relevo."
+      },
+      "coordinate": {
+        "number": "03",
+        "title": "Con nosotros como coordinadores",
+        "description": "Para operadores más pequeños, gestionamos la ejecución de principio a fin — selección de proveedores, gestión del proyecto, seguimiento. La auditoría se convierte en el primer mes de una colaboración continua."
+      }
+    }
+  },
+  "founder": {
+    "label": "Sobre nosotros",
+    "headline": "Construido por alguien que lo ha vivido.",
+    "name": "[TU NOMBRE]",
+    "title": "Fundador",
+    "bio": "Pasé [N años] auditando y operando tecnología en [N ubicaciones de coworking y flex office] antes de empezar esto. Sé qué falla un martes por la mañana y por qué — y sé cómo se hace bien. Este es el trabajo al que quiero dedicarme.",
+    "linkedin_label": "Conectar en LinkedIn",
+    "linkedin_cta": "LinkedIn"
   },
   "final_cta": {
     "headline": "Pon la tecnología en su sitio. Lo demás se vuelve más fácil.",
@@ -161,6 +197,7 @@
     "tagline": "Auditorías independientes de tecnología para operadores de coworking y oficinas flexibles.",
     "copyright": "© 2026 Sorun. Todos los derechos reservados.",
     "social_email": "Correo a Sorun",
+    "social_linkedin": "Sorun en LinkedIn",
     "links": {
       "expertise": "Especialidad",
       "process": "Proceso",

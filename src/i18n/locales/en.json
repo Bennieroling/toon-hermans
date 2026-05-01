@@ -21,8 +21,12 @@
   },
   "problem": {
     "label": "The problem",
-    "body_1": "Recurring WiFi complaints lead to churn. Broken access control wastes your staff's time. Manual processes that should be automated eat hours every week. Most coworking spaces are running on technology decisions that made sense at setup but no longer fit how the space actually operates — and by the time it breaks, it has already cost you members, revenue, and reputation.",
-    "body_2": "The help that exists does not fit. Enterprise integrators are too expensive. General IT support does not understand your operations. Software vendors only care about their own platform. You need someone who understands the full stack and the business it supports."
+    "scenarios": {
+      "s1": "The WiFi drops on Tuesday morning. A member tweets about it.",
+      "s2": "The fob reader is broken. Your staff lets people in by hand.",
+      "s3": "Your platform doesn't talk to your accounting software. You re-enter every invoice."
+    },
+    "closing": "Most coworking spaces are running on technology decisions that made sense at setup but no longer fit how the space actually operates. By the time it breaks, it has already cost you members, revenue, and reputation."
   },
   "layers": {
     "label": "What we audit",
@@ -149,7 +153,39 @@
       "q3": "Dealing with tech that wastes your time or frustrates your members",
       "q4": "Ready to fix it properly, once"
     },
+    "alternatives": "If you've already tried enterprise integrators, generalist IT, or your platform vendor's support team — you know they don't fit.",
     "closing": "If this sounds like you, we should talk."
+  },
+  "whats_next": {
+    "label": "After the audit",
+    "headline": "Three paths. Your choice.",
+    "subheadline": "An audit is only useful if it leads somewhere. Here is how operators we work with continue.",
+    "paths": {
+      "team": {
+        "number": "01",
+        "title": "Hand it to your team",
+        "description": "We're done. You leave with the report and the roadmap, and your team executes from there. Best when you already have hands you trust."
+      },
+      "partner": {
+        "number": "02",
+        "title": "Hand it to a vetted partner",
+        "description": "We maintain a small network of implementers and integrators we trust. We make the introduction; they pick up where we left off."
+      },
+      "coordinate": {
+        "number": "03",
+        "title": "Work with us as your coordinator",
+        "description": "For smaller operators, we manage execution end-to-end — vendor selection, project management, follow-through. The audit becomes the first month of an ongoing engagement."
+      }
+    }
+  },
+  "founder": {
+    "label": "About",
+    "headline": "Built by someone who has lived this.",
+    "name": "[YOUR NAME]",
+    "title": "Founder",
+    "bio": "I spent [N years] auditing and running technology across [N coworking and flex office locations] before starting this. I know what fails on a Tuesday morning and why — and I know what good looks like. This is the work I want to be doing.",
+    "linkedin_label": "Connect on LinkedIn",
+    "linkedin_cta": "LinkedIn"
   },
   "final_cta": {
     "headline": "Get the tech right. The rest gets easier.",
@@ -161,6 +197,7 @@
     "tagline": "Independent technology audits for coworking and flex office operators.",
     "copyright": "© 2026 Sorun. All rights reserved.",
     "social_email": "Email Sorun",
+    "social_linkedin": "Sorun on LinkedIn",
     "links": {
       "expertise": "Expertise",
       "process": "Process",

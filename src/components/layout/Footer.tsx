@@ -1,6 +1,7 @@
 import { Mail } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
+import { LinkedInIcon } from "@/components/shared/LinkedInIcon"
 import { Logo } from "@/components/shared/Logo"
 
 export function Footer() {
@@ -20,13 +21,22 @@ export function Footer() {
             <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
               {t("footer.tagline")}
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex gap-3">
               <a
                 aria-label={t("footer.social_email")}
                 className="inline-flex size-11 items-center justify-center rounded-full border border-border text-muted-foreground transition hover:border-primary/40 hover:text-primary"
                 href="mailto:hello@sorun.dev"
               >
                 <Mail className="size-4" />
+              </a>
+              <a
+                aria-label={t("footer.social_linkedin")}
+                className="inline-flex size-11 items-center justify-center rounded-full border border-border text-muted-foreground transition hover:border-primary/40 hover:text-primary"
+                href="https://linkedin.com/in/YOUR-HANDLE"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <LinkedInIcon className="size-4" />
               </a>
             </div>
           </div>

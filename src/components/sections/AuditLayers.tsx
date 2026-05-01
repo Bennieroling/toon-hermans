@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next"
 
 import { AnimateIn } from "@/components/AnimateIn"
-import { Card, CardContent } from "@/components/ui/card"
-import { layers } from "@/lib/utils"
+import { EightLayerStack } from "@/components/EightLayerStack"
 
 export function AuditLayers() {
   const { t } = useTranslation()
@@ -25,35 +24,7 @@ export function AuditLayers() {
             </p>
           </div>
         </AnimateIn>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
-          {layers.map((layer, index) => {
-            const Icon = layer.icon
-
-            return (
-              <AnimateIn delay={index * 60} key={layer.key}>
-                <Card className="service-card group h-full border-border">
-                  <CardContent className="p-7">
-                    <div className="flex items-start justify-between">
-                      <div className="flex size-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition duration-300 group-hover:scale-110">
-                        <Icon className="size-7" />
-                      </div>
-                      <span className="font-display text-xs font-bold tracking-[0.3em] text-muted-foreground">
-                        {t(`layers.items.${layer.key}.number`)}
-                      </span>
-                    </div>
-                    <h3 className="mt-7 text-lg font-bold text-foreground">
-                      {t(`layers.items.${layer.key}.name`)}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                      {t(`layers.items.${layer.key}.description`)}
-                    </p>
-                    <div className="mt-6 h-1 w-0 rounded-full bg-primary transition-all duration-500 group-hover:w-12" />
-                  </CardContent>
-                </Card>
-              </AnimateIn>
-            )
-          })}
-        </div>
+        <EightLayerStack />
       </div>
     </section>
   )

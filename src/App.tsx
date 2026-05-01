@@ -6,10 +6,12 @@ import { Header } from "@/components/layout/Header"
 import { AuditLayers } from "@/components/sections/AuditLayers"
 import { Deliverables } from "@/components/sections/Deliverables"
 import { FinalCTA } from "@/components/sections/FinalCTA"
+import { Founder } from "@/components/sections/Founder"
 import { Hero } from "@/components/sections/Hero"
 import { Pricing } from "@/components/sections/Pricing"
 import { Problem } from "@/components/sections/Problem"
 import { Process } from "@/components/sections/Process"
+import { WhatHappensAfter } from "@/components/sections/WhatHappensAfter"
 import { WhoIsThisFor } from "@/components/sections/WhoIsThisFor"
 
 function App() {
@@ -47,7 +49,9 @@ function App() {
           <AuditLayers />
           <Process />
           <Deliverables />
+          <WhatHappensAfter />
           <Pricing />
+          <Founder />
           <FinalCTA />
         </main>
         <Footer />

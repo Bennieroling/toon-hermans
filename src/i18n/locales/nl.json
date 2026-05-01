@@ -21,8 +21,12 @@
   },
   "problem": {
     "label": "Het probleem",
-    "body_1": "Terugkerende WiFi-klachten zorgen voor uitstroom. Kapotte access control kost je team onnodig tijd. Handmatige processen die allang geautomatiseerd hadden moeten zijn, slokken elke week uren op. De meeste coworkingruimtes draaien op technische keuzes die bij de start logisch waren, maar niet meer passen bij hoe de locatie vandaag echt werkt — en tegen de tijd dat het misgaat, heeft het je al leden, omzet en reputatie gekost.",
-    "body_2": "De hulp die er is, past niet. Enterprise-integrators zijn te duur. Algemene IT-support begrijpt je operatie niet. Softwareleveranciers kijken alleen naar hun eigen platform. Je hebt iemand nodig die de hele stack begrijpt én het bedrijf dat erop draait."
+    "scenarios": {
+      "s1": "De WiFi valt uit op dinsdagochtend. Een lid tweet erover.",
+      "s2": "De fob-lezer is kapot. Je team laat mensen handmatig binnen.",
+      "s3": "Je platform praat niet met je boekhoudpakket. Je tikt elke factuur opnieuw in."
+    },
+    "closing": "De meeste coworkingruimtes draaien op technische keuzes die bij de start logisch waren, maar niet meer passen bij hoe de locatie vandaag echt werkt. Tegen de tijd dat het misgaat, heeft het je al leden, omzet en reputatie gekost."
   },
   "layers": {
     "label": "Wat we auditen",
@@ -149,7 +153,39 @@
       "q3": "Klaar met tech die je tijd kost of je leden frustreert",
       "q4": "Klaar om het in één keer goed op te lossen"
     },
+    "alternatives": "Heb je het al geprobeerd met enterprise-integrators, algemene IT-support of de helpdesk van je platformleverancier — dan weet je dat het niet past.",
     "closing": "Herken je jezelf hierin, dan moeten we praten."
+  },
+  "whats_next": {
+    "label": "Na de audit",
+    "headline": "Drie wegen. Jij kiest.",
+    "subheadline": "Een audit is alleen waardevol als die ergens toe leidt. Zo werken de operators waarmee we samenwerken verder.",
+    "paths": {
+      "team": {
+        "number": "01",
+        "title": "Doorgeven aan je eigen team",
+        "description": "Wij zijn klaar. Je houdt het rapport en de roadmap, en je team voert vanaf daar uit. Werkt goed als je al handen hebt die je vertrouwt."
+      },
+      "partner": {
+        "number": "02",
+        "title": "Doorgeven aan een gescreende partner",
+        "description": "We onderhouden een klein netwerk van implementatiepartners en integrators die we vertrouwen. Wij maken de introductie; zij nemen het over."
+      },
+      "coordinate": {
+        "number": "03",
+        "title": "Met ons als coördinator",
+        "description": "Voor kleinere operators sturen we de uitvoering van A tot Z aan — leveranciersselectie, projectmanagement en opvolging. De audit wordt de eerste maand van een doorlopende samenwerking."
+      }
+    }
+  },
+  "founder": {
+    "label": "Over",
+    "headline": "Gemaakt door iemand die dit zelf heeft meegemaakt.",
+    "name": "[JOUW NAAM]",
+    "title": "Oprichter",
+    "bio": "Ik heb [N jaar] technologie geaudit en operationeel gerund in [N coworking- en flex office-locaties] voordat ik hieraan begon. Ik weet wat er op dinsdagochtend misgaat en waarom — en ik weet hoe het wel hoort. Dit is het werk waar ik mee bezig wil zijn.",
+    "linkedin_label": "Maak verbinding op LinkedIn",
+    "linkedin_cta": "LinkedIn"
   },
   "final_cta": {
     "headline": "Krijg de tech op orde. Dan wordt de rest een stuk makkelijker.",
@@ -161,6 +197,7 @@
     "tagline": "Onafhankelijke technologie-audits voor coworking- en flex office-operators.",
     "copyright": "© 2026 Sorun. Alle rechten voorbehouden.",
     "social_email": "E-mail Sorun",
+    "social_linkedin": "Sorun op LinkedIn",
     "links": {
       "expertise": "Expertise",
       "process": "Proces",

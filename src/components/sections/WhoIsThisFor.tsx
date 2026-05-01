@@ -33,7 +33,10 @@ export function WhoIsThisFor() {
                 </li>
               ))}
             </ul>
-            <p className="mt-10 font-display text-lg italic text-primary-foreground/90 sm:text-xl">
+            <p className="mx-auto mt-10 max-w-2xl text-sm leading-7 text-primary-foreground/80 sm:text-base">
+              {t("who.alternatives")}
+            </p>
+            <p className="mt-6 font-display text-lg italic text-primary-foreground/90 sm:text-xl">
               {t("who.closing")}
             </p>
           </div>
