@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sorun.dev — Coworking technology audits</title>
+    <meta
+      content="Independent technology audits for coworking spaces. WiFi, access control, management platform, meeting rooms — assessed, prioritised, explained in plain language."
+      name="description"
+    />
+    <meta content="#101622" name="theme-color" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sorun.dev" />
+    <meta property="og:title" content="Sorun.dev — Coworking technology audits" />
+    <meta
+      property="og:description"
+      content="Independent technology audits for coworking and flex office operators. Fixed price, remote delivery, plain-language report."
+    />
+    <meta property="og:locale" content="en" />
+    <meta property="og:locale:alternate" content="nl" />
+    <meta property="og:locale:alternate" content="es" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("sorun-theme");
+        if (!t) {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.classList.add(t);
+        try {
+          var lang = localStorage.getItem("sorun-language");
+          if (lang) document.documentElement.lang = lang;
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="/src/main.tsx" type="module"></script>
+  </body>
+</html>

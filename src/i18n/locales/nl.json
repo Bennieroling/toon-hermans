@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Sorun.dev — Technologie-audits voor coworking",
+    "description": "Onafhankelijke technologie-audits voor coworkingruimtes. WiFi, access control, management platform, vergaderruimtes — beoordeeld, geprioriteerd en in heldere taal uitgelegd."
+  },
+  "nav": {
+    "brand": "SORUN",
+    "expertise": "Expertise",
+    "process": "Proces",
+    "pricing": "Prijs",
+    "contact": "Contact",
+    "cta": "Aan de slag",
+    "menu_toggle": "Navigatie openen"
+  },
+  "hero": {
+    "label": "Technologieadvies voor coworking",
+    "headline": "Jij runt de locatie. Wij regelen de tech.",
+    "subheadline": "We auditen de technologie waarop je locatie draait — van WiFi en access control tot je management platform, integraties en alles daartussenin. Eén vaste prijs. Eén helder rapport. Een geprioriteerd plan om het op te lossen.",
+    "cta": "Plan een gratis gesprek van 30 minuten",
+    "cta_sub": "Geen verplichting. Geen verkooppraatje. Gewoon een gesprek over je locatie."
+  },
+  "problem": {
+    "label": "Het probleem",
+    "body_1": "Terugkerende WiFi-klachten zorgen voor uitstroom. Kapotte access control kost je team onnodig tijd. Handmatige processen die allang geautomatiseerd hadden moeten zijn, slokken elke week uren op. De meeste coworkingruimtes draaien op technische keuzes die bij de start logisch waren, maar niet meer passen bij hoe de locatie vandaag echt werkt — en tegen de tijd dat het misgaat, heeft het je al leden, omzet en reputatie gekost.",
+    "body_2": "De hulp die er is, past niet. Enterprise-integrators zijn te duur. Algemene IT-support begrijpt je operatie niet. Softwareleveranciers kijken alleen naar hun eigen platform. Je hebt iemand nodig die de hele stack begrijpt én het bedrijf dat erop draait."
+  },
+  "layers": {
+    "label": "Wat we auditen",
+    "headline": "De 8 lagen van werkplektechnologie",
+    "subheadline": "Elke coworkingruimte draait op deze acht systemen. We beoordelen ze allemaal.",
+    "items": {
+      "network": {
+        "number": "01",
+        "name": "Netwerkinfrastructuur",
+        "description": "WiFi access points, switches, bekabeling, ISP en netwerksegmentatie"
+      },
+      "access": {
+        "number": "02",
+        "name": "Access control",
+        "description": "Deurhardware, tags, mobiele toegang, controllers en intercom"
+      },
+      "platform": {
+        "number": "03",
+        "name": "Space management platform",
+        "description": "Lidmaatschappen, facturatie, boekingen, ledenapp en rapportage"
+      },
+      "meeting": {
+        "number": "04",
+        "name": "Vergaderruimtesystemen",
+        "description": "AV-apparatuur, displays, boekingspanelen en videoconferencing"
+      },
+      "security": {
+        "number": "05",
+        "name": "Beveiliging & CCTV",
+        "description": "Camera's, opnames, retentie, monitoring en toegang tot beeldmateriaal"
+      },
+      "telephony": {
+        "number": "06",
+        "name": "Telefonie & receptie",
+        "description": "VoIP, intercom, receptiehardware en omroepsystemen"
+      },
+      "integrations": {
+        "number": "07",
+        "name": "Integraties & automatisering",
+        "description": "Systeemkoppelingen, workflows, API's en handmatige overdrachten"
+      },
+      "devices": {
+        "number": "08",
+        "name": "IT & apparaatbeheer",
+        "description": "Devices van medewerkers, printers, technologie voor leden en IT-support"
+      }
+    }
+  },
+  "process": {
+    "label": "De methodiek",
+    "headline": "Van eerste gesprek tot eindrapport in 2–3 weken",
+    "phases": {
+      "intake": {
+        "number": "01",
+        "title": "Intakegesprek",
+        "duration": "30–45 MIN",
+        "description": "Je legt de situatie uit. We beoordelen of er een goede match is en wat de scope is."
+      },
+      "discovery": {
+        "number": "02",
+        "title": "Verkenning",
+        "duration": "ASYNC + CALL",
+        "description": "Je deelt plattegronden en foto's. We koppelen technologie aan operationele impact."
+      },
+      "inventory": {
+        "number": "03",
+        "title": "Stack-inventarisatie",
+        "duration": "REMOTE",
+        "description": "Alle 8 lagen worden vastgelegd. Elk component wordt geregistreerd met bekende issues."
+      },
+      "assessment": {
+        "number": "04",
+        "title": "Beoordeling",
+        "duration": "ANALYSE",
+        "description": "Elke laag krijgt een score op ernst, impact op de business en moeite om te herstellen."
+      },
+      "report": {
+        "number": "05",
+        "title": "Rapport & presentatie",
+        "duration": "GELEVERD",
+        "description": "Schriftelijk rapport. Geprioriteerde roadmap. Live walkthrough en vragenronde."
+      }
+    }
+  },
+  "deliverables": {
+    "label": "Wat je krijgt",
+    "headline": "Een helder beeld en een plan om het op te lossen",
+    "items": {
+      "report": {
+        "title": "Volledig schriftelijk rapport",
+        "description": "Een gedetailleerd document dat alle 8 lagen van je technologische infrastructuur behandelt. Heldere taal. Geen jargon."
+      },
+      "findings": {
+        "title": "Geprioriteerde bevindingen",
+        "description": "Elke bevinding krijgt een categorie: nu oppakken, hoge prioriteit, 90-dagenplan of later bekijken."
+      },
+      "roadmap": {
+        "title": "Implementatieroadmap",
+        "description": "Een gefaseerd plan dat laat zien wat je eerst oplost, wat het kost en hoeveel tijd het vraagt."
+      }
+    },
+    "note": "Elke audit bevat een live presentatie waarin we de bevindingen met je doornemen en je vragen beantwoorden."
+  },
+  "pricing": {
+    "label": "Instapaudit",
+    "price": "vanaf €1.500",
+    "subtitle": "Vaste prijs voor een audit van één locatie. Geen uurtarief, geen verrassingen.",
+    "features": {
+      "fixed": "Vaste scope, heldere oplevering",
+      "turnaround": "Doorlooptijd van 2–3 weken",
+      "remote": "100% op afstand geleverd"
+    },
+    "cta": "Plan een gratis gesprek",
+    "multisite_text": "Meerdere locaties? Gedeelde infrastructuur betekent gedeelde scope, niet een vermenigvuldigde prijs.",
+    "multisite_link": "Laten we praten."
+  },
+  "who": {
+    "label": "Voor wie we werken",
+    "headline": "We werken met onafhankelijke operators zonder eigen IT-afdeling.",
+    "body": "Of je nu je eerste locatie opent of meerdere runt, onze audit zorgt dat je technologische basis klaar is voor groei in plaats van brandjes blussen.",
+    "qualifiers": {
+      "q1": "Onafhankelijke coworking- of flex office-operator",
+      "q2": "Eén locatie of een kleine multi-site — zonder enterprise IT-resources",
+      "q3": "Klaar met tech die je tijd kost of je leden frustreert",
+      "q4": "Klaar om het in één keer goed op te lossen"
+    },
+    "closing": "Herken je jezelf hierin, dan moeten we praten."
+  },
+  "final_cta": {
+    "headline": "Krijg de tech op orde. Dan wordt de rest een stuk makkelijker.",
+    "cta": "Plan een gratis gesprek van 30 minuten",
+    "email": "hello@sorun.dev"
+  },
+  "footer": {
+    "brand": "SORUN.DEV",
+    "tagline": "Onafhankelijke technologie-audits voor coworking- en flex office-operators.",
+    "copyright": "© 2026 Sorun. Alle rechten voorbehouden.",
+    "social_email": "E-mail Sorun",
+    "links": {
+      "expertise": "Expertise",
+      "process": "Proces",
+      "pricing": "Prijs"
+    }
+  },
+  "language": {
+    "en": "EN",
+    "nl": "NL",
+    "es": "ES"
+  },
+  "theme": {
+    "toggle_light": "Schakel naar lichtmodus",
+    "toggle_dark": "Schakel naar donkere modus"
+  },
+  "accessibility": {
+    "skipToContent": "Ga naar hoofdinhoud"
+  }
+}

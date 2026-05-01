@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Sorun.dev — Coworking technology audits",
+    "description": "Independent technology audits for coworking spaces. WiFi, access control, management platform, meeting rooms — assessed, prioritised, and explained in plain language."
+  },
+  "nav": {
+    "brand": "SORUN",
+    "expertise": "Expertise",
+    "process": "Process",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "cta": "Get started",
+    "menu_toggle": "Toggle navigation"
+  },
+  "hero": {
+    "label": "Coworking technology advisory",
+    "headline": "You run the space. We handle the tech.",
+    "subheadline": "We audit the technology that runs your space — from WiFi and access control to your management platform, integrations, and everything in between. One fixed price. One clear report. A prioritised plan for fixing it.",
+    "cta": "Book a free 30-minute call",
+    "cta_sub": "No commitment. No sales pitch. Just a conversation about your space."
+  },
+  "problem": {
+    "label": "The problem",
+    "body_1": "Recurring WiFi complaints lead to churn. Broken access control wastes your staff's time. Manual processes that should be automated eat hours every week. Most coworking spaces are running on technology decisions that made sense at setup but no longer fit how the space actually operates — and by the time it breaks, it has already cost you members, revenue, and reputation.",
+    "body_2": "The help that exists does not fit. Enterprise integrators are too expensive. General IT support does not understand your operations. Software vendors only care about their own platform. You need someone who understands the full stack and the business it supports."
+  },
+  "layers": {
+    "label": "What we audit",
+    "headline": "The 8 layers of workspace technology",
+    "subheadline": "Every coworking space runs on these eight systems. We assess all of them.",
+    "items": {
+      "network": {
+        "number": "01",
+        "name": "Network infrastructure",
+        "description": "WiFi access points, switches, cabling, ISP, and network segmentation"
+      },
+      "access": {
+        "number": "02",
+        "name": "Access control",
+        "description": "Door hardware, fobs, mobile access, controllers, and intercom"
+      },
+      "platform": {
+        "number": "03",
+        "name": "Space management platform",
+        "description": "Memberships, billing, bookings, member app, and reporting"
+      },
+      "meeting": {
+        "number": "04",
+        "name": "Meeting room systems",
+        "description": "AV equipment, displays, booking panels, and videoconferencing"
+      },
+      "security": {
+        "number": "05",
+        "name": "Security & CCTV",
+        "description": "Cameras, recording, retention, monitoring, and access to footage"
+      },
+      "telephony": {
+        "number": "06",
+        "name": "Telephony & front of house",
+        "description": "VoIP, intercom, reception hardware, and PA systems"
+      },
+      "integrations": {
+        "number": "07",
+        "name": "Integrations & automation",
+        "description": "System connections, workflows, APIs, and manual handoffs"
+      },
+      "devices": {
+        "number": "08",
+        "name": "IT & device management",
+        "description": "Staff devices, printers, member-facing tech, and IT support"
+      }
+    }
+  },
+  "process": {
+    "label": "The methodology",
+    "headline": "From first call to final report in 2–3 weeks",
+    "phases": {
+      "intake": {
+        "number": "01",
+        "title": "Intake call",
+        "duration": "30–45 MIN",
+        "description": "You describe your situation. We assess fit and scope."
+      },
+      "discovery": {
+        "number": "02",
+        "title": "Discovery",
+        "duration": "ASYNC + CALL",
+        "description": "You share floor plans and photos. We map technology to operational impact."
+      },
+      "inventory": {
+        "number": "03",
+        "title": "Stack inventory",
+        "duration": "REMOTE",
+        "description": "All 8 layers documented. Every component recorded with its known issues."
+      },
+      "assessment": {
+        "number": "04",
+        "title": "Assessment",
+        "duration": "ANALYSIS",
+        "description": "Each layer is rated for severity, business impact, and effort to fix."
+      },
+      "report": {
+        "number": "05",
+        "title": "Report & presentation",
+        "duration": "DELIVERED",
+        "description": "Written report. Prioritised roadmap. Live walkthrough and Q&A."
+      }
+    }
+  },
+  "deliverables": {
+    "label": "What you receive",
+    "headline": "A clear picture and a plan to fix it",
+    "items": {
+      "report": {
+        "title": "Full written report",
+        "description": "A detailed document covering all 8 layers of your technology infrastructure. Plain language. No jargon."
+      },
+      "findings": {
+        "title": "Prioritised findings",
+        "description": "Every finding categorised: act now, high priority, 90-day plan, and future consideration."
+      },
+      "roadmap": {
+        "title": "Implementation roadmap",
+        "description": "A sequenced plan showing what to fix first, what it will cost, and how long it will take."
+      }
+    },
+    "note": "Every audit includes a live presentation walkthrough where we talk you through the findings and answer your questions."
+  },
+  "pricing": {
+    "label": "Entry-point audit",
+    "price": "from €1,500",
+    "subtitle": "Fixed price for a single-location audit. No hourly billing, no surprises.",
+    "features": {
+      "fixed": "Fixed scope, clear deliverables",
+      "turnaround": "2–3 week turnaround",
+      "remote": "100% remote delivery"
+    },
+    "cta": "Book a free call",
+    "multisite_text": "Running multiple locations? Shared infrastructure means shared scope, not multiplied cost.",
+    "multisite_link": "Let's talk."
+  },
+  "who": {
+    "label": "Who we help",
+    "headline": "We work with independent operators who don't have a dedicated IT department.",
+    "body": "Whether you are opening your first space or managing several, our audit ensures your technology foundations are built for growth, not firefighting.",
+    "qualifiers": {
+      "q1": "Independent coworking or flex office operator",
+      "q2": "Single-site or small multi-site — without enterprise IT resources",
+      "q3": "Dealing with tech that wastes your time or frustrates your members",
+      "q4": "Ready to fix it properly, once"
+    },
+    "closing": "If this sounds like you, we should talk."
+  },
+  "final_cta": {
+    "headline": "Get the tech right. The rest gets easier.",
+    "cta": "Book a free 30-minute call",
+    "email": "hello@sorun.dev"
+  },
+  "footer": {
+    "brand": "SORUN.DEV",
+    "tagline": "Independent technology audits for coworking and flex office operators.",
+    "copyright": "© 2026 Sorun. All rights reserved.",
+    "social_email": "Email Sorun",
+    "links": {
+      "expertise": "Expertise",
+      "process": "Process",
+      "pricing": "Pricing"
+    }
+  },
+  "language": {
+    "en": "EN",
+    "nl": "NL",
+    "es": "ES"
+  },
+  "theme": {
+    "toggle_light": "Switch to light mode",
+    "toggle_dark": "Switch to dark mode"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content"
+  }
+}

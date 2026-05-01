@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Sorun.dev — Auditorías de tecnología para coworking",
+    "description": "Auditorías independientes de tecnología para espacios de coworking. WiFi, control de acceso, plataforma de gestión, salas de reuniones — evaluadas, priorizadas y explicadas en lenguaje claro."
+  },
+  "nav": {
+    "brand": "SORUN",
+    "expertise": "Especialidad",
+    "process": "Proceso",
+    "pricing": "Precio",
+    "contact": "Contacto",
+    "cta": "Empezar",
+    "menu_toggle": "Abrir navegación"
+  },
+  "hero": {
+    "label": "Asesoría tecnológica para coworking",
+    "headline": "Tú diriges el espacio. Nosotros nos ocupamos de la tecnología.",
+    "subheadline": "Auditamos la tecnología sobre la que funciona tu espacio — desde WiFi y control de acceso hasta tu plataforma de gestión, integraciones y todo lo que hay entre medias. Un precio fijo. Un informe claro. Un plan priorizado para corregirlo.",
+    "cta": "Reserva una llamada gratuita de 30 minutos",
+    "cta_sub": "Sin compromiso. Sin discurso comercial. Solo una conversación sobre tu espacio."
+  },
+  "problem": {
+    "label": "El problema",
+    "body_1": "Las quejas recurrentes sobre el WiFi provocan bajas. Un control de acceso que falla hace perder tiempo a tu equipo. Los procesos manuales que ya deberían estar automatizados consumen horas todas las semanas. La mayoría de espacios de coworking funcionan con decisiones tecnológicas que tenían sentido al abrir, pero ya no encajan con cómo opera el espacio de verdad — y cuando algo se rompe, ya te ha costado miembros, ingresos y reputación.",
+    "body_2": "La ayuda que existe no encaja. Los integradores enterprise son demasiado caros. El soporte IT general no entiende tu operación. Los proveedores de software solo miran por su propia plataforma. Necesitas a alguien que entienda todo el stack y también el negocio que lo sostiene."
+  },
+  "layers": {
+    "label": "Qué auditamos",
+    "headline": "Las 8 capas de la tecnología del espacio de trabajo",
+    "subheadline": "Todo espacio de coworking funciona sobre estos ocho sistemas. Los evaluamos todos.",
+    "items": {
+      "network": {
+        "number": "01",
+        "name": "Infraestructura de red",
+        "description": "Puntos de acceso WiFi, switches, cableado, ISP y segmentación de red"
+      },
+      "access": {
+        "number": "02",
+        "name": "Control de acceso",
+        "description": "Hardware de puertas, llaveros, acceso móvil, controladores e interfono"
+      },
+      "platform": {
+        "number": "03",
+        "name": "Plataforma de gestión",
+        "description": "Membresías, facturación, reservas, app para miembros e informes"
+      },
+      "meeting": {
+        "number": "04",
+        "name": "Sistemas de salas de reuniones",
+        "description": "Equipos AV, pantallas, paneles de reserva y videoconferencia"
+      },
+      "security": {
+        "number": "05",
+        "name": "Seguridad y CCTV",
+        "description": "Cámaras, grabación, retención, monitorización y acceso a las imágenes"
+      },
+      "telephony": {
+        "number": "06",
+        "name": "Telefonía y recepción",
+        "description": "VoIP, interfono, hardware de recepción y sistemas de megafonía"
+      },
+      "integrations": {
+        "number": "07",
+        "name": "Integraciones y automatización",
+        "description": "Conexiones entre sistemas, flujos de trabajo, API y traspasos manuales"
+      },
+      "devices": {
+        "number": "08",
+        "name": "IT y gestión de dispositivos",
+        "description": "Dispositivos del equipo, impresoras, tecnología para miembros y soporte IT"
+      }
+    }
+  },
+  "process": {
+    "label": "La metodología",
+    "headline": "De la primera llamada al informe final en 2–3 semanas",
+    "phases": {
+      "intake": {
+        "number": "01",
+        "title": "Llamada inicial",
+        "duration": "30–45 MIN",
+        "description": "Nos cuentas tu situación. Evaluamos encaje y alcance."
+      },
+      "discovery": {
+        "number": "02",
+        "title": "Descubrimiento",
+        "duration": "ASYNC + CALL",
+        "description": "Compartes planos y fotos. Relacionamos la tecnología con el impacto operativo."
+      },
+      "inventory": {
+        "number": "03",
+        "title": "Inventario del stack",
+        "duration": "REMOTO",
+        "description": "Las 8 capas quedan documentadas. Registramos cada componente con sus incidencias conocidas."
+      },
+      "assessment": {
+        "number": "04",
+        "title": "Evaluación",
+        "duration": "ANÁLISIS",
+        "description": "Cada capa se valora por severidad, impacto de negocio y esfuerzo de corrección."
+      },
+      "report": {
+        "number": "05",
+        "title": "Informe y presentación",
+        "duration": "ENTREGADO",
+        "description": "Informe escrito. Hoja de ruta priorizada. Presentación en directo y preguntas."
+      }
+    }
+  },
+  "deliverables": {
+    "label": "Qué recibes",
+    "headline": "Una visión clara y un plan para solucionarlo",
+    "items": {
+      "report": {
+        "title": "Informe completo por escrito",
+        "description": "Un documento detallado que cubre las 8 capas de tu infraestructura tecnológica. Lenguaje claro. Sin jerga."
+      },
+      "findings": {
+        "title": "Hallazgos priorizados",
+        "description": "Cada hallazgo se clasifica: actuar ahora, alta prioridad, plan a 90 días o más adelante."
+      },
+      "roadmap": {
+        "title": "Hoja de ruta de implementación",
+        "description": "Un plan secuenciado que muestra qué arreglar primero, cuánto costará y cuánto tiempo llevará."
+      }
+    },
+    "note": "Cada auditoría incluye una presentación en directo en la que repasamos los hallazgos contigo y respondemos tus preguntas."
+  },
+  "pricing": {
+    "label": "Auditoría inicial",
+    "price": "desde €1.500",
+    "subtitle": "Precio fijo para una auditoría de una sola ubicación. Sin facturación por horas, sin sorpresas.",
+    "features": {
+      "fixed": "Alcance fijo y entregables claros",
+      "turnaround": "Entrega en 2–3 semanas",
+      "remote": "Entrega 100% remota"
+    },
+    "cta": "Reserva una llamada gratuita",
+    "multisite_text": "¿Gestionas varias ubicaciones? Una infraestructura compartida implica un alcance compartido, no un coste multiplicado.",
+    "multisite_link": "Hablemos."
+  },
+  "who": {
+    "label": "A quién ayudamos",
+    "headline": "Trabajamos con operadores independientes que no tienen un departamento IT propio.",
+    "body": "Tanto si estás abriendo tu primer espacio como si gestionas varios, nuestra auditoría garantiza que tu base tecnológica esté preparada para crecer y no para apagar fuegos.",
+    "qualifiers": {
+      "q1": "Operador independiente de coworking o flex office",
+      "q2": "Una sola ubicación o un pequeño multi-site — sin recursos IT de nivel enterprise",
+      "q3": "Lidiando con tecnología que te quita tiempo o frustra a tus miembros",
+      "q4": "Listo para arreglarlo bien, de una vez"
+    },
+    "closing": "Si te ves reflejado aquí, deberíamos hablar."
+  },
+  "final_cta": {
+    "headline": "Pon la tecnología en su sitio. Lo demás se vuelve más fácil.",
+    "cta": "Reserva una llamada gratuita de 30 minutos",
+    "email": "hello@sorun.dev"
+  },
+  "footer": {
+    "brand": "SORUN.DEV",
+    "tagline": "Auditorías independientes de tecnología para operadores de coworking y oficinas flexibles.",
+    "copyright": "© 2026 Sorun. Todos los derechos reservados.",
+    "social_email": "Correo a Sorun",
+    "links": {
+      "expertise": "Especialidad",
+      "process": "Proceso",
+      "pricing": "Precio"
+    }
+  },
+  "language": {
+    "en": "EN",
+    "nl": "NL",
+    "es": "ES"
+  },
+  "theme": {
+    "toggle_light": "Cambiar a modo claro",
+    "toggle_dark": "Cambiar a modo oscuro"
+  },
+  "accessibility": {
+    "skipToContent": "Ir al contenido principal"
+  }
+}
