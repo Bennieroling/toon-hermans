@@ -10,13 +10,15 @@ import { createRoot } from "react-dom/client"
 
 import App from "./App"
 import { ThemeProvider } from "./components/ThemeProvider"
+import { DiagramDemo } from "./pages/DiagramDemo"
 import "./i18n"
 import "./styles/globals.css"
 
+const isDiagramDemo =
+  typeof window !== "undefined" && window.location.pathname.startsWith("/demo/diagrams")
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <ThemeProvider>{isDiagramDemo ? <DiagramDemo /> : <App />}</ThemeProvider>
   </StrictMode>,
 )
