@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next"
 
 import { AnimateIn } from "@/components/AnimateIn"
 import { Button } from "@/components/ui/button"
+import { bookingUrl } from "@/lib/utils"
 
 export function FinalCTA() {
   const { t } = useTranslation()
@@ -22,7 +23,7 @@ export function FinalCTA() {
                 size="lg"
                 variant="secondary"
               >
-                <a href="mailto:hello@sorun.dev">
+                <a href={bookingUrl} rel="noreferrer" target="_blank">
                   {t("final_cta.cta")}
                   <ArrowRight className="size-5" />
                 </a>

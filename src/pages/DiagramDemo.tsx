@@ -9,6 +9,7 @@ import { V5Topology } from "@/components/diagrams/V5Topology"
 import { V6Iceberg } from "@/components/diagrams/V6Iceberg"
 import { V7Honeycomb } from "@/components/diagrams/V7Honeycomb"
 import { V8Minimal } from "@/components/diagrams/V8Minimal"
+import { V9BlueprintImages } from "@/components/diagrams/V9BlueprintImages"
 
 interface Variant {
   id: string
@@ -83,6 +84,14 @@ const variants: Variant[] = [
     pros: "Confident — 'the work speaks, no styling needed'",
     cons: "Forgettable if the rest of the page isn't strong",
     Component: V8Minimal,
+  },
+  {
+    id: "v9-blueprint-images",
+    title: "V9 — Blueprint Detail (NEW)",
+    tagline: "Technical line illustrations, architectural markers, high-contrast details",
+    pros: "Expert authority, custom assets, breaks the shadcn feel",
+    cons: "Heavier asset weight (images)",
+    Component: V9BlueprintImages,
   },
 ]
 

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next"
 import { AnimateIn } from "@/components/AnimateIn"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { bookingUrl } from "@/lib/utils"
 
 const featureKeys = ["fixed", "turnaround", "remote"] as const
 
@@ -32,7 +33,9 @@ export function Pricing() {
                 ))}
               </ul>
               <Button asChild className="mt-8 w-full" size="lg">
-                <a href="mailto:hello@sorun.dev">{t("pricing.cta")}</a>
+                <a href={bookingUrl} rel="noreferrer" target="_blank">
+                  {t("pricing.cta")}
+                </a>
               </Button>
               <p className="mt-6 text-xs leading-6 text-muted-foreground">
                 {t("pricing.multisite_text")}{" "}

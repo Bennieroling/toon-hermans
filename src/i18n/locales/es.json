@@ -20,12 +20,13 @@
     "cta_sub": "Sin compromiso. Sin discurso comercial. Solo una conversación sobre tu espacio."
   },
   "problem": {
-    "label": "El problema",
+    "label": "La fricción",
     "scenarios": {
       "s1": "El WiFi se cae el martes por la mañana. Un miembro lo tuitea.",
       "s2": "El lector de llaveros está roto. Tu equipo abre las puertas a mano.",
       "s3": "Tu plataforma no se comunica con tu software de contabilidad. Reintroduces cada factura."
     },
+    "empathy": "Sabemos lo agotador que es pelear con tu tecnología cada lunes. El coworking es un negocio de hospitalidad con un armario de red — y tus miembros te juzgan por el WiFi.",
     "closing": "La mayoría de los espacios de coworking funcionan con decisiones tecnológicas que tenían sentido al abrir, pero ya no encajan con cómo opera el espacio de verdad. Cuando algo se rompe, ya te ha costado miembros, ingresos y reputación."
   },
   "layers": {
@@ -128,7 +129,9 @@
         "description": "Un plan secuenciado que muestra qué arreglar primero, cuánto costará y cuánto tiempo llevará."
       }
     },
-    "note": "Cada auditoría incluye una presentación en directo en la que repasamos los hallazgos contigo y respondemos tus preguntas."
+    "note": "Cada auditoría incluye una presentación en directo en la que repasamos los hallazgos contigo y respondemos tus preguntas.",
+    "sample_cta": "Descargar un informe de muestra",
+    "sample_sub": "PDF, 1.2MB. Mira el nivel de detalle que ofrecemos."
   },
   "pricing": {
     "label": "Auditoría inicial",

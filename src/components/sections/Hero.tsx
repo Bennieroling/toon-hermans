@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
+import { bookingUrl } from "@/lib/utils"
+
 export function Hero() {
   const { t } = useTranslation()
   const [loaded, setLoaded] = useState(false)
@@ -18,10 +20,10 @@ export function Hero() {
     <section className="relative flex min-h-screen flex-col overflow-hidden pt-24 md:flex-row" id="hero">
       <div className="relative h-[50vh] w-full shrink-0 overflow-hidden md:h-auto md:w-1/2">
         <img
-          alt="Modern coworking workspace"
-          className="absolute inset-0 h-full w-full object-cover"
+          alt="Technical coworking floor plan"
+          className="absolute inset-0 h-full w-full object-cover grayscale"
           fetchPriority="high"
-          src="/images/hero-office.jpg"
+          src="/images/hero-blueprint.png"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),transparent_45%),linear-gradient(120deg,rgba(19,91,236,0.1),transparent_40%)]" />
         <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
@@ -42,7 +44,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <a href="mailto:hello@sorun.dev">
+              <a href={bookingUrl} rel="noreferrer" target="_blank">
                 {t("hero.cta")}
                 <ArrowRight className="size-4" />
               </a>

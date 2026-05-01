@@ -1,6 +1,8 @@
+import { Download } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
 import { AnimateIn } from "@/components/AnimateIn"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { deliverables } from "@/lib/utils"
 
@@ -45,6 +47,17 @@ export function Deliverables() {
               })}
             </div>
             <p className="mt-8 text-sm leading-7 text-muted-foreground">{t("deliverables.note")}</p>
+            <div className="mt-10 rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-6 text-center">
+              <Button asChild className="w-full gap-2 sm:w-auto" variant="outline">
+                <a href="/sample-report.pdf" target="_blank">
+                  <Download className="size-4" />
+                  {t("deliverables.sample_cta")}
+                </a>
+              </Button>
+              <p className="mt-3 text-xs text-muted-foreground">
+                {t("deliverables.sample_sub")}
+              </p>
+            </div>
           </div>
         </AnimateIn>
         <AnimateIn delay={120}>

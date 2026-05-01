@@ -110,8 +110,8 @@ export function V5Topology() {
     const el = containerRef.current
     if (!el) return
     if (!("IntersectionObserver" in window)) {
-      const fallbackTimer = window.setTimeout(() => setEntered(true), 0)
-      return () => window.clearTimeout(fallbackTimer)
+      const fallbackTimer = globalThis.setTimeout(() => setEntered(true), 0)
+      return () => globalThis.clearTimeout(fallbackTimer)
     }
     const obs = new IntersectionObserver(
       ([entry]) => {
@@ -645,6 +645,15 @@ export function V5Topology() {
         >
           {activeLayerData ? (
             <div>
+              <div className="mb-5 aspect-square w-full overflow-hidden rounded-2xl border border-border/60 bg-card/30 p-4">
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full w-full object-contain mix-blend-multiply transition-opacity duration-300 dark:mix-blend-lighten"
+                  key={activeLayerData.key}
+                  src={`/diagram-illustrations/${activeLayerData.key}.png`}
+                />
+              </div>
               <div className="flex items-baseline justify-between gap-3">
                 <span className="font-display text-5xl font-black tracking-[-0.04em] text-primary">
                   {t(`layers.items.${activeLayerData.key}.number`)}

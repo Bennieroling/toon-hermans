@@ -31,7 +31,10 @@ export function Problem() {
           ))}
         </ul>
         <AnimateIn delay={300}>
-          <p className="mt-12 text-base leading-8 text-muted-foreground sm:text-lg">
+          <p className="mt-12 text-base font-medium leading-8 text-foreground sm:text-lg">
+            {t("problem.empathy")}
+          </p>
+          <p className="mt-6 text-base leading-8 text-muted-foreground sm:text-lg">
             {t("problem.closing")}
           </p>
         </AnimateIn>

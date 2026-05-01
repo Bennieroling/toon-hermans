@@ -27,6 +27,8 @@ export const navItems = [
   { key: "contact", href: "#contact", sectionId: "contact" },
 ] as const
 
+export const bookingUrl = "https://cal.com/sorun/30min"
+
 export const layers = [
   { key: "network", icon: Wifi },
   { key: "access", icon: DoorOpen },

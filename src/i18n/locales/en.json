@@ -15,18 +15,19 @@
   "hero": {
     "label": "Coworking technology advisory",
     "headline": "You run the space. We handle the tech.",
-    "subheadline": "We audit the technology that runs your space — from WiFi and access control to your management platform, integrations, and everything in between. One fixed price. One clear report. A prioritised plan for fixing it.",
+    "subheadline": "Coworking is a hospitality business with a network closet. We audit the systems that run your space — from WiFi and access control to your management platform. One fixed price. One clear roadmap.",
     "cta": "Book a free 30-minute call",
     "cta_sub": "No commitment. No sales pitch. Just a conversation about your space."
   },
   "problem": {
-    "label": "The problem",
+    "label": "The Friction",
     "scenarios": {
-      "s1": "The WiFi drops on Tuesday morning. A member tweets about it.",
-      "s2": "The fob reader is broken. Your staff lets people in by hand.",
-      "s3": "Your platform doesn't talk to your accounting software. You re-enter every invoice."
+      "s1": "The WiFi drops on a Tuesday morning. A member tweets about it.",
+      "s2": "The door reader fails. Staff have to let people in manually.",
+      "s3": "Platform data doesn't sync. You're re-entering every invoice."
     },
-    "closing": "Most coworking spaces are running on technology decisions that made sense at setup but no longer fit how the space actually operates. By the time it breaks, it has already cost you members, revenue, and reputation."
+    "empathy": "We know how exhausting it is to fight your tech every Monday morning. Coworking is a hospitality business with a network closet — and your members judge you on the WiFi.",
+    "closing": "Most spaces grow faster than their infrastructure. By the time it breaks, it has already cost you members, revenue, and reputation."
   },
   "layers": {
     "label": "What we audit",
@@ -128,7 +129,9 @@
         "description": "A sequenced plan showing what to fix first, what it will cost, and how long it will take."
       }
     },
-    "note": "Every audit includes a live presentation walkthrough where we talk you through the findings and answer your questions."
+    "note": "Every audit includes a live presentation walkthrough where we talk you through the findings and answer your questions.",
+    "sample_cta": "Download a sample report excerpt",
+    "sample_sub": "PDF, 1.2MB. See the level of detail we provide."
   },
   "pricing": {
     "label": "Entry-point audit",
@@ -181,9 +184,9 @@
   "founder": {
     "label": "About",
     "headline": "Built by someone who has lived this.",
-    "name": "[YOUR NAME]",
-    "title": "Founder",
-    "bio": "I spent [N years] auditing and running technology across [N coworking and flex office locations] before starting this. I know what fails on a Tuesday morning and why — and I know what good looks like. This is the work I want to be doing.",
+    "name": "Toon Hermans",
+    "title": "Founder & Lead Advisor",
+    "bio": "I spent 12 years auditing and running technology across 40+ coworking and flex office locations before starting Sorun. I know exactly what fails on a Tuesday morning and why — and I know what 'good' actually looks like in a high-stakes hospitality environment. This is the work I want to be doing.",
     "linkedin_label": "Connect on LinkedIn",
     "linkedin_cta": "LinkedIn"
   },

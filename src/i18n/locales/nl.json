@@ -20,12 +20,13 @@
     "cta_sub": "Geen verplichting. Geen verkooppraatje. Gewoon een gesprek over je locatie."
   },
   "problem": {
-    "label": "Het probleem",
+    "label": "De wrijving",
     "scenarios": {
       "s1": "De WiFi valt uit op dinsdagochtend. Een lid tweet erover.",
       "s2": "De fob-lezer is kapot. Je team laat mensen handmatig binnen.",
       "s3": "Je platform praat niet met je boekhoudpakket. Je tikt elke factuur opnieuw in."
     },
+    "empathy": "We weten hoe vermoeiend het is om elke maandag tegen je tech te vechten. Coworking is een hospitality-business met een netwerkkast — en je leden beoordelen je op de WiFi.",
     "closing": "De meeste coworkingruimtes draaien op technische keuzes die bij de start logisch waren, maar niet meer passen bij hoe de locatie vandaag echt werkt. Tegen de tijd dat het misgaat, heeft het je al leden, omzet en reputatie gekost."
   },
   "layers": {
@@ -128,7 +129,9 @@
         "description": "Een gefaseerd plan dat laat zien wat je eerst oplost, wat het kost en hoeveel tijd het vraagt."
       }
     },
-    "note": "Elke audit bevat een live presentatie waarin we de bevindingen met je doornemen en je vragen beantwoorden."
+    "note": "Elke audit bevat een live presentatie waarin we de bevindingen met je doornemen en je vragen beantwoorden.",
+    "sample_cta": "Download een voorbeeldrapport",
+    "sample_sub": "PDF, 1.2MB. Bekijk het detailniveau dat we leveren."
   },
   "pricing": {
     "label": "Instapaudit",

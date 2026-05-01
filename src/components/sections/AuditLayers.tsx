@@ -1,14 +1,14 @@
 import { useTranslation } from "react-i18next"
 
 import { AnimateIn } from "@/components/AnimateIn"
-import { EightLayerStack } from "@/components/EightLayerStack"
+import { V9BlueprintImages } from "@/components/diagrams/V9BlueprintImages"
 
 export function AuditLayers() {
   const { t } = useTranslation()
 
   return (
     <section className="scroll-mt-24 px-4 py-24 lg:px-6 lg:py-32" id="layers">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="mx-auto max-w-7xl">
         <AnimateIn className="lg:px-6">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div>
@@ -24,7 +24,7 @@ export function AuditLayers() {
             </p>
           </div>
         </AnimateIn>
-        <EightLayerStack />
+        <V9BlueprintImages />
       </div>
     </section>
   )

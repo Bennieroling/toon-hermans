@@ -45,9 +45,9 @@
   --glass-border: oklch(0.51 0.22 260 / 0.12);
   --glass-shadow: 0 1px 3px oklch(0.13 0.015 220 / 0.04), 0 4px 12px oklch(0.13 0.015 220 / 0.04);
   --service-card-hover-border: oklch(0.51 0.22 260 / 0.4);
-  --service-card-hover-shadow: 0 8px 24px oklch(0.13 0.015 220 / 0.08), 0 0 0 1px oklch(0.51 0.22 260 / 0.1);
+  --service-card-hover-shadow: 0 8px 24px oklch(0.13 0.015 220 / 0.04), 0 0 0 1px oklch(0.51 0.22 260 / 0.1);
   --grain-blend: multiply;
-  --grain-opacity: 0.035;
+  --grain-opacity: 0.06;
 }
 
 .dark {
@@ -85,7 +85,7 @@
   --service-card-hover-border: oklch(0.55 0.22 260 / 0.4);
   --service-card-hover-shadow: 0 8px 24px oklch(0 0 0 / 0.3), 0 0 0 1px oklch(0.55 0.22 260 / 0.1);
   --grain-blend: soft-light;
-  --grain-opacity: 0.025;
+  --grain-opacity: 0.05;
 }
 
 @theme inline {
