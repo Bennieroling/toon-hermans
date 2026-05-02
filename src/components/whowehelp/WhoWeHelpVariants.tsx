@@ -370,6 +370,70 @@ export function WhoWeHelpDeclarative() {
 }
 
 /* ------------------------------------------------------------------ */
+/* 9 — POSITIVE COMBINED — V1 + door-open note for central-IT + CTA   */
+/* ------------------------------------------------------------------ */
+
+export function WhoWeHelpPositiveDoorOpen() {
+  return (
+    <section className="scroll-mt-24 px-4 py-24 lg:px-6 lg:py-32">
+      <AnimateIn>
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.25rem] bg-primary px-6 py-16 text-primary-foreground shadow-2xl shadow-primary/25 sm:px-10 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-4xl rounded-[2rem] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.16),transparent_55%)] text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-primary-foreground/80">
+              WHO WE WORK WITH
+            </p>
+            <h2 className="mt-5 font-display text-3xl font-black leading-tight tracking-[-0.04em] text-primary-foreground sm:text-4xl md:text-5xl">
+              Built for the operator who runs the space AND the tech.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-primary-foreground/85 sm:text-lg">
+              If you're the person making the calls about your member platform, your access
+              system, and your WiFi vendor — we work with you.
+            </p>
+            <ul className="mt-10 flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row">
+              {POSITIVE_QUALIFIERS.map((q, i) => (
+                <li
+                  className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-primary-foreground"
+                  key={i}
+                >
+                  <CheckCircle className="size-4 shrink-0" />
+                  {q}
+                </li>
+              ))}
+            </ul>
+            <p className="mx-auto mt-10 max-w-2xl text-sm leading-7 text-primary-foreground/80 sm:text-base">
+              {ALTERNATIVES_LINE}
+            </p>
+
+            {/* Door-open note for operators with central IT */}
+            <div className="mx-auto mt-10 max-w-3xl border-y border-white/15 px-2 py-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary-foreground/70">
+                ALREADY HAVE AN IT TEAM?
+              </p>
+              <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-primary-foreground/85 sm:text-base">
+                If you've got an in-house IT lead, fractional CTO, or trusted MSP — we often
+                work <span className="font-bold text-primary-foreground">alongside them</span>,
+                auditing the coworking-specific layers a generalist team doesn't always see
+                day-to-day. The audit makes their job easier, not redundant.
+              </p>
+            </div>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-3">
+              <Button asChild className="rounded-xl bg-background px-8 py-4 text-base font-bold text-primary hover:bg-background/90" size="lg" variant="secondary">
+                <a href={bookingUrl} rel="noreferrer" target="_blank">
+                  Book a free 30-minute call
+                  <ArrowRight className="size-4" />
+                </a>
+              </Button>
+              <p className="text-xs text-primary-foreground/70">No pitch. Just a conversation about your space.</p>
+            </div>
+          </div>
+        </div>
+      </AnimateIn>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /* 8 — COMBINED — spectrum + for-you/not-for-you + CTA                */
 /* ------------------------------------------------------------------ */
 

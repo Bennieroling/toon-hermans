@@ -9,6 +9,7 @@ import {
   WhoWeHelpOperatorQuote,
   WhoWeHelpOriginal,
   WhoWeHelpPositive,
+  WhoWeHelpPositiveDoorOpen,
   WhoWeHelpRecognition,
   WhoWeHelpScaleSpectrum,
 } from "@/components/whowehelp/WhoWeHelpVariants"
@@ -99,11 +100,20 @@ const variants: Variant[] = [
   {
     id: "ww-combined",
     letter: "8",
-    title: "Combined — spectrum + For-you/Not-for-you + CTA (RECOMMENDED)",
-    tagline: "Stacks the strongest pieces from 7, 3, and 1 in sequence. Top: compact scale spectrum (position visually). Middle: For-you/Not-for-you two columns (filter qualitatively). Bottom: alternatives line + 'Sounds like you? Let's talk' + booking CTA (push to action).",
-    pros: "Walks the visitor through position → filter → act in one section. Each block does one job. Most complete and most defensible.",
-    cons: "Tallest section of the lot. If page-length is a concern, picking just one of the three blocks would still work.",
+    title: "Combined — spectrum + For-you/Not-for-you + CTA",
+    tagline: "Stacks 7, 3, and 1: scale spectrum + For-you/Not-for-you two columns + alternatives line + booking CTA. Walks visitor through position → filter → act.",
+    pros: "Most explicit positioning. Anti-positioning sharpens the For-You side.",
+    cons: "Reads as too negative — explicit 'NOT FOR YOU IF…' columns close doors that, in practice, business reality keeps open. Closes off operators with central IT who could still be a great fit on the right project.",
     Component: WhoWeHelpCombined,
+  },
+  {
+    id: "ww-positive-door-open",
+    letter: "9",
+    title: "Positive + door-open for central-IT (RECOMMENDED)",
+    tagline: "V1's positive framing (define by what you ARE, not what you LACK), with an additional 'Already have an IT team?' note inside the same blue card explaining we work ALONGSIDE in-house teams rather than excluding them. Plus a clear booking CTA.",
+    pros: "Keeps the door open for edge cases (central IT, fractional CTO, MSP). Frames every audience as a potential fit but with different working models. Confident without being exclusionary. Adds CTA the original lacks.",
+    cons: "Slightly tall — the alternatives line + the door-open note + the CTA all stack vertically inside the blue card. Could be tightened if pace is a concern.",
+    Component: WhoWeHelpPositiveDoorOpen,
   },
 ]
 
