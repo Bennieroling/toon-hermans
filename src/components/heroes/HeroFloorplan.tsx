@@ -29,7 +29,9 @@ interface HeroFloorplanProps {
   narrativeCycle?: boolean
   /** Option 2 — vertical scan line sweeps L→R every 8s, lighting tech as it passes. */
   systemSweep?: boolean
-  /** Option 3 — scrolling telemetry ticker + inline data badges next to tech points. */
+  /** Option 3a — inline data badges anchored to tech points on the floor plan. */
+  telemetryBadges?: boolean
+  /** Option 3b — scrolling telemetry ticker along the bottom of the floor plan. */
   telemetryTicker?: boolean
   /** Option 4 — dashed connection lines between tech systems with packets traveling on them. */
   connectionWeb?: boolean
@@ -83,6 +85,7 @@ export function HeroFloorplan({
   parallax = false,
   narrativeCycle = false,
   systemSweep = false,
+  telemetryBadges = false,
   telemetryTicker = false,
   connectionWeb = false,
   alertDrama = false,
@@ -104,15 +107,15 @@ export function HeroFloorplan({
     return () => window.clearInterval(interval)
   }, [narrativeCycle])
 
-  /* telemetry counter ticking — Option 3 */
+  /* telemetry counter ticking — fires when either badges or ticker is on */
   useEffect(() => {
-    if (!telemetryTicker) return
+    if (!telemetryTicker && !telemetryBadges) return
     const interval = window.setInterval(() => {
       setMemberCount((c) => c + (Math.random() < 0.5 ? 1 : 0))
       setBandwidth((b) => Math.max(60, Math.min(120, b + (Math.random() < 0.5 ? 1 : -1) * Math.floor(Math.random() * 4))))
     }, 1500)
     return () => window.clearInterval(interval)
-  }, [telemetryTicker])
+  }, [telemetryTicker, telemetryBadges])
 
   /* alert drama cycle — Option 5 */
   useEffect(() => {
@@ -643,7 +646,7 @@ export function HeroFloorplan({
           ) : null}
 
           {/* Option 3 — telemetry inline data badges (ticker bar is HTML, below) */}
-          {telemetryTicker ? (
+          {telemetryBadges || telemetryTicker ? (
             <g className="text-primary font-mono">
               {/* AP throughput badge */}
               <g>

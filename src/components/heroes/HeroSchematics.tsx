@@ -124,7 +124,17 @@ export function HeroDE2Sweep() {
 export function HeroDE2Ticker() {
   return (
     <HeroShell>
-      <HeroFloorplan extraEvents telemetryTicker />
+      <HeroFloorplan extraEvents telemetryBadges telemetryTicker />
+    </HeroShell>
+  )
+}
+
+/** Option 6 — D+E2 with system sweep + inline data badges (no bottom ticker).
+ *  My recommended production hero combination. */
+export function HeroDE2SweepBadges() {
+  return (
+    <HeroShell>
+      <HeroFloorplan extraEvents systemSweep telemetryBadges />
     </HeroShell>
   )
 }

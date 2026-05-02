@@ -9,6 +9,7 @@ import {
   HeroDE2Alert,
   HeroDE2Narrative,
   HeroDE2Sweep,
+  HeroDE2SweepBadges,
   HeroDE2Ticker,
   HeroDE2Web,
   HeroDE3,
@@ -114,6 +115,15 @@ const variants: HeroVariant[] = [
     pros: "Most direct sales positioning — visibly sells the value of the audit.",
     cons: "Risky: visitors who arrive mid-alert see 'something is wrong' and might bounce. Use sparingly.",
     Component: HeroDE2Alert,
+  },
+  {
+    id: "hero-de2-sweep-badges",
+    letter: "6",
+    title: "Option 6 — System sweep + inline data badges (RECOMMENDED)",
+    tagline: "D+E2 base + Option 2's vertical scan line every 8s + Option 3's inline data badges (Mbps near AP, CPU% on server, members in reception, cams next to camera). No bottom marquee. Sweep gives the dramatic 'wait, that's clever' moment; badges ground it in real numbers continuously.",
+    pros: "Best simplicity-to-impact ratio. 'Operations control room' feel. Numbers + scan together = sophisticated, continuous audit.",
+    cons: "Slightly busier than Option 2 alone, but much less so than the full ticker.",
+    Component: HeroDE2SweepBadges,
   },
 ]
 
