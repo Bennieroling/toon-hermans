@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 
 import { AnimateIn } from "@/components/AnimateIn"
-import { V9BlueprintImages } from "@/components/diagrams/V9BlueprintImages"
+import { V5Topology } from "@/components/diagrams/V5Topology"
 
 export function AuditLayers() {
   const { t } = useTranslation()
@@ -24,7 +24,7 @@ export function AuditLayers() {
             </p>
           </div>
         </AnimateIn>
-        <V9BlueprintImages />
+        <V5Topology capFloorHeight hideBottomLegend showTopTabs />
       </div>
     </section>
   )
