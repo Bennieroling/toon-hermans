@@ -110,6 +110,14 @@ interface V5TopologyProps {
   capFloorHeight?: boolean
   /** Shrink the whole component (narrower container, smaller scene + text). */
   compact?: boolean
+  /** Render only the floor-plan SVG — no chip strip, detail strip, or legend.
+   *  Used by hero variants that embed the floor plan as a background visual. */
+  bareFloorPlan?: boolean
+  /** Auto-advance activeLayer through the 8 layers on a timer.
+   *  Pairs with bareFloorPlan to give an "always running" hero feel. */
+  autoCycle?: boolean
+  /** Disable the hover/click interactions on layer nodes (use with bareFloorPlan). */
+  disableInteractions?: boolean
 }
 
 export function V5Topology({
@@ -117,6 +125,9 @@ export function V5Topology({
   showTopTabs = false,
   capFloorHeight = false,
   compact = false,
+  bareFloorPlan = false,
+  autoCycle = false,
+  disableInteractions = false,
 }: V5TopologyProps = {}) {
   const { t } = useTranslation()
   const [activeLayer, setActiveLayer] = useState<string | null>(null)
@@ -145,8 +156,25 @@ export function V5Topology({
 
   const activeLayerData = activeLayer ? layers.find((l) => l.key === activeLayer) : null
 
+  /* auto-cycle through layers (used by hero variants) */
+  useEffect(() => {
+    if (!autoCycle) return
+    let i = 0
+    const tick = () => {
+      const layer = layers[i % layers.length]
+      if (layer) setActiveLayer(layer.key)
+      i++
+    }
+    tick()
+    const interval = window.setInterval(tick, 2400)
+    return () => window.clearInterval(interval)
+  }, [autoCycle])
+
   return (
-    <div className={`mx-auto mt-10 ${compact ? "max-w-5xl" : "max-w-7xl"}`} ref={containerRef}>
+    <div
+      className={bareFloorPlan ? "h-full w-full" : `mx-auto mt-10 ${compact ? "max-w-5xl" : "max-w-7xl"}`}
+      ref={containerRef}
+    >
       <SceneStyles />
       <style>{`
         @keyframes v5-wifi-ping {
@@ -217,7 +245,7 @@ export function V5Topology({
         }
       `}</style>
 
-      {showTopTabs ? (
+      {!bareFloorPlan && showTopTabs ? (
         <nav className="mb-4 flex flex-wrap gap-1.5">
           {layers.map((layer) => {
             const isActive = activeLayer === layer.key
@@ -239,7 +267,11 @@ export function V5Topology({
         </nav>
       ) : null}
       <div
-        className={`mx-auto rounded-2xl border border-border bg-background/40 ${compact ? "max-w-2xl p-2 sm:p-3" : capFloorHeight ? "max-w-3xl p-3 sm:p-5" : "p-3 sm:p-5"}`}
+        className={
+          bareFloorPlan
+            ? "h-full w-full"
+            : `mx-auto rounded-2xl border border-border bg-background/40 ${compact ? "max-w-2xl p-2 sm:p-3" : capFloorHeight ? "max-w-3xl p-3 sm:p-5" : "p-3 sm:p-5"}`
+        }
       >
         <svg
           className="w-full text-foreground"
@@ -611,21 +643,25 @@ export function V5Topology({
               return (
                 <g
                   key={layer.key}
-                  className={`v5-node-entrance ${entered ? "v5-entered" : ""} cursor-pointer transition-opacity duration-300`}
+                  className={`v5-node-entrance ${entered ? "v5-entered" : ""} ${disableInteractions ? "" : "cursor-pointer"} transition-opacity duration-300`}
                   style={{
                     opacity: isInactive ? 0.35 : 1,
                     transitionDelay: entered ? `${1100 + i * 90}ms` : "0ms",
                   }}
-                  onClick={() => setActiveLayer(activeLayer === layer.key ? null : layer.key)}
-                  onMouseEnter={() => setActiveLayer(layer.key)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault()
-                      setActiveLayer(activeLayer === layer.key ? null : layer.key)
-                    }
-                  }}
+                  onClick={disableInteractions ? undefined : () => setActiveLayer(activeLayer === layer.key ? null : layer.key)}
+                  onMouseEnter={disableInteractions ? undefined : () => setActiveLayer(layer.key)}
+                  role={disableInteractions ? undefined : "button"}
+                  tabIndex={disableInteractions ? -1 : 0}
+                  onKeyDown={
+                    disableInteractions
+                      ? undefined
+                      : (e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault()
+                            setActiveLayer(activeLayer === layer.key ? null : layer.key)
+                          }
+                        }
+                  }
                   aria-label={`Layer ${t(`layers.items.${layer.key}.number`)} — ${t(`layers.items.${layer.key}.name`)}`}
                 >
                   {isActive && (
@@ -679,6 +715,7 @@ export function V5Topology({
       </div>
 
       {/* Detail strip — full-width below the floor plan when a layer is active */}
+      {bareFloorPlan ? null : (
       <aside aria-live="polite" className="mt-6">
         {activeLayerData ? (
           <div className={`rounded-2xl border border-border bg-background/60 ${compact ? "p-4 lg:p-5" : "p-6 lg:p-8"}`}>
@@ -744,9 +781,10 @@ export function V5Topology({
           </div>
         )}
       </aside>
+      )}
 
       {/* Legend below */}
-      {hideBottomLegend ? null : (
+      {bareFloorPlan || hideBottomLegend ? null : (
       <ol className="mt-8 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
         {layers.map((layer) => {
           const isActive = activeLayer === layer.key

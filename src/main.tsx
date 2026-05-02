@@ -11,14 +11,18 @@ import { createRoot } from "react-dom/client"
 import App from "./App"
 import { ThemeProvider } from "./components/ThemeProvider"
 import { DiagramDemo } from "./pages/DiagramDemo"
+import { HeroDemo } from "./pages/HeroDemo"
 import "./i18n"
 import "./styles/globals.css"
 
-const isDiagramDemo =
-  typeof window !== "undefined" && window.location.pathname.startsWith("/demo/diagrams")
+const path = typeof window !== "undefined" ? window.location.pathname : "/"
+const isDiagramDemo = path.startsWith("/demo/diagrams")
+const isHeroDemo = path.startsWith("/demo/heroes")
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider>{isDiagramDemo ? <DiagramDemo /> : <App />}</ThemeProvider>
+    <ThemeProvider>
+      {isDiagramDemo ? <DiagramDemo /> : isHeroDemo ? <HeroDemo /> : <App />}
+    </ThemeProvider>
   </StrictMode>,
 )
