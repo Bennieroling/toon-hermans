@@ -370,6 +370,131 @@ export function WhoWeHelpDeclarative() {
 }
 
 /* ------------------------------------------------------------------ */
+/* 8 — COMBINED — spectrum + for-you/not-for-you + CTA                */
+/* ------------------------------------------------------------------ */
+
+export function WhoWeHelpCombined() {
+  return (
+    <section className="scroll-mt-24 bg-muted px-4 py-24 lg:px-6 lg:py-32">
+      <div className="mx-auto max-w-6xl">
+        {/* Position — header + compact spectrum */}
+        <AnimateIn>
+          <p className="text-primary-text text-sm font-bold uppercase tracking-[0.35em]">
+            WHO WE WORK WITH
+          </p>
+          <h2 className="mt-6 max-w-3xl font-display text-4xl font-black tracking-[-0.04em] text-foreground sm:text-5xl">
+            We work in the gap between <span className="text-primary">"too small for IT"</span> and{" "}
+            <span className="text-primary">"too big to need outside help"</span>.
+          </h2>
+        </AnimateIn>
+
+        <AnimateIn delay={120}>
+          <div className="mt-10 rounded-2xl border border-border/50 bg-background/30 px-6 py-7 lg:px-10 lg:py-8">
+            <svg className="w-full text-foreground" viewBox="0 0 100 18" xmlns="http://www.w3.org/2000/svg">
+              {/* track */}
+              <line x1={4} x2={96} y1={9} y2={9} stroke="currentColor" strokeOpacity={0.25} strokeWidth={0.4} />
+              {/* sweet-spot highlight */}
+              <line x1={20} x2={56} y1={9} y2={9} stroke="currentColor" strokeOpacity={1} strokeWidth={1.4} className="text-primary" />
+              <text x={38} y={4} textAnchor="middle" fontSize={2.6} className="font-mono fill-primary" letterSpacing="0.5">
+                WE WORK HERE
+              </text>
+              {/* stops */}
+              {spectrumStops.map((stop, i) => (
+                <g key={i}>
+                  <circle
+                    cx={stop.x}
+                    cy={9}
+                    r={stop.sweet ? 1.6 : 1.1}
+                    className={stop.sweet ? "fill-primary" : "fill-card"}
+                    stroke="currentColor"
+                    strokeWidth={stop.sweet ? 0 : 0.4}
+                    strokeOpacity={stop.sweet ? 0 : 0.5}
+                  />
+                  <text
+                    x={stop.x}
+                    y={14.2}
+                    textAnchor="middle"
+                    fontSize={3}
+                    className={`font-display fill-foreground ${stop.sweet ? "font-black" : ""}`}
+                  >
+                    {stop.label}
+                  </text>
+                  <text
+                    x={stop.x}
+                    y={17.5}
+                    textAnchor="middle"
+                    fontSize={1.7}
+                    className="font-mono fill-muted-foreground"
+                    opacity={0.85}
+                  >
+                    LOCATIONS
+                  </text>
+                </g>
+              ))}
+            </svg>
+          </div>
+        </AnimateIn>
+
+        {/* Filter — for you / not for you */}
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          <AnimateIn delay={180}>
+            <div className="h-full rounded-3xl border border-primary/40 bg-primary/5 p-8 lg:p-10">
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary">FOR YOU IF…</p>
+              <ul className="mt-6 space-y-4">
+                {POSITIVE_QUALIFIERS.map((q, i) => (
+                  <li className="flex gap-3 text-base leading-7 text-foreground sm:text-[17px]" key={i}>
+                    <CheckCircle className="mt-1 size-5 shrink-0 text-primary" />
+                    <span>{q}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimateIn>
+          <AnimateIn delay={260}>
+            <div className="h-full rounded-3xl border border-border/60 bg-background/40 p-8 lg:p-10">
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+                NOT FOR YOU IF…
+              </p>
+              <ul className="mt-6 space-y-4">
+                {NEGATIVE_QUALIFIERS.map((q, i) => (
+                  <li className="flex gap-3 text-base leading-7 text-muted-foreground sm:text-[17px]" key={i}>
+                    <X className="mt-1 size-5 shrink-0 text-muted-foreground/70" />
+                    <span>{q}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimateIn>
+        </div>
+
+        {/* Alternatives + Action */}
+        <AnimateIn delay={360}>
+          <div className="mt-12 border-t border-border/40 pt-8">
+            <p className="max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
+              {ALTERNATIVES_LINE}
+            </p>
+            <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl">
+                Sounds like you? Let's talk.
+              </p>
+              <Button asChild size="lg">
+                <a href={bookingUrl} rel="noreferrer" target="_blank">
+                  Book a 30-minute call
+                  <ArrowRight className="size-4" />
+                </a>
+              </Button>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground">
+              No pitch. Just a conversation about your space.
+            </p>
+          </div>
+        </AnimateIn>
+      </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /* 7 — SCALE SPECTRUM                                                 */
 /* ------------------------------------------------------------------ */
 

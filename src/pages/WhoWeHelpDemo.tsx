@@ -3,6 +3,7 @@ import type { ComponentType, ReactNode } from "react"
 
 import {
   WhoWeHelpCalmContainer,
+  WhoWeHelpCombined,
   WhoWeHelpDeclarative,
   WhoWeHelpForYouOrNot,
   WhoWeHelpOperatorQuote,
@@ -94,6 +95,15 @@ const variants: Variant[] = [
     pros: "Most visually distinctive. Shows positioning instead of telling. Makes scale-fit obvious in 2 seconds.",
     cons: "Custom visual element to maintain. Doesn't capture qualitative qualifiers (e.g. 'hands-on' or 'tired of muddling through').",
     Component: WhoWeHelpScaleSpectrum,
+  },
+  {
+    id: "ww-combined",
+    letter: "8",
+    title: "Combined — spectrum + For-you/Not-for-you + CTA (RECOMMENDED)",
+    tagline: "Stacks the strongest pieces from 7, 3, and 1 in sequence. Top: compact scale spectrum (position visually). Middle: For-you/Not-for-you two columns (filter qualitatively). Bottom: alternatives line + 'Sounds like you? Let's talk' + booking CTA (push to action).",
+    pros: "Walks the visitor through position → filter → act in one section. Each block does one job. Most complete and most defensible.",
+    cons: "Tallest section of the lot. If page-length is a concern, picking just one of the three blocks would still work.",
+    Component: WhoWeHelpCombined,
   },
 ]
 
