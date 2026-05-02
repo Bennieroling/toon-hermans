@@ -1,19 +1,24 @@
 import { ArrowRight } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, type ReactNode } from "react"
 import { useTranslation } from "react-i18next"
 
-import { V5Topology } from "@/components/diagrams/V5Topology"
+import { HeroFloorplan } from "@/components/heroes/HeroFloorplan"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { bookingUrl } from "@/lib/utils"
 
 /**
- * Path C — V5 schematic with auto-cycling layer focus.
- * The same V5 floor plan as Path A, but `autoCycle` advances the
- * activeLayer through 01 → 08 every couple of seconds. Visitors
- * see "live system in motion" before they read a word of copy.
+ * Four hero variants on top of the same V5-style schematic floor plan.
+ * They share an identical right-column (badge / headline / subheadline
+ * / CTA / cta sub) — the only difference is which animation mode the
+ * floor plan runs in.
  */
-export function HeroC() {
+
+interface HeroShellProps {
+  children: ReactNode
+}
+
+function HeroShell({ children }: HeroShellProps) {
   const { t } = useTranslation()
   const [loaded, setLoaded] = useState(false)
 
@@ -24,15 +29,14 @@ export function HeroC() {
 
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden md:flex-row">
-      {/* Left — auto-cycling schematic */}
+      {/* Left — schematic */}
       <div className="relative h-[50vh] w-full shrink-0 overflow-hidden md:h-auto md:w-1/2">
         <div className="absolute inset-0 flex items-center justify-center px-6 py-10 sm:px-10">
-          <div className="w-full max-w-2xl">
-            <V5Topology autoCycle bareFloorPlan disableInteractions />
-          </div>
+          <div className="w-full max-w-2xl">{children}</div>
         </div>
+        {/* gradient fade into the right column */}
         <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-transparent via-transparent to-background md:block" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(19,91,236,0.08),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(19,91,236,0.06),transparent_55%)]" />
       </div>
 
       {/* Right — copy + CTA */}
@@ -59,5 +63,41 @@ export function HeroC() {
         </div>
       </div>
     </section>
+  )
+}
+
+/** Path D — clean schematic with ambient overlays only. */
+export function HeroD() {
+  return (
+    <HeroShell>
+      <HeroFloorplan />
+    </HeroShell>
+  )
+}
+
+/** Path D + E1 — schematic with cinematic camera fly-through. */
+export function HeroDE1() {
+  return (
+    <HeroShell>
+      <HeroFloorplan flyThrough />
+    </HeroShell>
+  )
+}
+
+/** Path D + E2 — schematic with multi-event live simulation on top. */
+export function HeroDE2() {
+  return (
+    <HeroShell>
+      <HeroFloorplan extraEvents />
+    </HeroShell>
+  )
+}
+
+/** Path D + E3 — schematic with mouse-tracked spotlight + parallax. */
+export function HeroDE3() {
+  return (
+    <HeroShell>
+      <HeroFloorplan parallax />
+    </HeroShell>
   )
 }
