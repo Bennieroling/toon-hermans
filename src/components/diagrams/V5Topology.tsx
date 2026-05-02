@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 
+import { layerScenes, SceneStyles } from "@/components/diagrams/scenes/LayerScenes"
 import { layers } from "@/lib/utils"
 
 interface Room {
@@ -130,6 +131,7 @@ export function V5Topology() {
 
   return (
     <div className="mx-auto mt-10 max-w-5xl" ref={containerRef}>
+      <SceneStyles />
       <style>{`
         @keyframes v5-wifi-ping {
           0% { transform: scale(0.4); opacity: 0.9; }
@@ -645,14 +647,11 @@ export function V5Topology() {
         >
           {activeLayerData ? (
             <div>
-              <div className="mb-5 aspect-square w-full overflow-hidden rounded-2xl border border-border/60 bg-card/30 p-4">
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  className="h-full w-full object-contain mix-blend-multiply transition-opacity duration-300 dark:mix-blend-lighten"
-                  key={activeLayerData.key}
-                  src={`/diagram-illustrations/${activeLayerData.key}.png`}
-                />
+              <div className="mb-5" key={activeLayerData.key}>
+                {(() => {
+                  const Scene = layerScenes[activeLayerData.key]
+                  return Scene ? <Scene /> : null
+                })()}
               </div>
               <div className="flex items-baseline justify-between gap-3">
                 <span className="font-display text-5xl font-black tracking-[-0.04em] text-primary">
