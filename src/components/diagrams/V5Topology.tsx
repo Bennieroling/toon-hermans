@@ -13,27 +13,27 @@ interface Room {
 }
 
 const rooms: Room[] = [
-  { x: 40, y: 40, w: 130, h: 280, label: "RECEPTION" },
-  { x: 40, y: 320, w: 130, h: 140, label: "LOBBY" },
-  { x: 170, y: 40, w: 290, h: 240, label: "OPEN COWORKING" },
-  { x: 170, y: 280, w: 290, h: 180, label: "KITCHEN  /  LOUNGE" },
-  { x: 460, y: 40, w: 300, h: 160, label: "MEETING ROOM" },
-  { x: 460, y: 200, w: 150, h: 160, label: "PRIVATE OFFICE" },
-  { x: 610, y: 200, w: 150, h: 160, label: "PRIVATE OFFICE" },
-  { x: 460, y: 360, w: 90, h: 100, label: "BOOTH" },
-  { x: 550, y: 360, w: 90, h: 100, label: "BOOTH" },
-  { x: 640, y: 360, w: 120, h: 100, label: "IT  CLOSET" },
+  { x: 40, y: 40, w: 130, h: 340, label: "RECEPTION" },
+  { x: 40, y: 380, w: 130, h: 200, label: "LOBBY" },
+  { x: 170, y: 40, w: 290, h: 310, label: "OPEN COWORKING" },
+  { x: 170, y: 350, w: 290, h: 230, label: "KITCHEN  /  LOUNGE" },
+  { x: 460, y: 40, w: 300, h: 200, label: "MEETING ROOM" },
+  { x: 460, y: 240, w: 150, h: 200, label: "PRIVATE OFFICE" },
+  { x: 610, y: 240, w: 150, h: 200, label: "PRIVATE OFFICE" },
+  { x: 460, y: 440, w: 90, h: 140, label: "BOOTH" },
+  { x: 550, y: 440, w: 90, h: 140, label: "BOOTH" },
+  { x: 640, y: 440, w: 120, h: 140, label: "IT  CLOSET" },
 ]
 
 const nodePositions: { x: number; y: number }[] = [
-  { x: 700, y: 415 }, // 01 Network → IT closet
-  { x: 40, y: 290 }, // 02 Access control → front door
+  { x: 700, y: 510 }, // 01 Network → IT closet
+  { x: 40, y: 320 }, // 02 Access control → front door
   { x: 105, y: 130 }, // 03 Platform → reception desk
-  { x: 610, y: 120 }, // 04 Meeting room
-  { x: 105, y: 380 }, // 05 Security/CCTV → lobby
-  { x: 595, y: 410 }, // 06 Telephony → phone booths
-  { x: 315, y: 380 }, // 07 Integrations → kitchen wall
-  { x: 315, y: 145 }, // 08 IT/devices → coworking desks
+  { x: 610, y: 140 }, // 04 Meeting room
+  { x: 105, y: 480 }, // 05 Security/CCTV → lobby
+  { x: 595, y: 510 }, // 06 Telephony → phone booths
+  { x: 315, y: 470 }, // 07 Integrations → kitchen
+  { x: 315, y: 165 }, // 08 IT/devices → coworking desks
 ]
 
 // Sample audit checks per layer. These are the visible signal of expertise —
@@ -130,7 +130,7 @@ export function V5Topology() {
   const activeLayerData = activeLayer ? layers.find((l) => l.key === activeLayer) : null
 
   return (
-    <div className="mx-auto mt-10 max-w-5xl" ref={containerRef}>
+    <div className="mx-auto mt-10 max-w-7xl" ref={containerRef}>
       <SceneStyles />
       <style>{`
         @keyframes v5-wifi-ping {
@@ -205,7 +205,7 @@ export function V5Topology() {
         <div className="rounded-2xl border border-border bg-background/40 p-3 sm:p-5">
           <svg
             className="w-full text-foreground"
-            viewBox="0 0 800 500"
+            viewBox="0 0 800 620"
             xmlns="http://www.w3.org/2000/svg"
             onClick={(e) => {
               if (e.target === e.currentTarget) setActiveLayer(null)
@@ -213,14 +213,14 @@ export function V5Topology() {
           >
             {/* drawing-sheet header */}
             <g className="font-mono fill-foreground" opacity={0.5}>
-              <text x={40} y={28} fontSize={10} style={{ letterSpacing: "0.25em" }}>
+              <text x={40} y={28} fontSize={13} style={{ letterSpacing: "0.25em" }}>
                 FLOOR PLAN — TYPICAL COWORKING (SCHEMATIC)
               </text>
               <text
                 x={760}
                 y={28}
                 textAnchor="end"
-                fontSize={10}
+                fontSize={13}
                 style={{ letterSpacing: "0.25em" }}
               >
                 LIVE / INTERACTIVE
@@ -234,7 +234,7 @@ export function V5Topology() {
               x={40}
               y={40}
               width={720}
-              height={420}
+              height={540}
               stroke="currentColor"
               strokeOpacity={0.55}
               strokeWidth={2.5}
@@ -257,22 +257,22 @@ export function V5Topology() {
 
             {/* doors */}
             <g stroke="currentColor" strokeOpacity={0.55} strokeWidth={1.4} fill="none" className="text-primary">
-              <path d="M 40 290 L 40 270" />
-              <path d="M 40 270 A 28 28 0 0 1 68 298" />
+              <path d="M 40 320 L 40 300" />
+              <path d="M 40 300 A 28 28 0 0 1 68 328" />
             </g>
             <g stroke="currentColor" strokeOpacity={0.35} strokeWidth={1.2} fill="none">
               <path d="M 170 130 L 170 100" />
               <path d="M 170 100 A 25 25 0 0 1 195 125" />
-              <path d="M 170 380 L 170 360" />
-              <path d="M 170 360 A 22 22 0 0 1 192 382" />
+              <path d="M 170 440 L 170 420" />
+              <path d="M 170 420 A 22 22 0 0 1 192 442" />
               <path d="M 460 90 L 460 65" />
               <path d="M 460 65 A 22 22 0 0 1 482 87" />
-              <path d="M 535 200 L 510 200" />
-              <path d="M 510 200 A 22 22 0 0 1 532 222" />
-              <path d="M 685 200 L 660 200" />
-              <path d="M 660 200 A 22 22 0 0 1 682 222" />
-              <path d="M 695 360 L 670 360" />
-              <path d="M 670 360 A 22 22 0 0 1 692 382" />
+              <path d="M 535 240 L 510 240" />
+              <path d="M 510 240 A 22 22 0 0 1 532 262" />
+              <path d="M 685 240 L 660 240" />
+              <path d="M 660 240 A 22 22 0 0 1 682 262" />
+              <path d="M 695 440 L 670 440" />
+              <path d="M 670 440 A 22 22 0 0 1 692 462" />
             </g>
 
             {/* coworking hot-desks */}
@@ -281,9 +281,9 @@ export function V5Topology() {
                 <rect
                   key={`desk-${row}-${col}`}
                   x={185 + col * 65}
-                  y={170 + row * 35}
+                  y={195 + row * 50}
                   width={50}
-                  height={22}
+                  height={28}
                   rx={2}
                   fill="none"
                   stroke="currentColor"
@@ -296,23 +296,23 @@ export function V5Topology() {
             {/* meeting room */}
             <ellipse
               cx={610}
-              cy={120}
+              cy={140}
               rx={100}
-              ry={32}
+              ry={36}
               fill="none"
               stroke="currentColor"
               strokeOpacity={0.3}
               strokeWidth={1.2}
             />
             {[
-              [510, 120],
-              [710, 120],
-              [560, 80],
-              [610, 70],
-              [660, 80],
-              [560, 160],
-              [610, 170],
-              [660, 160],
+              [510, 140],
+              [710, 140],
+              [560, 100],
+              [610, 90],
+              [660, 100],
+              [560, 180],
+              [610, 190],
+              [660, 180],
             ].map(([cx, cy], i) => (
               <circle
                 key={`chair-${i}`}
@@ -338,9 +338,9 @@ export function V5Topology() {
             {/* kitchen */}
             <rect
               x={245}
-              y={355}
+              y={445}
               width={140}
-              height={45}
+              height={50}
               rx={4}
               fill="none"
               stroke="currentColor"
@@ -348,16 +348,16 @@ export function V5Topology() {
               strokeWidth={1.2}
             />
             <g stroke="currentColor" strokeOpacity={0.22} strokeWidth={1} fill="none">
-              <rect x={185} y={300} width={28} height={20} rx={1} />
-              <rect x={215} y={300} width={28} height={20} rx={1} />
-              <rect x={245} y={300} width={28} height={20} rx={1} />
+              <rect x={185} y={370} width={28} height={22} rx={1} />
+              <rect x={215} y={370} width={28} height={22} rx={1} />
+              <rect x={245} y={370} width={28} height={22} rx={1} />
             </g>
             {[200, 245, 290, 335, 380, 425].map((cx, i) => (
               <circle
                 key={`seat-${i}`}
                 cx={cx}
-                cy={420}
-                r={6}
+                cy={540}
+                r={7}
                 fill="none"
                 stroke="currentColor"
                 strokeOpacity={0.2}
@@ -368,51 +368,51 @@ export function V5Topology() {
             {/* offices */}
             <rect
               x={485}
-              y={300}
+              y={290}
               width={100}
-              height={26}
+              height={30}
               rx={2}
               fill="none"
               stroke="currentColor"
               strokeOpacity={0.25}
               strokeWidth={1}
             />
-            <circle cx={535} cy={340} r={6} fill="none" stroke="currentColor" strokeOpacity={0.25} />
+            <circle cx={535} cy={355} r={7} fill="none" stroke="currentColor" strokeOpacity={0.25} />
             <rect
               x={635}
-              y={300}
+              y={290}
               width={100}
-              height={26}
+              height={30}
               rx={2}
               fill="none"
               stroke="currentColor"
               strokeOpacity={0.25}
               strokeWidth={1}
             />
-            <circle cx={685} cy={340} r={6} fill="none" stroke="currentColor" strokeOpacity={0.25} />
+            <circle cx={685} cy={355} r={7} fill="none" stroke="currentColor" strokeOpacity={0.25} />
 
             {/* booths */}
-            <circle cx={505} cy={410} r={8} fill="none" stroke="currentColor" strokeOpacity={0.25} />
-            <rect x={490} y={430} width={30} height={4} fill="currentColor" fillOpacity={0.18} />
-            <circle cx={595} cy={410} r={8} fill="none" stroke="currentColor" strokeOpacity={0.25} />
-            <rect x={580} y={430} width={30} height={4} fill="currentColor" fillOpacity={0.18} />
+            <circle cx={505} cy={510} r={9} fill="none" stroke="currentColor" strokeOpacity={0.25} />
+            <rect x={490} y={540} width={30} height={5} fill="currentColor" fillOpacity={0.18} />
+            <circle cx={595} cy={510} r={9} fill="none" stroke="currentColor" strokeOpacity={0.25} />
+            <rect x={580} y={540} width={30} height={5} fill="currentColor" fillOpacity={0.18} />
 
             {/* IT closet — server rack with blinking LEDs */}
             <g stroke="currentColor" strokeOpacity={0.4} strokeWidth={1} fill="none">
-              <rect x={655} y={395} width={30} height={50} rx={1} />
-              {[0, 1, 2, 3, 4].map((j) => (
+              <rect x={655} y={485} width={30} height={70} rx={1} />
+              {[0, 1, 2, 3, 4, 5].map((j) => (
                 <line
                   key={`rack-${j}`}
                   x1={655}
                   x2={685}
-                  y1={403 + j * 9}
-                  y2={403 + j * 9}
+                  y1={495 + j * 11}
+                  y2={495 + j * 11}
                 />
               ))}
             </g>
-            <circle cx={680} cy={401} r={1.5} className="text-primary v5-rack-led-a" fill="currentColor" />
-            <circle cx={680} cy={419} r={1.5} className="text-primary v5-rack-led-b" fill="currentColor" />
-            <circle cx={680} cy={437} r={1.5} className="text-primary v5-rack-led-c" fill="currentColor" />
+            <circle cx={680} cy={493} r={1.8} className="text-primary v5-rack-led-a" fill="currentColor" />
+            <circle cx={680} cy={515} r={1.8} className="text-primary v5-rack-led-b" fill="currentColor" />
+            <circle cx={680} cy={537} r={1.8} className="text-primary v5-rack-led-c" fill="currentColor" />
 
             {/* reception desk */}
             <path
@@ -434,9 +434,9 @@ export function V5Topology() {
             />
 
             {/* lobby seating */}
-            <circle cx={75} cy={400} r={11} fill="none" stroke="currentColor" strokeOpacity={0.25} />
-            <circle cx={125} cy={400} r={11} fill="none" stroke="currentColor" strokeOpacity={0.25} />
-            <rect x={70} y={425} width={70} height={5} fill="currentColor" fillOpacity={0.18} />
+            <circle cx={75} cy={490} r={13} fill="none" stroke="currentColor" strokeOpacity={0.25} />
+            <circle cx={125} cy={490} r={13} fill="none" stroke="currentColor" strokeOpacity={0.25} />
+            <rect x={70} y={520} width={70} height={6} fill="currentColor" fillOpacity={0.18} />
 
             {/* CCTV camera with sweeping cone */}
             <g className="text-primary">
@@ -448,9 +448,9 @@ export function V5Topology() {
                 fill="currentColor"
                 fillOpacity={0.06}
               >
-                <path d="M 100 340 L 60 380 L 145 380 Z" strokeDasharray="2 4" />
+                <path d="M 100 410 L 60 460 L 145 460 Z" strokeDasharray="2 4" />
               </g>
-              <circle cx={100} cy={340} r={3} fill="currentColor" fillOpacity={0.6} />
+              <circle cx={100} cy={410} r={3.5} fill="currentColor" fillOpacity={0.6} />
             </g>
 
             {/* WiFi access point with three pulsing rings */}
@@ -490,10 +490,10 @@ export function V5Topology() {
 
             {/* Door reader pulse near entrance */}
             <g className="text-primary">
-              <rect x={36} y={285} width={4} height={10} fill="currentColor" fillOpacity={0.55} />
+              <rect x={36} y={315} width={4} height={10} fill="currentColor" fillOpacity={0.55} />
               <circle
                 cx={40}
-                cy={290}
+                cy={320}
                 r={10}
                 className="v5-reader-pulse-1"
                 fill="none"
@@ -503,7 +503,7 @@ export function V5Topology() {
               />
               <circle
                 cx={40}
-                cy={290}
+                cy={320}
                 r={10}
                 className="v5-reader-pulse-2"
                 fill="none"
@@ -518,10 +518,10 @@ export function V5Topology() {
               <text
                 key={`label-${i}`}
                 x={r.x + r.w / 2}
-                y={r.y + 18}
+                y={r.y + 22}
                 textAnchor="middle"
                 className="font-mono fill-foreground"
-                fontSize={r.w > 120 ? 11 : 9}
+                fontSize={r.w > 120 ? 14 : 11}
                 opacity={0.55}
                 style={{ letterSpacing: r.w > 120 ? "0.25em" : "0.18em" }}
               >
@@ -530,19 +530,19 @@ export function V5Topology() {
             ))}
 
             {/* north arrow */}
-            <g transform="translate(750, 70)">
-              <circle r={14} fill="none" stroke="currentColor" strokeOpacity={0.4} strokeWidth={1} />
+            <g transform="translate(745, 72)">
+              <circle r={18} fill="none" stroke="currentColor" strokeOpacity={0.4} strokeWidth={1} />
               <path
-                d="M 0 -10 L 4 4 L 0 1 L -4 4 Z"
+                d="M 0 -13 L 5 5 L 0 1 L -5 5 Z"
                 fill="currentColor"
                 fillOpacity={0.55}
                 className="text-primary"
               />
               <text
                 textAnchor="middle"
-                y={-16}
+                y={-22}
                 className="font-mono fill-foreground"
-                fontSize={9}
+                fontSize={12}
                 opacity={0.55}
                 style={{ letterSpacing: "0.2em" }}
               >
@@ -552,15 +552,15 @@ export function V5Topology() {
 
             {/* scale bar */}
             <g
-              transform="translate(40, 480)"
+              transform="translate(40, 600)"
               className="font-mono fill-foreground"
               opacity={0.5}
             >
-              <line x1={0} x2={80} y1={0} y2={0} stroke="currentColor" strokeWidth={1} />
-              <line x1={0} x2={0} y1={-3} y2={3} stroke="currentColor" strokeWidth={1} />
-              <line x1={40} x2={40} y1={-2} y2={2} stroke="currentColor" strokeWidth={1} />
-              <line x1={80} x2={80} y1={-3} y2={3} stroke="currentColor" strokeWidth={1} />
-              <text x={40} y={14} textAnchor="middle" fontSize={9} style={{ letterSpacing: "0.2em" }}>
+              <line x1={0} x2={100} y1={0} y2={0} stroke="currentColor" strokeWidth={1} />
+              <line x1={0} x2={0} y1={-4} y2={4} stroke="currentColor" strokeWidth={1} />
+              <line x1={50} x2={50} y1={-3} y2={3} stroke="currentColor" strokeWidth={1} />
+              <line x1={100} x2={100} y1={-4} y2={4} stroke="currentColor" strokeWidth={1} />
+              <text x={50} y={16} textAnchor="middle" fontSize={11} style={{ letterSpacing: "0.2em" }}>
                 5 M
               </text>
             </g>
@@ -595,7 +595,7 @@ export function V5Topology() {
                       <circle
                         cx={p.x}
                         cy={p.y}
-                        r={32}
+                        r={38}
                         fill="none"
                         stroke="currentColor"
                         className="text-primary"
@@ -605,7 +605,7 @@ export function V5Topology() {
                       <circle
                         cx={p.x}
                         cy={p.y}
-                        r={26}
+                        r={30}
                         fill="none"
                         stroke="currentColor"
                         className="text-primary"
@@ -617,19 +617,19 @@ export function V5Topology() {
                   <circle
                     cx={p.x}
                     cy={p.y}
-                    r={isActive ? 22 : 16}
+                    r={isActive ? 26 : 19}
                     className={isActive ? "fill-primary" : "fill-background"}
                     stroke="currentColor"
                     strokeOpacity={0.85}
-                    strokeWidth={2}
+                    strokeWidth={2.2}
                     style={{ transition: "r 0.3s ease, fill 0.3s ease" }}
                   />
                   <text
                     x={p.x}
-                    y={p.y + (isActive ? 5 : 4)}
+                    y={p.y + (isActive ? 6 : 5)}
                     textAnchor="middle"
                     className={`font-display font-black ${isActive ? "fill-primary-foreground" : "fill-primary"}`}
-                    fontSize={isActive ? 13 : 11}
+                    fontSize={isActive ? 17 : 14}
                     style={{ transition: "font-size 0.3s ease" }}
                   >
                     {t(`layers.items.${layer.key}.number`)}
