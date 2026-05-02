@@ -9,6 +9,7 @@ import {
   ProblemOriginal,
   ProblemPullquote,
   ProblemSharpenedClosing,
+  ProblemSystemGaps,
   ProblemTightenedVoice,
   ProblemWithPivot,
 } from "@/components/problems/ProblemVariants"
@@ -104,6 +105,15 @@ const variants: ProblemVariant[] = [
     pros: "Strongest version. Every fix applied. Section has visual weight, content escalates, and the section ends with a forward-looking line.",
     cons: "Most invasive change. Mixing the stat + the callout + the pivot line in one section can feel like a lot — risk of over-design.",
     Component: ProblemAllCombined,
+  },
+  {
+    id: "problem-system-gaps",
+    letter: "9",
+    title: "Reframe — The gaps between your systems (story-in-facts)",
+    tagline: "Drops the incident framing entirely. Shows 5 concrete capability gaps where systems should talk to each other but don't (Booking ↔ Access, Membership ↔ Printing, WiFi ↔ Occupancy, VC ↔ Cleaning, Onboarding ↔ Everything). Each beat shows what 'wired' looks like vs. what an unintegrated stack actually does.",
+    pros: "Honest scope — doesn't promise to stop incidents you can't prevent. Maps directly to what an audit reveals: integrations that should exist, don't. Differentiates from generic IT helpdesks.",
+    cons: "Longer than the current section. Reads more like an article than a quick scroll. May benefit from being shorter/punchier on mobile.",
+    Component: ProblemSystemGaps,
   },
 ]
 

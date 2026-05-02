@@ -301,6 +301,116 @@ export function ProblemTightenedVoice() {
 }
 
 /* ------------------------------------------------------------------ */
+/* 9 — THE GAPS BETWEEN YOUR SYSTEMS (story-in-facts, capability gaps)*/
+/* ------------------------------------------------------------------ */
+
+interface GapBeat {
+  pair: string
+  whenConnected: string
+  whenNot: string
+}
+
+const gapBeats: GapBeat[] = [
+  {
+    pair: "Booking → Access control",
+    whenConnected:
+      "A member books a phone booth at 11pm for tomorrow's 7am call. The booking system charges them. The access system provisions a 30-minute door pass. They tap their phone, walk in, take the call.",
+    whenNot:
+      "The booking sits unprocessed until Monday morning. The member shows up to a locked door.",
+  },
+  {
+    pair: "Membership → Printing",
+    whenConnected:
+      "A member sends a 200-page print job from their laptop. The print server checks their plan, charges their account, logs the job to their billing.",
+    whenNot:
+      "They print, you absorb the cost. Or they don't print at all — nothing on your network knows who they are.",
+  },
+  {
+    pair: "WiFi → Occupancy",
+    whenConnected:
+      "Your APs already know how many devices are in each meeting room, in real time. Your booking system uses that to mark rooms as occupied or free. Members searching for a free room see ground truth.",
+    whenNot:
+      "The room shows 'free' on Cal — but it's been occupied for 40 minutes. Or it's marked 'booked' and sitting empty.",
+  },
+  {
+    pair: "VC system → Cleaning ops",
+    whenConnected:
+      "The camera in each room snapshots the state at the end of each booking. Your hosts get a list of rooms that actually need turning over before the next meeting.",
+    whenNot:
+      "The next member walks into yesterday's coffee cups and leaves a 3-star review citing 'cleanliness'.",
+  },
+  {
+    pair: "Onboarding → Everything",
+    whenConnected:
+      "A new member's fob, WiFi credentials, print quota, and booking access are provisioned in one flow on day one.",
+    whenNot:
+      "Four signups, four passwords, four ways to feel like an outsider in the first ten minutes of membership.",
+  },
+]
+
+export function ProblemSystemGaps() {
+  return (
+    <section className="scroll-mt-24 bg-muted px-4 py-24 lg:px-6 lg:py-32">
+      <div className="mx-auto max-w-5xl">
+        <AnimateIn>
+          <p className="text-primary-text text-sm font-bold uppercase tracking-[0.35em]">
+            THE GAPS BETWEEN YOUR SYSTEMS
+          </p>
+          <h2 className="mt-6 max-w-3xl font-display text-3xl font-bold leading-tight tracking-[-0.02em] text-foreground sm:text-4xl">
+            Most spaces don't fail in obvious ways. They fall short in the gaps —
+            between systems that should be wired together but aren't.
+          </h2>
+        </AnimateIn>
+        <ol className="mt-14 space-y-10">
+          {gapBeats.map((beat, index) => (
+            <AnimateIn delay={index * 80} key={beat.pair}>
+              <li className="grid gap-4 border-l-2 border-primary/30 pl-6 lg:grid-cols-[260px_1fr] lg:gap-10 lg:pl-8">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                    GAP / {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <p className="mt-2 font-display text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                    {beat.pair}
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-base leading-7 text-foreground sm:text-[17px] sm:leading-8">
+                    <span className="font-mono mr-2 text-[10px] uppercase tracking-[0.25em] text-primary">
+                      WHEN IT'S WIRED
+                    </span>
+                    {beat.whenConnected}
+                  </p>
+                  <p className="text-sm leading-7 text-muted-foreground sm:text-base">
+                    <span className="font-mono mr-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground/80">
+                      WHEN IT ISN'T
+                    </span>
+                    {beat.whenNot}
+                  </p>
+                </div>
+              </li>
+            </AnimateIn>
+          ))}
+        </ol>
+        <AnimateIn delay={500}>
+          <div className="mt-16 max-w-3xl border-t border-border/40 pt-8">
+            <p className="text-base leading-8 text-foreground sm:text-lg">
+              An audit finds gaps like these — where your systems already hold the data,
+              but nothing is wired up to act on it. We don't promise your WiFi never
+              drops. We promise to show you what your stack could be doing for you that
+              it isn't.
+            </p>
+            <p className="mt-6 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl">
+              The result isn't a tech upgrade. It's making the space operate the way it
+              should already be operating.
+            </p>
+          </div>
+        </AnimateIn>
+      </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /* 8 — EVERYTHING COMBINED                                            */
 /* ------------------------------------------------------------------ */
 
