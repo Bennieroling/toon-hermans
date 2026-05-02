@@ -101,7 +101,23 @@ const layerRoomLabels: Record<string, string> = {
   devices: "OPEN COWORKING",
 }
 
-export function V5Topology() {
+interface V5TopologyProps {
+  /** Hide the 8-item legend grid at the bottom (it duplicates the floor-plan numbers). */
+  hideBottomLegend?: boolean
+  /** Render a chip strip with all 8 layer names at the top, above the floor plan. */
+  showTopTabs?: boolean
+  /** Cap the floor-plan SVG height so it doesn't dominate the viewport. */
+  capFloorHeight?: boolean
+  /** Shrink the whole component (narrower container, smaller scene + text). */
+  compact?: boolean
+}
+
+export function V5Topology({
+  hideBottomLegend = false,
+  showTopTabs = false,
+  capFloorHeight = false,
+  compact = false,
+}: V5TopologyProps = {}) {
   const { t } = useTranslation()
   const [activeLayer, setActiveLayer] = useState<string | null>(null)
   const [entered, setEntered] = useState(false)
@@ -130,7 +146,7 @@ export function V5Topology() {
   const activeLayerData = activeLayer ? layers.find((l) => l.key === activeLayer) : null
 
   return (
-    <div className="mx-auto mt-10 max-w-7xl" ref={containerRef}>
+    <div className={`mx-auto mt-10 ${compact ? "max-w-5xl" : "max-w-7xl"}`} ref={containerRef}>
       <SceneStyles />
       <style>{`
         @keyframes v5-wifi-ping {
@@ -201,7 +217,30 @@ export function V5Topology() {
         }
       `}</style>
 
-      <div className="rounded-2xl border border-border bg-background/40 p-3 sm:p-5">
+      {showTopTabs ? (
+        <nav className="mb-4 flex flex-wrap gap-1.5">
+          {layers.map((layer) => {
+            const isActive = activeLayer === layer.key
+            return (
+              <button
+                className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs transition ${isActive ? "border-primary bg-primary/15 text-foreground" : "border-border bg-background/40 text-muted-foreground hover:border-primary/40 hover:text-foreground"}`}
+                key={layer.key}
+                onClick={() => setActiveLayer(activeLayer === layer.key ? null : layer.key)}
+                onMouseEnter={() => setActiveLayer(layer.key)}
+                type="button"
+              >
+                <span className="font-display font-black text-primary">
+                  {t(`layers.items.${layer.key}.number`)}
+                </span>
+                <span className="font-medium">{t(`layers.items.${layer.key}.name`)}</span>
+              </button>
+            )
+          })}
+        </nav>
+      ) : null}
+      <div
+        className={`mx-auto rounded-2xl border border-border bg-background/40 ${compact ? "max-w-2xl p-2 sm:p-3" : capFloorHeight ? "max-w-3xl p-3 sm:p-5" : "p-3 sm:p-5"}`}
+      >
         <svg
           className="w-full text-foreground"
           viewBox="0 0 800 620"
@@ -642,10 +681,10 @@ export function V5Topology() {
       {/* Detail strip — full-width below the floor plan when a layer is active */}
       <aside aria-live="polite" className="mt-6">
         {activeLayerData ? (
-          <div className="rounded-2xl border border-border bg-background/60 p-6 lg:p-8">
-            <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-8">
+          <div className={`rounded-2xl border border-border bg-background/60 ${compact ? "p-4 lg:p-5" : "p-6 lg:p-8"}`}>
+            <div className={`grid gap-6 ${compact ? "lg:grid-cols-[220px_minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-5" : "lg:grid-cols-[280px_minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-8"}`}>
               {/* Animated scene */}
-              <div className="lg:max-w-[280px]" key={activeLayerData.key}>
+              <div className={compact ? "lg:max-w-[220px]" : "lg:max-w-[280px]"} key={activeLayerData.key}>
                 {(() => {
                   const Scene = layerScenes[activeLayerData.key]
                   return Scene ? <Scene /> : null
@@ -707,6 +746,7 @@ export function V5Topology() {
       </aside>
 
       {/* Legend below */}
+      {hideBottomLegend ? null : (
       <ol className="mt-8 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
         {layers.map((layer) => {
           const isActive = activeLayer === layer.key
@@ -733,6 +773,7 @@ export function V5Topology() {
           )
         })}
       </ol>
+      )}
     </div>
   )
 }

@@ -6,6 +6,12 @@ import { V2Blueprint } from "@/components/diagrams/V2Blueprint"
 import { V3OSIStack } from "@/components/diagrams/V3OSIStack"
 import { V4Radial } from "@/components/diagrams/V4Radial"
 import { V5Topology } from "@/components/diagrams/V5Topology"
+import {
+  V5aNoLegend,
+  V5bTopTabs,
+  V5cCompact,
+  V5dCappedNoLegend,
+} from "@/components/diagrams/V5Variants"
 import { V6Iceberg } from "@/components/diagrams/V6Iceberg"
 import { V7Honeycomb } from "@/components/diagrams/V7Honeycomb"
 import { V8Minimal } from "@/components/diagrams/V8Minimal"
@@ -55,11 +61,43 @@ const variants: Variant[] = [
   },
   {
     id: "v5-topology",
-    title: "V5 — Floor-plan topology",
+    title: "V5 — Floor-plan topology (current)",
     tagline: "8 numbered nodes positioned where each layer lives in a real space",
     pros: "Most coworking-specific. Brand-defining.",
-    cons: "Most work to perfect — needs a real floor-plan illustration",
+    cons: "Currently scrolls below the viewport on most laptops",
     Component: V5Topology,
+  },
+  {
+    id: "v5a-no-legend",
+    title: "V5a — Floor plan without bottom legend",
+    tagline: "Same as V5 but the duplicate 8-item list at the bottom is removed",
+    pros: "Saves ~170px vertical. Floor plan IS the legend (numbered hotspots).",
+    cons: "No named overview — the eye has to read the numbers off the plan to find a topic",
+    Component: V5aNoLegend,
+  },
+  {
+    id: "v5b-top-tabs",
+    title: "V5b — Compact name strip ABOVE the floor plan",
+    tagline: "Names move into a single-row chip strip at the top, bottom legend gone",
+    pros: "Preserves the named overview but takes ~50px vs. ~170px. One-line glance + click-by-name.",
+    cons: "Tabs row adds a horizontal element above the title block",
+    Component: V5bTopTabs,
+  },
+  {
+    id: "v5c-compact",
+    title: "V5c — Whole component shrunk ~15%",
+    tagline: "Narrower max-width, smaller floor plan + scene + text, legend stays",
+    pros: "Everything in one shot, no element removed",
+    cons: "Room labels and layer numbers shrink back toward where they were two iterations ago",
+    Component: V5cCompact,
+  },
+  {
+    id: "v5d-capped-no-legend",
+    title: "V5d — No bottom legend AND capped floor plan width",
+    tagline: "Most aggressive: removes the legend and constrains the floor plan to a smaller area",
+    pros: "Most likely to fit a 1080p laptop without scrolling",
+    cons: "Floor plan is smaller than V5a; loses some of the wow-factor of the wide rendering",
+    Component: V5dCappedNoLegend,
   },
   {
     id: "v6-iceberg",
