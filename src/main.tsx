@@ -13,6 +13,7 @@ import { ThemeProvider } from "./components/ThemeProvider"
 import { DiagramDemo } from "./pages/DiagramDemo"
 import { HeroDemo } from "./pages/HeroDemo"
 import { ProblemDemo } from "./pages/ProblemDemo"
+import { WhoWeHelpDemo } from "./pages/WhoWeHelpDemo"
 import "./i18n"
 import "./styles/globals.css"
 
@@ -20,6 +21,7 @@ const path = typeof window !== "undefined" ? window.location.pathname : "/"
 const isDiagramDemo = path.startsWith("/demo/diagrams")
 const isHeroDemo = path.startsWith("/demo/heroes")
 const isProblemDemo = path.startsWith("/demo/problems")
+const isWhoWeHelpDemo = path.startsWith("/demo/whowehelp")
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -30,6 +32,8 @@ createRoot(document.getElementById("root")!).render(
         <HeroDemo />
       ) : isProblemDemo ? (
         <ProblemDemo />
+      ) : isWhoWeHelpDemo ? (
+        <WhoWeHelpDemo />
       ) : (
         <App />
       )}
