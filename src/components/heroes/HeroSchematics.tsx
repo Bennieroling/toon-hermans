@@ -101,3 +101,48 @@ export function HeroDE3() {
     </HeroShell>
   )
 }
+
+/** Option 1 — narrative cycle "a day in the space" (replaces E2's flavour). */
+export function HeroDE2Narrative() {
+  return (
+    <HeroShell>
+      <HeroFloorplan narrativeCycle />
+    </HeroShell>
+  )
+}
+
+/** Option 2 — D+E2 with a system-sweep scan line. */
+export function HeroDE2Sweep() {
+  return (
+    <HeroShell>
+      <HeroFloorplan extraEvents systemSweep />
+    </HeroShell>
+  )
+}
+
+/** Option 3 — D+E2 with telemetry ticker + inline data badges. */
+export function HeroDE2Ticker() {
+  return (
+    <HeroShell>
+      <HeroFloorplan extraEvents telemetryTicker />
+    </HeroShell>
+  )
+}
+
+/** Option 4 — D+E2 with connection web (system interconnections visualised). */
+export function HeroDE2Web() {
+  return (
+    <HeroShell>
+      <HeroFloorplan extraEvents connectionWeb />
+    </HeroShell>
+  )
+}
+
+/** Option 5 — D+E2 with periodic "issue → resolved" alert dramaturgy. */
+export function HeroDE2Alert() {
+  return (
+    <HeroShell>
+      <HeroFloorplan extraEvents alertDrama />
+    </HeroShell>
+  )
+}

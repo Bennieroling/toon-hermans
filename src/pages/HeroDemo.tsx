@@ -2,7 +2,17 @@ import { ArrowLeft } from "lucide-react"
 import type { ComponentType, ReactNode } from "react"
 
 import { HeroB } from "@/components/heroes/HeroB"
-import { HeroD, HeroDE1, HeroDE2, HeroDE3 } from "@/components/heroes/HeroSchematics"
+import {
+  HeroD,
+  HeroDE1,
+  HeroDE2,
+  HeroDE2Alert,
+  HeroDE2Narrative,
+  HeroDE2Sweep,
+  HeroDE2Ticker,
+  HeroDE2Web,
+  HeroDE3,
+} from "@/components/heroes/HeroSchematics"
 
 interface HeroVariant {
   id: string
@@ -59,6 +69,51 @@ const variants: HeroVariant[] = [
     pros: "Highly interactive without demanding clicks. Encourages exploration. Feels modern.",
     cons: "Touch devices fall back to no-spotlight. Effect is subtle — desktop only signal.",
     Component: HeroDE3,
+  },
+  {
+    id: "hero-de2-narrative",
+    letter: "1",
+    title: "Option 1 — Narrative cycle (a day in the space)",
+    tagline: "Phase chip in the corner advances every 4s through 5 stages: Morning arrival → Meeting starts → Lunch rush → Peak network → Quiet/overnight. Different events fire each phase, so the floor plan tells a 20-second story.",
+    pros: "Most sophisticated. Story arc implies 'we monitor your space all day, every part of it'.",
+    cons: "Needs to be seen for ~20 s to land. Reset back to morning can feel abrupt if pacing is off.",
+    Component: HeroDE2Narrative,
+  },
+  {
+    id: "hero-de2-sweep",
+    letter: "2",
+    title: "Option 2 — System sweep / radar scan",
+    tagline: "D+E2 base + a vertical brand-blue scan line moves left to right every 8 seconds. As it passes over each tech point (door reader, CCTV, WiFi, phone, display, server), that point over-pulses with an extra-large ring.",
+    pros: "Visceral 'audit in progress' feel. Fastest 'wait, that's clever' reaction.",
+    cons: "Risk of looking like an alarm scanner — make sure the line stays calm and brand-blue, not red.",
+    Component: HeroDE2Sweep,
+  },
+  {
+    id: "hero-de2-ticker",
+    letter: "3",
+    title: "Option 3 — Live telemetry ticker + data badges",
+    tagline: "D+E2 base + a thin scrolling ticker at the bottom (WIFI HEALTHY 84 MBPS · 12 DEVICES · CCTV REC ZONE A · 847 MEMBERS · ...) plus 4 inline data badges anchored to tech points (Mbps next to AP, CPU% next to server, members in reception, cams next to camera).",
+    pros: "Most enterprise / 'real numbers'. Adds weight without flashiness.",
+    cons: "Adds visual noise at the bottom — narrows where the floor plan can breathe.",
+    Component: HeroDE2Ticker,
+  },
+  {
+    id: "hero-de2-web",
+    letter: "4",
+    title: "Option 4 — Connection web (system interconnections)",
+    tagline: "D+E2 base + faint dashed lines connecting tech points to the server rack (the 'brain'), with packets traveling along each connection. Tiny labels mark what each line carries (WIFI ↔ CTRL, NVR FEED, ROOM AV, ACCESS LOG).",
+    pros: "Most differentiating message: 'we see how every system connects, not just the parts'.",
+    cons: "Adds the most visual clutter to the floor plan. Could feel diagram-busy.",
+    Component: HeroDE2Web,
+  },
+  {
+    id: "hero-de2-alert",
+    letter: "5",
+    title: "Option 5 — Issue detected → resolved dramaturgy",
+    tagline: "D+E2 base + every ~12 seconds, a random tech point shows a red 'ISSUE DETECTED' indicator for 1.5s, then transitions to a green 'AUTO-RESOLVED' indicator for another 1.5s. Implies: 'we catch issues before your members feel them'.",
+    pros: "Most direct sales positioning — visibly sells the value of the audit.",
+    cons: "Risky: visitors who arrive mid-alert see 'something is wrong' and might bounce. Use sparingly.",
+    Component: HeroDE2Alert,
   },
 ]
 
