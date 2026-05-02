@@ -201,16 +201,15 @@ export function V5Topology() {
         }
       `}</style>
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_300px] lg:items-start">
-        <div className="rounded-2xl border border-border bg-background/40 p-3 sm:p-5">
-          <svg
-            className="w-full text-foreground"
-            viewBox="0 0 800 620"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={(e) => {
-              if (e.target === e.currentTarget) setActiveLayer(null)
-            }}
-          >
+      <div className="rounded-2xl border border-border bg-background/40 p-3 sm:p-5">
+        <svg
+          className="w-full text-foreground"
+          viewBox="0 0 800 620"
+          xmlns="http://www.w3.org/2000/svg"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setActiveLayer(null)
+          }}
+        >
             {/* drawing-sheet header */}
             <g className="font-mono fill-foreground" opacity={0.5}>
               <text x={40} y={28} fontSize={13} style={{ letterSpacing: "0.25em" }}>
@@ -637,90 +636,75 @@ export function V5Topology() {
                 </g>
               )
             })}
-          </svg>
-        </div>
+        </svg>
+      </div>
 
-        {/* Side panel */}
-        <aside
-          aria-live="polite"
-          className="rounded-2xl border border-border bg-background/60 p-6 lg:sticky lg:top-24"
-        >
-          {activeLayerData ? (
-            <div>
-              <div className="mb-5" key={activeLayerData.key}>
+      {/* Detail strip — full-width below the floor plan when a layer is active */}
+      <aside aria-live="polite" className="mt-6">
+        {activeLayerData ? (
+          <div className="rounded-2xl border border-border bg-background/60 p-6 lg:p-8">
+            <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-8">
+              {/* Animated scene */}
+              <div className="lg:max-w-[280px]" key={activeLayerData.key}>
                 {(() => {
                   const Scene = layerScenes[activeLayerData.key]
                   return Scene ? <Scene /> : null
                 })()}
               </div>
-              <div className="flex items-baseline justify-between gap-3">
-                <span className="font-display text-5xl font-black tracking-[-0.04em] text-primary">
-                  {t(`layers.items.${activeLayerData.key}.number`)}
-                </span>
-                <button
-                  aria-label="Clear selection"
-                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground transition hover:text-foreground"
-                  onClick={() => setActiveLayer(null)}
-                  type="button"
-                >
-                  CLEAR
-                </button>
+
+              {/* Layer info column */}
+              <div>
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="font-display text-5xl font-black leading-none tracking-[-0.04em] text-primary lg:text-6xl">
+                    {t(`layers.items.${activeLayerData.key}.number`)}
+                  </span>
+                  <button
+                    aria-label="Clear selection"
+                    className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground transition hover:text-foreground"
+                    onClick={() => setActiveLayer(null)}
+                    type="button"
+                  >
+                    CLEAR
+                  </button>
+                </div>
+                <h3 className="mt-4 font-display text-xl font-bold text-foreground lg:text-2xl">
+                  {t(`layers.items.${activeLayerData.key}.name`)}
+                </h3>
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                  LIVES IN / {layerRoomLabels[activeLayerData.key]}
+                </p>
+                <p className="mt-5 text-sm leading-7 text-muted-foreground lg:text-base lg:leading-8">
+                  {t(`layers.items.${activeLayerData.key}.description`)}
+                </p>
               </div>
-              <h3 className="mt-3 font-display text-lg font-bold text-foreground">
-                {t(`layers.items.${activeLayerData.key}.name`)}
-              </h3>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                LIVES IN / {layerRoomLabels[activeLayerData.key]}
-              </p>
-              <p className="mt-5 text-sm leading-7 text-muted-foreground">
-                {t(`layers.items.${activeLayerData.key}.description`)}
-              </p>
-              <p className="mt-7 font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-                WHAT WE AUDIT
-              </p>
-              <ul className="mt-3 space-y-2 text-sm leading-7 text-foreground">
-                {auditChecks[activeLayerData.key]?.map((check, i) => (
-                  <li className="flex gap-3" key={i}>
-                    <span className="font-mono text-[10px] text-primary mt-2">▸</span>
-                    <span>{check}</span>
-                  </li>
-                ))}
-              </ul>
+
+              {/* Audit checks column */}
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                  WHAT WE AUDIT
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-7 text-foreground">
+                  {auditChecks[activeLayerData.key]?.map((check, i) => (
+                    <li className="flex gap-3" key={i}>
+                      <span className="font-mono text-[10px] text-primary mt-2">▸</span>
+                      <span>{check}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          ) : (
-            <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+          </div>
+        ) : (
+          <div className="rounded-xl border border-dashed border-border/60 bg-background/30 px-6 py-4">
+            <p className="text-center text-sm text-muted-foreground">
+              <span className="font-mono mr-3 align-middle text-[11px] uppercase tracking-[0.3em] text-primary">
                 INSTRUCTIONS
-              </p>
-              <p className="mt-4 font-display text-xl font-bold leading-tight text-foreground">
-                Hover or tap any number on the floor plan.
-              </p>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                Each one points to a real piece of the technology stack. We
-                audit all eight — what you see and what runs underneath.
-              </p>
-              <ul className="mt-7 space-y-2 text-xs">
-                <li className="flex gap-2 text-muted-foreground">
-                  <span className="font-mono text-primary">●</span>
-                  <span>WiFi access point pinging in coworking</span>
-                </li>
-                <li className="flex gap-2 text-muted-foreground">
-                  <span className="font-mono text-primary">●</span>
-                  <span>CCTV camera sweeping the lobby</span>
-                </li>
-                <li className="flex gap-2 text-muted-foreground">
-                  <span className="font-mono text-primary">●</span>
-                  <span>Door reader pulsing at the entrance</span>
-                </li>
-                <li className="flex gap-2 text-muted-foreground">
-                  <span className="font-mono text-primary">●</span>
-                  <span>Server rack LEDs blinking in IT closet</span>
-                </li>
-              </ul>
-            </div>
-          )}
-        </aside>
-      </div>
+              </span>
+              Hover or tap any number on the floor plan to see the layer in action and what we audit there.
+            </p>
+          </div>
+        )}
+      </aside>
 
       {/* Legend below */}
       <ol className="mt-8 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
