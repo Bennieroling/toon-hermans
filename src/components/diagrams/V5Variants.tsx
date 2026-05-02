@@ -11,7 +11,7 @@ export function V5aNoLegend() {
 }
 
 export function V5bTopTabs() {
-  return <V5Topology hideBottomLegend showTopTabs />
+  return <V5Topology capFloorHeight hideBottomLegend showTopTabs />
 }
 
 export function V5cCompact() {
