@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react"
 import type { ComponentType, ReactNode } from "react"
 
 import { HeroB } from "@/components/heroes/HeroB"
+import { HeroOriginal } from "@/components/heroes/HeroOriginal"
 import {
   HeroD,
   HeroDE1,
@@ -26,6 +27,15 @@ interface HeroVariant {
 }
 
 const variants: HeroVariant[] = [
+  {
+    id: "hero-original",
+    letter: "0",
+    title: "Original — First shipped hero (preserved for reference)",
+    tagline: "The original homepage hero before this exploration: raster architectural-blueprint image with a single animated WiFi-pulse overlay. Kept here so we can always revert or share for outside opinions.",
+    pros: "Real, authentic floor plan — feels like an actual coworking space.",
+    cons: "Visual style doesn't match V5's schematic in AuditLayers below; the right-edge fade between image and copy column is harsh in light mode.",
+    Component: HeroOriginal,
+  },
   {
     id: "hero-b-blueprint",
     letter: "B",
