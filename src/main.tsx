@@ -10,6 +10,7 @@ import { createRoot } from "react-dom/client"
 
 import App from "./App"
 import { ThemeProvider } from "./components/ThemeProvider"
+import { AnimationsDemo } from "./pages/AnimationsDemo"
 import { DiagramDemo } from "./pages/DiagramDemo"
 import { HeroDemo } from "./pages/HeroDemo"
 import { MethodologyDemo } from "./pages/MethodologyDemo"
@@ -28,6 +29,7 @@ const isWhoWeHelpDemo = path.startsWith("/demo/whowehelp")
 const isMethodologyDemo = path.startsWith("/demo/methodology")
 const isWhatYouReceiveDemo = path.startsWith("/demo/whatyoureceive")
 const isRedesignDemo = path.startsWith("/demo/redesign")
+const isAnimationsDemo = path.startsWith("/demo/animations")
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -46,6 +48,8 @@ createRoot(document.getElementById("root")!).render(
         <WhatYouReceiveDemo />
       ) : isRedesignDemo ? (
         <RedesignDemo />
+      ) : isAnimationsDemo ? (
+        <AnimationsDemo />
       ) : (
         <App />
       )}
