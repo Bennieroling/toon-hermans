@@ -6,6 +6,7 @@ import {
   MethodologyDeliverablesLed,
   MethodologyHorizontalTimeline,
   MethodologyMatrix,
+  MethodologyMerged,
   MethodologyOriginal,
   MethodologyVerticalStepper,
 } from "@/components/methodology/MethodologyVariants"
@@ -69,11 +70,20 @@ const variants: Variant[] = [
   {
     id: "method-combined",
     letter: "5",
-    title: "Combined — vertical stepper + matrix + timeline (RECOMMENDED)",
+    title: "Combined — vertical stepper + matrix + timeline",
     tagline: "Vertical stepper from variant 2 (animated progress + active phase highlight + icons). Each phase node opens into a card with the YOU/WE/DELIVERABLE matrix from variant 3. A small horizontal timeline ruler sits above the stepper showing day progress as you scroll. Headline mentions the total commitment: 'roughly 5 hours over 3 weeks'.",
     pros: "Most complete picture: when (timeline), what you do (your time column), what we do (our work column), what you get (deliverable column). All wrapped in animated progress as you scroll. Hits buyer's three concerns — time, commitment, outcome — in one section.",
     cons: "Tallest section of the lot. Most ambitious to land — pacing of the scroll-tracked progress matters. Test on real visitors before assuming the animation is delightful and not distracting.",
     Component: MethodologyCombined,
+  },
+  {
+    id: "method-merged",
+    letter: "6",
+    title: "Merged — methodology + deliverables in ONE section (RECOMMENDED)",
+    tagline: "Variant 5 plus a deliverables 'climax' at the bottom — replaces the separate 'What You Receive' section entirely. After the vertical stepper finishes, the section closes with: a 4-deliverable badge list (report / findings / roadmap / walkthrough) + report mockup + 'PEEK INSIDE' sample-finding peek + sample-report download CTA.",
+    pros: "Removes the duplicate-content overlap with the standalone What-You-Receive section (process and outputs are described in two places today). One narrative arc: cause → effect. Frees one full section's worth of vertical space for something more valuable later. Climax at the end is naturally where buyer attention should peak.",
+    cons: "Tallest section by a margin. If a buyer needs to *scan* deliverables fast (without reading the methodology), the standalone deliverables section was easier to find. Picking this means dropping the 'What You Receive' section from the homepage entirely.",
+    Component: MethodologyMerged,
   },
 ]
 
