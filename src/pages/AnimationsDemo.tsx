@@ -1,4 +1,4 @@
-import { ArrowRight, Check, CheckCircle, Clock, Download, Mail, Mic } from "lucide-react"
+import { ArrowRight, Check, CheckCircle, Clock, Download, Mail } from "lucide-react"
 import { useEffect, useState, type ReactNode } from "react"
 
 import { AnimateIn } from "@/components/AnimateIn"
@@ -8,9 +8,9 @@ import { Logo } from "@/components/shared/Logo"
 import { Badge } from "@/components/ui/badge"
 import { CountUp, FlowButton, TextReveal } from "@/components/ui/animations"
 import { Card, CardContent } from "@/components/ui/card"
-import { InteractiveReportViewer } from "@/components/whatyoureceive/WhatYouReceiveVariants"
+import { WhatYouReceiveInteractive } from "@/components/whatyoureceive/WhatYouReceiveVariants"
 import { useTheme } from "@/hooks/useTheme"
-import { bookingUrl, deliverables } from "@/lib/utils"
+import { bookingUrl } from "@/lib/utils"
 
 /**
  * /demo/animations — full-page composition combining the requested
@@ -450,80 +450,16 @@ function AnimMethodology() {
 }
 
 /* ==================================================================
-   WHAT YOU RECEIVE — Variant 6 (interactive cycling report viewer)
+   WHAT YOU RECEIVE — Variant 6 from /demo/whatyoureceive (full)
+   Uses WhatYouReceiveInteractive verbatim. Wrapped in a muted-bg
+   div so it keeps the page's alternating section rhythm.
 ================================================================== */
 
 function AnimWhatYouReceive() {
   return (
-    <section
-      className="scroll-mt-24 overflow-hidden bg-muted/40 px-6 py-28 lg:px-10 lg:py-36"
-      id="deliverables"
-    >
-      <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-start">
-        <AnimateIn>
-          <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.32em] text-primary">
-              What you receive
-            </p>
-            <h2 className="mt-5 font-display text-3xl font-bold leading-tight tracking-[-0.025em] text-foreground sm:text-4xl lg:text-5xl">
-              A clear picture and a plan to fix it.
-            </h2>
-            <div className="mt-10 space-y-5">
-              {deliverables.map((item) => {
-                const Icon = item.icon
-                return (
-                  <Card className="service-card group border-border" key={item.key}>
-                    <CardContent className="flex gap-5 p-6">
-                      <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition duration-300 group-hover:scale-110">
-                        <Icon className="size-6" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-foreground">
-                          {item.key === "report"
-                            ? "Full written report"
-                            : item.key === "findings"
-                            ? "Prioritised findings"
-                            : "Implementation roadmap"}
-                        </h3>
-                        <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                          {item.key === "report"
-                            ? "A detailed document covering all 8 layers of your technology infrastructure. Plain language. No jargon."
-                            : item.key === "findings"
-                            ? "Every finding categorised: act now, high priority, 90-day plan, and future consideration."
-                            : "A sequenced plan showing what to fix first, what it will cost, and how long it will take."}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )
-              })}
-              <Card className="service-card group border-border" key="walkthrough">
-                <CardContent className="flex gap-5 p-6">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition duration-300 group-hover:scale-110">
-                    <Mic className="size-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground">
-                      Live walkthrough + Q&amp;A
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                      A 60-minute call where we present findings to your team. Recorded for the
-                      people who couldn't make it.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </AnimateIn>
-
-        <AnimateIn delay={120}>
-          <div className="lg:sticky lg:top-24">
-            <InteractiveReportViewer />
-          </div>
-        </AnimateIn>
-      </div>
-    </section>
+    <div className="scroll-mt-24 bg-muted/40" id="deliverables">
+      <WhatYouReceiveInteractive />
+    </div>
   )
 }
 
