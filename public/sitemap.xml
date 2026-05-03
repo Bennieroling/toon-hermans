@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sorun.dev/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sorun.dev/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sorun.dev/?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sorun.dev/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sorun.dev/"/>
+  </url>
+  <url>
+    <loc>https://sorun.dev/privacy</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sorun.dev/imprint</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.3</priority>
   </url>
 </urlset>

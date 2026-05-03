@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next"
 import { AnimateIn } from "@/components/AnimateIn"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useReducedMotion } from "@/hooks/useReducedMotion"
 import { deliverables } from "@/lib/utils"
 
 /**
@@ -889,24 +890,37 @@ const reportScreens: ReportScreen[] = [
 ]
 
 export function InteractiveReportViewer() {
+  const { t } = useTranslation()
+  const reducedMotion = useReducedMotion()
   const [activeIdx, setActiveIdx] = useState(0)
-  const [autoPlaying, setAutoPlaying] = useState(true)
+  const [autoPlaying, setAutoPlaying] = useState(!reducedMotion)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  /* auto-cycle every 2.4s when playing — matches V5e cadence */
+  /* auto-cycle every 2.4s when playing. Disabled with reduced-motion. */
   useEffect(() => {
-    if (!autoPlaying) return
+    if (!autoPlaying || reducedMotion) return
     const interval = window.setInterval(() => {
       setActiveIdx((i) => (i + 1) % reportScreens.length)
     }, 2400)
     return () => window.clearInterval(interval)
-  }, [autoPlaying])
+  }, [autoPlaying, reducedMotion])
 
   const handleEnter = () => setAutoPlaying(false)
-  const handleLeave = () => setAutoPlaying(true)
+  const handleLeave = () => {
+    if (!reducedMotion) setAutoPlaying(true)
+  }
   const handleSelect = (i: number) => {
     setActiveIdx(i)
     setAutoPlaying(false)
+  }
+
+  // i18n labels for the indicator chips
+  const screenLabels: Record<string, string> = {
+    cover: t("deliverables.viewer_screens.cover"),
+    finding: t("deliverables.viewer_screens.finding"),
+    roadmap: t("deliverables.viewer_screens.roadmap"),
+    findings: t("deliverables.viewer_screens.findings"),
+    inventory: t("deliverables.viewer_screens.inventory"),
   }
 
   return (
@@ -936,10 +950,16 @@ export function InteractiveReportViewer() {
           ))}
         </div>
 
-        {/* live label top-right */}
+        {/* ILLUSTRATIVE EXAMPLE — top-left, unmissable */}
+        <div className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/15 px-2.5 py-1 text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-amber-700 backdrop-blur-sm dark:text-amber-300">
+          <span className="size-1.5 rounded-full bg-amber-500" />
+          {t("deliverables.viewer_label")}
+        </div>
+
+        {/* auto-cycle status pip — top-right */}
         <div className="absolute right-5 top-5 flex items-center gap-1.5 rounded-full border border-border/60 bg-card/80 px-2.5 py-1 text-[9px] font-mono uppercase tracking-[0.25em] text-muted-foreground backdrop-blur-sm">
           <span className={`size-1.5 rounded-full ${autoPlaying ? "animate-pulse bg-primary" : "bg-muted-foreground/60"}`} />
-          {autoPlaying ? "LIVE PREVIEW" : "PAUSED"}
+          {autoPlaying ? "AUTO" : "PAUSED"}
         </div>
       </div>
 
@@ -960,7 +980,7 @@ export function InteractiveReportViewer() {
             >
               <span className={`size-1.5 rounded-full ${isActive ? "bg-primary" : "bg-muted-foreground/40"}`} />
               <span className="font-mono text-[10px] uppercase tracking-[0.18em]">
-                {String(i + 1).padStart(2, "0")} · {screen.label}
+                {String(i + 1).padStart(2, "0")} · {screenLabels[screen.id] ?? screen.label}
               </span>
             </button>
           )

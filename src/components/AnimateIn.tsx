@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react"
 
+import { useReducedMotion } from "@/hooks/useReducedMotion"
+
 interface AnimateInProps {
   children: ReactNode
   className?: string
@@ -8,9 +10,14 @@ interface AnimateInProps {
 
 export function AnimateIn({ children, className = "", delay = 0 }: AnimateInProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const reducedMotion = useReducedMotion()
+  const [visible, setVisible] = useState(reducedMotion)
 
   useEffect(() => {
+    if (reducedMotion) {
+      const t = globalThis.setTimeout(() => setVisible(true), 0)
+      return () => globalThis.clearTimeout(t)
+    }
     const element = ref.current
     if (!element) {
       return
@@ -33,7 +40,7 @@ export function AnimateIn({ children, className = "", delay = 0 }: AnimateInProp
 
     observer.observe(element)
     return () => observer.disconnect()
-  }, [delay])
+  }, [delay, reducedMotion])
 
   return (
     <div

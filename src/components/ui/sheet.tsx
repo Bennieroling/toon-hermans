@@ -2,7 +2,7 @@
 
 import * as Dialog from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
-import type { ComponentPropsWithoutRef } from "react"
+import type { ComponentPropsWithoutRef, HTMLAttributes } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -11,6 +11,36 @@ export const SheetPortal = Dialog.Portal
 export const SheetTrigger = Dialog.Trigger
 export const SheetClose = Dialog.Close
 export const SheetOverlay = Dialog.Overlay
+
+export function SheetHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("flex flex-col gap-1.5", className)} data-slot="sheet-header" {...props} />
+}
+
+export function SheetTitle({
+  className,
+  ...props
+}: ComponentPropsWithoutRef<typeof Dialog.Title>) {
+  return (
+    <Dialog.Title
+      className={cn("text-base font-semibold text-foreground", className)}
+      data-slot="sheet-title"
+      {...props}
+    />
+  )
+}
+
+export function SheetDescription({
+  className,
+  ...props
+}: ComponentPropsWithoutRef<typeof Dialog.Description>) {
+  return (
+    <Dialog.Description
+      className={cn("text-sm text-muted-foreground", className)}
+      data-slot="sheet-description"
+      {...props}
+    />
+  )
+}
 
 export function SheetContent({
   className,

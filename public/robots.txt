@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /demo/
 
 Sitemap: https://sorun.dev/sitemap.xml

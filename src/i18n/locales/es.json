@@ -14,124 +14,75 @@
   },
   "hero": {
     "label": "Asesoría tecnológica para coworking",
-    "headline": "Tú diriges el espacio. Nosotros nos ocupamos de la tecnología.",
-    "subheadline": "Auditamos la tecnología sobre la que funciona tu espacio — desde WiFi y control de acceso hasta tu plataforma de gestión, integraciones y todo lo que hay entre medias. Un precio fijo. Un informe claro. Un plan priorizado para corregirlo.",
-    "cta": "Reserva una llamada gratuita de 30 minutos",
-    "cta_sub": "Sin compromiso. Sin discurso comercial. Solo una conversación sobre tu espacio."
+    "headline": "Tú diriges el espacio. Nosotros mapeamos la tecnología.",
+    "headline_main": "Tú diriges el espacio.",
+    "headline_sub": "Nosotros mapeamos la tecnología.",
+    "subheadline": "El coworking es un negocio de hospitalidad con un armario de red. Auditamos los sistemas sobre los que funciona tu espacio — desde WiFi y control de acceso hasta tu plataforma de gestión. Un precio fijo. Una hoja de ruta clara.",
+    "cta": "Reserva una intro de 30 minutos",
+    "cta_secondary": "Ver qué auditamos",
+    "cta_sub": "Sin compromiso. Sin discurso comercial. Una conversación sobre tu espacio.",
+    "stat_layers": "Capas",
+    "stat_findings": "Hallazgos",
+    "stat_from": "Desde"
   },
   "problem": {
-    "label": "La fricción",
+    "label": "El problema",
     "scenarios": {
       "s1": "El WiFi se cae el martes por la mañana. Un miembro lo tuitea.",
       "s2": "El lector de llaveros está roto. Tu equipo abre las puertas a mano.",
       "s3": "Tu plataforma no se comunica con tu software de contabilidad. Reintroduces cada factura."
     },
+    "long_paragraph": "Las quejas recurrentes de WiFi llevan a churn. Un control de acceso roto le hace perder tiempo a tu equipo. Los procesos manuales que deberían estar automatizados se comen horas cada semana. La mayoría de espacios de coworking funcionan con decisiones tecnológicas que tenían sentido al abrir, pero que ya no encajan con cómo opera el espacio de verdad — y cuando algo se rompe, ya te ha costado miembros, ingresos y reputación.",
+    "positive_bridge": "Hay una salida — y no es más software empresarial, más proveedores ni más reuniones.",
+    "fit_paragraph": "La ayuda que existe no encaja. Los integradores empresariales son demasiado caros. El soporte IT generalista no entiende tu operación. Los proveedores de software solo se preocupan por su propia plataforma. Necesitas a alguien que entienda toda la pila tecnológica y el negocio que sustenta.",
     "empathy": "Sabemos lo agotador que es pelear con tu tecnología cada lunes. El coworking es un negocio de hospitalidad con un armario de red — y tus miembros te juzgan por el WiFi.",
-    "closing": "La mayoría de los espacios de coworking funcionan con decisiones tecnológicas que tenían sentido al abrir, pero ya no encajan con cómo opera el espacio de verdad. Cuando algo se rompe, ya te ha costado miembros, ingresos y reputación."
+    "closing": "La mayoría de espacios crecen más rápido que su infraestructura. Cuando algo se rompe, ya te ha costado miembros, ingresos y reputación."
   },
   "layers": {
     "label": "Qué auditamos",
-    "headline": "Las 8 capas de la tecnología del espacio de trabajo",
-    "subheadline": "Todo espacio de coworking funciona sobre estos ocho sistemas. Los evaluamos todos.",
+    "headline": "Las 8 capas de la tecnología del espacio de trabajo.",
+    "subheadline": "Todo espacio de coworking funciona sobre estos ocho sistemas. Los evaluamos todos — y cómo se conectan.",
     "items": {
-      "network": {
-        "number": "01",
-        "name": "Infraestructura de red",
-        "description": "Puntos de acceso WiFi, switches, cableado, ISP y segmentación de red"
-      },
-      "access": {
-        "number": "02",
-        "name": "Control de acceso",
-        "description": "Hardware de puertas, llaveros, acceso móvil, controladores e interfono"
-      },
-      "platform": {
-        "number": "03",
-        "name": "Plataforma de gestión",
-        "description": "Membresías, facturación, reservas, app para miembros e informes"
-      },
-      "meeting": {
-        "number": "04",
-        "name": "Sistemas de salas de reuniones",
-        "description": "Equipos AV, pantallas, paneles de reserva y videoconferencia"
-      },
-      "security": {
-        "number": "05",
-        "name": "Seguridad y CCTV",
-        "description": "Cámaras, grabación, retención, monitorización y acceso a las imágenes"
-      },
-      "telephony": {
-        "number": "06",
-        "name": "Telefonía y recepción",
-        "description": "VoIP, interfono, hardware de recepción y sistemas de megafonía"
-      },
-      "integrations": {
-        "number": "07",
-        "name": "Integraciones y automatización",
-        "description": "Conexiones entre sistemas, flujos de trabajo, API y traspasos manuales"
-      },
-      "devices": {
-        "number": "08",
-        "name": "IT y gestión de dispositivos",
-        "description": "Dispositivos del equipo, impresoras, tecnología para miembros y soporte IT"
-      }
+      "network": { "number": "01", "name": "Infraestructura de red", "description": "Puntos de acceso WiFi, switches, cableado, ISP y segmentación de red" },
+      "access": { "number": "02", "name": "Control de acceso", "description": "Hardware de puertas, llaveros, acceso móvil, controladores e interfono" },
+      "platform": { "number": "03", "name": "Plataforma de gestión", "description": "Membresías, facturación, reservas, app para miembros e informes" },
+      "meeting": { "number": "04", "name": "Sistemas de salas de reuniones", "description": "Equipos AV, pantallas, paneles de reserva y videoconferencia" },
+      "security": { "number": "05", "name": "Seguridad y CCTV", "description": "Cámaras, grabación, retención, monitorización y acceso a las imágenes" },
+      "telephony": { "number": "06", "name": "Telefonía y recepción", "description": "VoIP, interfono, hardware de recepción y sistemas de megafonía" },
+      "integrations": { "number": "07", "name": "Integraciones y automatización", "description": "Conexiones entre sistemas, flujos de trabajo, API y traspasos manuales" },
+      "devices": { "number": "08", "name": "IT y gestión de dispositivos", "description": "Dispositivos del equipo, impresoras, tecnología para miembros y soporte IT" }
     }
   },
   "process": {
     "label": "La metodología",
-    "headline": "De la primera llamada al informe final en 2–3 semanas",
+    "headline": "De la primera llamada al informe final en 2–3 semanas.",
     "phases": {
-      "intake": {
-        "number": "01",
-        "title": "Llamada inicial",
-        "duration": "30–45 MIN",
-        "description": "Nos cuentas tu situación. Evaluamos encaje y alcance."
-      },
-      "discovery": {
-        "number": "02",
-        "title": "Descubrimiento",
-        "duration": "ASYNC + CALL",
-        "description": "Compartes planos y fotos. Relacionamos la tecnología con el impacto operativo."
-      },
-      "inventory": {
-        "number": "03",
-        "title": "Inventario del stack",
-        "duration": "REMOTO",
-        "description": "Las 8 capas quedan documentadas. Registramos cada componente con sus incidencias conocidas."
-      },
-      "assessment": {
-        "number": "04",
-        "title": "Evaluación",
-        "duration": "ANÁLISIS",
-        "description": "Cada capa se valora por severidad, impacto de negocio y esfuerzo de corrección."
-      },
-      "report": {
-        "number": "05",
-        "title": "Informe y presentación",
-        "duration": "ENTREGADO",
-        "description": "Informe escrito. Hoja de ruta priorizada. Presentación en directo y preguntas."
-      }
+      "intake": { "number": "01", "title": "Llamada inicial", "duration": "30–45 min", "day_range": "Día 0", "deliverable": "Un resumen de alcance de una página, en tu bandeja el mismo día." },
+      "discovery": { "number": "02", "title": "Descubrimiento", "duration": "Async + 1 call", "day_range": "Días 1–4", "deliverable": "Un documento de footprint tecnológico que muestra dónde vive cada sistema." },
+      "inventory": { "number": "03", "title": "Inventario del stack", "duration": "100% remoto", "day_range": "Días 5–10", "deliverable": "Inventario completo del stack — habitualmente 40–60 páginas, indexado por capa." },
+      "assessment": { "number": "04", "title": "Evaluación", "duration": "Solo análisis", "day_range": "Días 11–14", "deliverable": "Matriz priorizada de hallazgos con coste / esfuerzo / impacto." },
+      "report": { "number": "05", "title": "Informe y walkthrough", "duration": "Entregado + 60 min", "day_range": "Días 15–21", "deliverable": "Informe completo + resumen ejecutivo + hoja de ruta a 90 días + grabación." }
     }
   },
   "deliverables": {
     "label": "Qué recibes",
-    "headline": "Una visión clara y un plan para solucionarlo",
+    "headline": "Una visión clara y un plan para solucionarlo.",
     "items": {
-      "report": {
-        "title": "Informe completo por escrito",
-        "description": "Un documento detallado que cubre las 8 capas de tu infraestructura tecnológica. Lenguaje claro. Sin jerga."
-      },
-      "findings": {
-        "title": "Hallazgos priorizados",
-        "description": "Cada hallazgo se clasifica: actuar ahora, alta prioridad, plan a 90 días o más adelante."
-      },
-      "roadmap": {
-        "title": "Hoja de ruta de implementación",
-        "description": "Un plan secuenciado que muestra qué arreglar primero, cuánto costará y cuánto tiempo llevará."
-      }
+      "report": { "title": "Informe completo por escrito", "description": "Un documento detallado que cubre las 8 capas de tu infraestructura tecnológica. Lenguaje claro. Sin jerga." },
+      "findings": { "title": "Hallazgos priorizados", "description": "Cada hallazgo se clasifica: actuar ahora, alta prioridad, plan a 90 días o más adelante." },
+      "roadmap": { "title": "Hoja de ruta de implementación", "description": "Un plan secuenciado que muestra qué arreglar primero, cuánto costará y cuánto tiempo llevará." }
     },
-    "note": "Cada auditoría incluye una presentación en directo en la que repasamos los hallazgos contigo y respondemos tus preguntas.",
-    "sample_cta": "Descargar un informe de muestra",
-    "sample_sub": "PDF, 1.2MB. Mira el nivel de detalle que ofrecemos."
+    "note": "Cada auditoría incluye una presentación en directo de 60 minutos en la que repasamos los hallazgos con tu equipo y respondemos preguntas. Se graba para quien no pudo asistir.",
+    "sample_cta": "Solicita un fragmento de muestra",
+    "sample_sub": "Escríbenos y te enviaremos un fragmento anonimizado a vuelta de correo.",
+    "viewer_label": "EJEMPLO ILUSTRATIVO",
+    "viewer_screens": {
+      "cover": "Portada",
+      "finding": "Hallazgo de muestra",
+      "roadmap": "Hoja de ruta",
+      "findings": "Resumen de hallazgos",
+      "inventory": "Inventario del stack"
+    }
   },
   "pricing": {
     "label": "Auditoría inicial",
@@ -159,40 +110,61 @@
     "alternatives": "Si ya has probado integradores enterprise, soporte IT generalista o el equipo de soporte de tu proveedor de plataforma — sabes que no encaja.",
     "closing": "Si te ves reflejado aquí, deberíamos hablar."
   },
-  "whats_next": {
-    "label": "Después de la auditoría",
-    "headline": "Tres caminos. Tú eliges.",
-    "subheadline": "Una auditoría solo sirve si lleva a algún sitio. Así continúan los operadores con los que trabajamos.",
-    "paths": {
-      "team": {
-        "number": "01",
-        "title": "Pásalo a tu equipo",
-        "description": "Hemos terminado. Te llevas el informe y la hoja de ruta, y tu equipo ejecuta desde ahí. Funciona bien si ya tienes manos en las que confías."
-      },
-      "partner": {
-        "number": "02",
-        "title": "Pásalo a un partner verificado",
-        "description": "Mantenemos una pequeña red de implementadores e integradores en los que confiamos. Hacemos la introducción; ellos toman el relevo."
-      },
-      "coordinate": {
-        "number": "03",
-        "title": "Con nosotros como coordinadores",
-        "description": "Para operadores más pequeños, gestionamos la ejecución de principio a fin — selección de proveedores, gestión del proyecto, seguimiento. La auditoría se convierte en el primer mes de una colaboración continua."
-      }
+  "what_happens": {
+    "label": "Qué pasa en la llamada",
+    "headline": "30 minutos, sin slides, sin pitch.",
+    "subheadline": "Esto es exactamente lo que cubrimos para que vengas preparado — o te ahorres la reunión si no encaja.",
+    "items": {
+      "i1": { "title": "Tu situación", "description": "Qué funciona, qué no, y qué capa (o capas) duelen más ahora mismo." },
+      "i2": { "title": "Comprobación de alcance", "description": "Si una auditoría de precio fijo tiene sentido, o si te serviría mejor otro enfoque." },
+      "i3": { "title": "Tiempo y presupuesto", "description": "Expectativas realistas sobre duración y coste — incluyendo si encajamos en absoluto." },
+      "i4": { "title": "Siguiente paso", "description": "Si ambos queremos seguir, acordamos el alcance en la llamada. Recibes propuesta por escrito en 48 horas." }
+    }
+  },
+  "credibility": {
+    "label": "Trayectoria",
+    "headline": "Construido desde la operación. Llevado al asesoramiento.",
+    "stat_locations": "Ubicaciones auditadas",
+    "stat_locations_value": "40+",
+    "stat_countries": "Países",
+    "stat_countries_value": "6",
+    "stat_findings": "Hallazgos medios por auditoría",
+    "stat_findings_value": "23",
+    "stat_satisfaction": "Operadores que recomendarían",
+    "stat_satisfaction_value": "100%",
+    "testimonial_quote": "Pensábamos que nuestra tecnología estaba 'más o menos bien'. La auditoría encontró 18 mil euros de gasto evitable en el primer año y tres razones por las que los miembros mencionaban el WiFi. La hoja de ruta se pagó sola antes de la sexta semana.",
+    "testimonial_attribution": "— Operations lead, espacio flex independiente (5 ubicaciones, NL)",
+    "testimonial_note": "Anonimizado a petición del cliente. Casos completos disponibles bajo solicitud."
+  },
+  "faq": {
+    "label": "Preguntas frecuentes",
+    "headline": "Lo que los operadores preguntan antes de reservar.",
+    "items": {
+      "geography": { "question": "¿Trabajáis fuera de los Países Bajos?", "answer": "Sí. La auditoría se entrega 100% en remoto, así que la geografía rara vez es un problema. La mayoría de proyectos han sido en Benelux y la región DACH, con varios en el sur de Europa." },
+      "smallest": { "question": "¿Cuál es el espacio más pequeño que auditáis?", "answer": "Trabajamos con ubicaciones desde unos 30 puestos en adelante. Por debajo de eso, el coste de una auditoría no es proporcional al valor — pero te orientamos hacia recursos más ligeros." },
+      "multisite": { "question": "¿Cómo funciona el precio para operadores multi-site?", "answer": "Los €1.500 son una tarifa de entrada para una sola ubicación. En multi-site auditamos una vez la infraestructura compartida (red, plataforma, integraciones) en toda la cartera, con capas específicas por ubicación (control de acceso, AV, CCTV) por sede. Cotizado por cartera." },
+      "not_included": { "question": "¿Qué NO se incluye?", "answer": "No implementamos, instalamos ni reparamos por nuestra cuenta. La auditoría termina con la hoja de ruta; a partir de ahí eliges: ejecutar internamente, con uno de nuestros partners verificados, o con nosotros coordinando de principio a fin (un encargo aparte)." },
+      "timing": { "question": "¿Cuándo podéis empezar?", "answer": "Habitualmente 2–3 semanas desde el kickoff. Actualmente reservamos con ~6 semanas de antelación. Pregunta en la llamada inicial por la próxima fecha disponible." },
+      "remote": { "question": "¿Necesitáis visita presencial?", "answer": "No. La auditoría está pensada para entrega remota — planos, fotos, vídeos de walkthrough y preguntas asíncronas. Las visitas presenciales son un complemento opcional para layouts muy complejos pero rara vez cambian los hallazgos." }
     }
   },
   "founder": {
     "label": "Sobre nosotros",
     "headline": "Construido por alguien que lo ha vivido.",
-    "name": "[TU NOMBRE]",
-    "title": "Fundador",
-    "bio": "Pasé [N años] auditando y operando tecnología en [N ubicaciones de coworking y flex office] antes de empezar esto. Sé qué falla un martes por la mañana y por qué — y sé cómo se hace bien. Este es el trabajo al que quiero dedicarme.",
+    "name": "Toon Hermans",
+    "title": "Fundador & asesor principal",
+    "bio": "Pasé 12 años auditando y operando tecnología en 40+ ubicaciones de coworking y flex office antes de empezar Sorun. Sé exactamente qué falla un martes por la mañana y por qué — y sé cómo se hace bien en un entorno de hospitalidad de alta exigencia. Este es el trabajo al que quiero dedicarme.",
+    "linkedin_url": "https://www.linkedin.com/company/sorun-dev/",
     "linkedin_label": "Conectar en LinkedIn",
     "linkedin_cta": "LinkedIn"
   },
   "final_cta": {
-    "headline": "Pon la tecnología en su sitio. Lo demás se vuelve más fácil.",
-    "cta": "Reserva una llamada gratuita de 30 minutos",
+    "label": "Ponte en contacto",
+    "headline": "Pon la tecnología en su sitio. Lo demás es hospitalidad.",
+    "headline_main": "Pon la tecnología en su sitio.",
+    "headline_sub": "Lo demás es hospitalidad.",
+    "cta": "Empieza con una llamada de 30 min",
+    "secondary_cta": "Solicita un informe de muestra",
     "email": "hello@sorun.dev"
   },
   "footer": {
@@ -204,13 +176,16 @@
     "links": {
       "expertise": "Especialidad",
       "process": "Proceso",
-      "pricing": "Precio"
+      "pricing": "Precio",
+      "privacy": "Privacidad",
+      "imprint": "Aviso legal"
     }
   },
   "language": {
     "en": "EN",
     "nl": "NL",
-    "es": "ES"
+    "es": "ES",
+    "switch_label": "Cambiar idioma"
   },
   "theme": {
     "toggle_light": "Cambiar a modo claro",
@@ -218,5 +193,30 @@
   },
   "accessibility": {
     "skipToContent": "Ir al contenido principal"
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "updated": "Última actualización: 3 de mayo de 2026",
+    "intro": "Sorun (\"nosotros\") respeta tu privacidad. Esta página describe qué datos recopilamos cuando visitas sorun.dev o nos contratas para una auditoría, por qué los recopilamos, cómo los gestionamos y tus derechos bajo el RGPD de la UE.",
+    "sections": {
+      "controller": { "heading": "Responsable del tratamiento", "body": "El responsable del tratamiento de sorun.dev es Sorun.dev. Para cualquier consulta sobre privacidad: hello@sorun.dev." },
+      "what": { "heading": "Qué recopilamos", "body": "Cuando visitas el sitio guardamos dos valores en el localStorage de tu navegador: tu preferencia de tema (claro/oscuro) y de idioma (en/nl/es). Estos valores no salen de tu navegador. Cuando reservas una llamada usamos Cal.com, que recopila la información que tú facilitas (nombre, email, franja horaria). Cuando nos escribes a hello@sorun.dev recibimos el contenido y la dirección de tu correo. No usamos rastreadores publicitarios, scripts de fingerprinting ni analítica de terceros que identifique a personas." },
+      "legal": { "heading": "Base legal", "body": "Las preferencias de navegador se almacenan bajo el interés legítimo de prestar el servicio solicitado (un sitio web funcional). Reserva y correos se procesan bajo tu consentimiento y para la ejecución de un contrato (o gestiones precontractuales)." },
+      "subprocessors": { "heading": "Subencargados", "body": "Cal.com Inc. (EE. UU.) — para programar llamadas. Cal.com firma las Cláusulas Contractuales Tipo de la UE para transferencias fuera del EEE. Proveedor de hosting — se especificará antes del lanzamiento público." },
+      "retention": { "heading": "Plazos de conservación", "body": "Las preferencias del navegador permanecen hasta que vacías tu localStorage. La correspondencia por correo se conserva durante el encargo y 7 años por motivos fiscales/auditoría. Los metadatos de reserva en Cal.com siguen su política de retención." },
+      "rights": { "heading": "Tus derechos", "body": "Bajo el RGPD tienes derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición al tratamiento de tus datos personales, así como a presentar una reclamación ante tu autoridad de control. Para ejercerlos: hello@sorun.dev." },
+      "changes": { "heading": "Cambios", "body": "Actualizaremos esta página si nuestras prácticas cambian. La fecha de \"última actualización\" indica la versión vigente." }
+    }
+  },
+  "imprint": {
+    "title": "Aviso legal",
+    "updated": "Última actualización: 3 de mayo de 2026",
+    "intro": "Información requerida bajo la normativa neerlandesa de comercio electrónico / comunicaciones comerciales y la Directiva UE 2000/31/CE.",
+    "sections": {
+      "entity": { "heading": "Entidad legal", "body": "Sorun.dev — práctica de asesoría unipersonal. Razón social, número de Cámara de Comercio (KVK) e identificación fiscal (VAT) se añadirán antes del lanzamiento público." },
+      "contact": { "heading": "Contacto", "body": "Email: hello@sorun.dev" },
+      "responsibility": { "heading": "Responsable del contenido", "body": "La responsabilidad sobre el contenido recae en el operador de sorun.dev identificado en la sección Entidad legal." },
+      "disputes": { "heading": "Resolución de disputas", "body": "No estamos obligados a participar en procedimientos de resolución de disputas ante un organismo de arbitraje de consumo." }
+    }
   }
 }

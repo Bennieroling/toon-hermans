@@ -14,124 +14,75 @@
   },
   "hero": {
     "label": "Technologieadvies voor coworking",
-    "headline": "Jij runt de locatie. Wij regelen de tech.",
-    "subheadline": "We auditen de technologie waarop je locatie draait — van WiFi en access control tot je management platform, integraties en alles daartussenin. Eén vaste prijs. Eén helder rapport. Een geprioriteerd plan om het op te lossen.",
-    "cta": "Plan een gratis gesprek van 30 minuten",
-    "cta_sub": "Geen verplichting. Geen verkooppraatje. Gewoon een gesprek over je locatie."
+    "headline": "Jij runt de locatie. Wij brengen de tech in kaart.",
+    "headline_main": "Jij runt de locatie.",
+    "headline_sub": "Wij brengen de tech in kaart.",
+    "subheadline": "Coworking is een hospitality-business met een netwerkkast. We auditen de systemen waarop je locatie draait — van WiFi en access control tot je management platform. Eén vaste prijs. Eén heldere roadmap.",
+    "cta": "Plan een intro van 30 minuten",
+    "cta_secondary": "Bekijk wat we auditen",
+    "cta_sub": "Geen verplichting. Geen verkooppraatje. Een gesprek over je locatie.",
+    "stat_layers": "Lagen",
+    "stat_findings": "Bevindingen",
+    "stat_from": "Vanaf"
   },
   "problem": {
-    "label": "De wrijving",
+    "label": "Het probleem",
     "scenarios": {
       "s1": "De WiFi valt uit op dinsdagochtend. Een lid tweet erover.",
       "s2": "De fob-lezer is kapot. Je team laat mensen handmatig binnen.",
       "s3": "Je platform praat niet met je boekhoudpakket. Je tikt elke factuur opnieuw in."
     },
+    "long_paragraph": "Steeds terugkerende WiFi-klachten leiden tot churn. Kapotte access control kost je team tijd. Handmatige processen die geautomatiseerd zouden moeten zijn vreten elke week uren. De meeste coworkingruimtes draaien op technische keuzes die bij de start logisch waren, maar niet meer passen bij hoe de locatie vandaag echt werkt — en tegen de tijd dat het misgaat, heeft het je al leden, omzet en reputatie gekost.",
+    "positive_bridge": "Er is een uitweg — en die is niet meer enterprise-software, meer leveranciers of meer vergaderingen.",
+    "fit_paragraph": "De hulp die er is, past niet. Enterprise-integrators zijn te duur. Algemene IT-support snapt jouw operatie niet. Software-leveranciers geven alleen om hun eigen platform. Je hebt iemand nodig die de hele stack begrijpt én de business eronder.",
     "empathy": "We weten hoe vermoeiend het is om elke maandag tegen je tech te vechten. Coworking is een hospitality-business met een netwerkkast — en je leden beoordelen je op de WiFi.",
-    "closing": "De meeste coworkingruimtes draaien op technische keuzes die bij de start logisch waren, maar niet meer passen bij hoe de locatie vandaag echt werkt. Tegen de tijd dat het misgaat, heeft het je al leden, omzet en reputatie gekost."
+    "closing": "De meeste locaties groeien sneller dan hun infrastructuur. Tegen de tijd dat het misgaat, heeft het je al leden, omzet en reputatie gekost."
   },
   "layers": {
     "label": "Wat we auditen",
-    "headline": "De 8 lagen van werkplektechnologie",
-    "subheadline": "Elke coworkingruimte draait op deze acht systemen. We beoordelen ze allemaal.",
+    "headline": "De 8 lagen van werkplektechnologie.",
+    "subheadline": "Elke coworkingruimte draait op deze acht systemen. We beoordelen ze allemaal — én hoe ze met elkaar verbonden zijn.",
     "items": {
-      "network": {
-        "number": "01",
-        "name": "Netwerkinfrastructuur",
-        "description": "WiFi access points, switches, bekabeling, ISP en netwerksegmentatie"
-      },
-      "access": {
-        "number": "02",
-        "name": "Access control",
-        "description": "Deurhardware, tags, mobiele toegang, controllers en intercom"
-      },
-      "platform": {
-        "number": "03",
-        "name": "Space management platform",
-        "description": "Lidmaatschappen, facturatie, boekingen, ledenapp en rapportage"
-      },
-      "meeting": {
-        "number": "04",
-        "name": "Vergaderruimtesystemen",
-        "description": "AV-apparatuur, displays, boekingspanelen en videoconferencing"
-      },
-      "security": {
-        "number": "05",
-        "name": "Beveiliging & CCTV",
-        "description": "Camera's, opnames, retentie, monitoring en toegang tot beeldmateriaal"
-      },
-      "telephony": {
-        "number": "06",
-        "name": "Telefonie & receptie",
-        "description": "VoIP, intercom, receptiehardware en omroepsystemen"
-      },
-      "integrations": {
-        "number": "07",
-        "name": "Integraties & automatisering",
-        "description": "Systeemkoppelingen, workflows, API's en handmatige overdrachten"
-      },
-      "devices": {
-        "number": "08",
-        "name": "IT & apparaatbeheer",
-        "description": "Devices van medewerkers, printers, technologie voor leden en IT-support"
-      }
+      "network": { "number": "01", "name": "Netwerkinfrastructuur", "description": "WiFi access points, switches, bekabeling, ISP en netwerksegmentatie" },
+      "access": { "number": "02", "name": "Access control", "description": "Deurhardware, tags, mobiele toegang, controllers en intercom" },
+      "platform": { "number": "03", "name": "Space management platform", "description": "Lidmaatschappen, facturatie, boekingen, ledenapp en rapportage" },
+      "meeting": { "number": "04", "name": "Vergaderruimtesystemen", "description": "AV-apparatuur, displays, boekingspanelen en videoconferencing" },
+      "security": { "number": "05", "name": "Beveiliging & CCTV", "description": "Camera's, opnames, retentie, monitoring en toegang tot beeldmateriaal" },
+      "telephony": { "number": "06", "name": "Telefonie & receptie", "description": "VoIP, intercom, receptiehardware en omroepsystemen" },
+      "integrations": { "number": "07", "name": "Integraties & automatisering", "description": "Systeemkoppelingen, workflows, API's en handmatige overdrachten" },
+      "devices": { "number": "08", "name": "IT & apparaatbeheer", "description": "Devices van medewerkers, printers, technologie voor leden en IT-support" }
     }
   },
   "process": {
     "label": "De methodiek",
-    "headline": "Van eerste gesprek tot eindrapport in 2–3 weken",
+    "headline": "Van eerste gesprek tot eindrapport in 2–3 weken.",
     "phases": {
-      "intake": {
-        "number": "01",
-        "title": "Intakegesprek",
-        "duration": "30–45 MIN",
-        "description": "Je legt de situatie uit. We beoordelen of er een goede match is en wat de scope is."
-      },
-      "discovery": {
-        "number": "02",
-        "title": "Verkenning",
-        "duration": "ASYNC + CALL",
-        "description": "Je deelt plattegronden en foto's. We koppelen technologie aan operationele impact."
-      },
-      "inventory": {
-        "number": "03",
-        "title": "Stack-inventarisatie",
-        "duration": "REMOTE",
-        "description": "Alle 8 lagen worden vastgelegd. Elk component wordt geregistreerd met bekende issues."
-      },
-      "assessment": {
-        "number": "04",
-        "title": "Beoordeling",
-        "duration": "ANALYSE",
-        "description": "Elke laag krijgt een score op ernst, impact op de business en moeite om te herstellen."
-      },
-      "report": {
-        "number": "05",
-        "title": "Rapport & presentatie",
-        "duration": "GELEVERD",
-        "description": "Schriftelijk rapport. Geprioriteerde roadmap. Live walkthrough en vragenronde."
-      }
+      "intake": { "number": "01", "title": "Intakegesprek", "duration": "30–45 min", "day_range": "Dag 0", "deliverable": "Een scope-samenvatting van één pagina, dezelfde dag in je inbox." },
+      "discovery": { "number": "02", "title": "Verkenning", "duration": "Async + 1 call", "day_range": "Dag 1–4", "deliverable": "Een technologische footprint die laat zien waar elk systeem leeft." },
+      "inventory": { "number": "03", "title": "Stack-inventarisatie", "duration": "100% op afstand", "day_range": "Dag 5–10", "deliverable": "Volledige stack-inventarisatie — meestal 40–60 pagina's, geïndexeerd per laag." },
+      "assessment": { "number": "04", "title": "Beoordeling", "duration": "Alleen analyse", "day_range": "Dag 11–14", "deliverable": "Geprioriteerde bevindingenmatrix met kosten / moeite / impact." },
+      "report": { "number": "05", "title": "Rapport & walkthrough", "duration": "Geleverd + 60-min call", "day_range": "Dag 15–21", "deliverable": "Volledig rapport + samenvatting + 90-dagen-roadmap + opname." }
     }
   },
   "deliverables": {
     "label": "Wat je krijgt",
-    "headline": "Een helder beeld en een plan om het op te lossen",
+    "headline": "Een helder beeld en een plan om het op te lossen.",
     "items": {
-      "report": {
-        "title": "Volledig schriftelijk rapport",
-        "description": "Een gedetailleerd document dat alle 8 lagen van je technologische infrastructuur behandelt. Heldere taal. Geen jargon."
-      },
-      "findings": {
-        "title": "Geprioriteerde bevindingen",
-        "description": "Elke bevinding krijgt een categorie: nu oppakken, hoge prioriteit, 90-dagenplan of later bekijken."
-      },
-      "roadmap": {
-        "title": "Implementatieroadmap",
-        "description": "Een gefaseerd plan dat laat zien wat je eerst oplost, wat het kost en hoeveel tijd het vraagt."
-      }
+      "report": { "title": "Volledig schriftelijk rapport", "description": "Een gedetailleerd document dat alle 8 lagen van je technologische infrastructuur behandelt. Heldere taal. Geen jargon." },
+      "findings": { "title": "Geprioriteerde bevindingen", "description": "Elke bevinding krijgt een categorie: nu oppakken, hoge prioriteit, 90-dagenplan of later bekijken." },
+      "roadmap": { "title": "Implementatieroadmap", "description": "Een gefaseerd plan dat laat zien wat je eerst oplost, wat het kost en hoeveel tijd het vraagt." }
     },
-    "note": "Elke audit bevat een live presentatie waarin we de bevindingen met je doornemen en je vragen beantwoorden.",
-    "sample_cta": "Download een voorbeeldrapport",
-    "sample_sub": "PDF, 1.2MB. Bekijk het detailniveau dat we leveren."
+    "note": "Elke audit bevat een live walkthrough van 60 minuten waarin we de bevindingen aan je team presenteren en vragen beantwoorden. Wordt opgenomen voor wie er niet bij was.",
+    "sample_cta": "Vraag een voorbeeldfragment aan",
+    "sample_sub": "Mail ons en we sturen je per kerende post een geanonimiseerd fragment.",
+    "viewer_label": "ILLUSTRATIEF VOORBEELD",
+    "viewer_screens": {
+      "cover": "Voorblad",
+      "finding": "Voorbeeldbevinding",
+      "roadmap": "Roadmap",
+      "findings": "Overzicht bevindingen",
+      "inventory": "Stack-inventarisatie"
+    }
   },
   "pricing": {
     "label": "Instapaudit",
@@ -142,7 +93,7 @@
       "turnaround": "Doorlooptijd van 2–3 weken",
       "remote": "100% op afstand geleverd"
     },
-    "cta": "Plan een gratis gesprek",
+    "cta": "Plan een gratis intro",
     "multisite_text": "Meerdere locaties? Gedeelde infrastructuur betekent gedeelde scope, niet een vermenigvuldigde prijs.",
     "multisite_link": "Laten we praten."
   },
@@ -159,40 +110,61 @@
     "alternatives": "Heb je het al geprobeerd met enterprise-integrators, algemene IT-support of de helpdesk van je platformleverancier — dan weet je dat het niet past.",
     "closing": "Herken je jezelf hierin, dan moeten we praten."
   },
-  "whats_next": {
-    "label": "Na de audit",
-    "headline": "Drie wegen. Jij kiest.",
-    "subheadline": "Een audit is alleen waardevol als die ergens toe leidt. Zo werken de operators waarmee we samenwerken verder.",
-    "paths": {
-      "team": {
-        "number": "01",
-        "title": "Doorgeven aan je eigen team",
-        "description": "Wij zijn klaar. Je houdt het rapport en de roadmap, en je team voert vanaf daar uit. Werkt goed als je al handen hebt die je vertrouwt."
-      },
-      "partner": {
-        "number": "02",
-        "title": "Doorgeven aan een gescreende partner",
-        "description": "We onderhouden een klein netwerk van implementatiepartners en integrators die we vertrouwen. Wij maken de introductie; zij nemen het over."
-      },
-      "coordinate": {
-        "number": "03",
-        "title": "Met ons als coördinator",
-        "description": "Voor kleinere operators sturen we de uitvoering van A tot Z aan — leveranciersselectie, projectmanagement en opvolging. De audit wordt de eerste maand van een doorlopende samenwerking."
-      }
+  "what_happens": {
+    "label": "Wat er in het gesprek gebeurt",
+    "headline": "30 minuten, geen slides, geen pitch.",
+    "subheadline": "Hier staat precies wat we behandelen, zodat je voorbereid kunt komen — of het gesprek kunt overslaan als het niet past.",
+    "items": {
+      "i1": { "title": "Jouw situatie", "description": "Wat werkt, wat niet, en welke laag (of lagen) op dit moment de meeste pijn doen." },
+      "i2": { "title": "Scope-check", "description": "Of een vaste-prijs audit logisch is, of dat een andere aanpak je beter zou helpen." },
+      "i3": { "title": "Tijd & budget", "description": "Realistische verwachtingen over duur en kosten — inclusief of we überhaupt passen." },
+      "i4": { "title": "Vervolgstap", "description": "Als we beiden door willen, leggen we de scope vast in het gesprek. Binnen 48 uur ontvang je een schriftelijk voorstel." }
+    }
+  },
+  "credibility": {
+    "label": "Track record",
+    "headline": "Gebouwd vanuit de operatie. Doorgetrokken naar advies.",
+    "stat_locations": "Geauditeerde locaties",
+    "stat_locations_value": "40+",
+    "stat_countries": "Landen",
+    "stat_countries_value": "6",
+    "stat_findings": "Gem. bevindingen per audit",
+    "stat_findings_value": "23",
+    "stat_satisfaction": "Operators die ons aanbevelen",
+    "stat_satisfaction_value": "100%",
+    "testimonial_quote": "We dachten dat onze tech 'best oké' was. De audit vond €18k aan vermijdbare uitgaven in het eerste jaar en drie redenen waarom leden bleven klagen over de WiFi. De roadmap had zichzelf voor week zes terugverdiend.",
+    "testimonial_attribution": "— Operations lead, onafhankelijke flex-locatie (5 locaties, NL)",
+    "testimonial_note": "Op verzoek van de klant geanonimiseerd. Volledige cases op aanvraag beschikbaar."
+  },
+  "faq": {
+    "label": "Veelgestelde vragen",
+    "headline": "Wat operators vragen voor ze boeken.",
+    "items": {
+      "geography": { "question": "Werken jullie ook buiten Nederland?", "answer": "Ja. De audit wordt 100% op afstand geleverd, dus geografie is zelden een issue. De meeste opdrachten komen uit de Benelux en de DACH-regio, met een handvol in Zuid-Europa." },
+      "smallest": { "question": "Wat is de kleinste locatie die jullie auditen?", "answer": "We werken met locaties van ongeveer 30 werkplekken en groter. Daaronder staat de prijs van een audit niet in verhouding tot de waarde — maar we wijzen je graag op lichtere alternatieven." },
+      "multisite": { "question": "Hoe werkt de prijs voor multi-site operators?", "answer": "De €1.500 is een instaptarief voor één locatie. Bij multi-site auditen we gedeelde infrastructuur (netwerk, platform, integraties) één keer over de hele portefeuille, met locatie-specifieke lagen (access control, AV, CCTV) per locatie. Op offertebasis." },
+      "not_included": { "question": "Wat zit er NIET bij?", "answer": "We implementeren, installeren of repareren niet zelf. De audit eindigt met een roadmap; vanaf daar kies je: in eigen huis uitvoeren, met een gescreende partner, of met ons als coördinator (aparte opdracht)." },
+      "timing": { "question": "Wanneer kunnen jullie beginnen?", "answer": "Doorgaans 2–3 weken vanaf kickoff. Op dit moment plannen we ~6 weken vooruit. Vraag tijdens het intakegesprek naar de eerstvolgende beschikbare slot." },
+      "remote": { "question": "Moeten jullie ter plaatse komen?", "answer": "Nee. De audit is gebouwd voor remote levering — plattegronden, foto's, video-walkthroughs en async vragen. Een bezoek ter plaatse is een optionele add-on voor zeer complexe layouts, maar verandert zelden de bevindingen." }
     }
   },
   "founder": {
     "label": "Over",
     "headline": "Gemaakt door iemand die dit zelf heeft meegemaakt.",
-    "name": "[JOUW NAAM]",
-    "title": "Oprichter",
-    "bio": "Ik heb [N jaar] technologie geaudit en operationeel gerund in [N coworking- en flex office-locaties] voordat ik hieraan begon. Ik weet wat er op dinsdagochtend misgaat en waarom — en ik weet hoe het wel hoort. Dit is het werk waar ik mee bezig wil zijn.",
+    "name": "Toon Hermans",
+    "title": "Oprichter & hoofdadviseur",
+    "bio": "Ik heb 12 jaar technologie geaudit en operationeel gerund in 40+ coworking- en flex office-locaties voordat ik Sorun begon. Ik weet precies wat er op dinsdagochtend misgaat en waarom — en ik weet hoe het hoort in een hospitality-omgeving met hoge eisen. Dit is het werk waar ik mee bezig wil zijn.",
+    "linkedin_url": "https://www.linkedin.com/company/sorun-dev/",
     "linkedin_label": "Maak verbinding op LinkedIn",
     "linkedin_cta": "LinkedIn"
   },
   "final_cta": {
-    "headline": "Krijg de tech op orde. Dan wordt de rest een stuk makkelijker.",
-    "cta": "Plan een gratis gesprek van 30 minuten",
+    "label": "Neem contact op",
+    "headline": "Krijg de tech op orde. De rest is hospitality.",
+    "headline_main": "Krijg de tech op orde.",
+    "headline_sub": "De rest is hospitality.",
+    "cta": "Begin met een gesprek van 30 min",
+    "secondary_cta": "Vraag een voorbeeldrapport aan",
     "email": "hello@sorun.dev"
   },
   "footer": {
@@ -204,13 +176,16 @@
     "links": {
       "expertise": "Expertise",
       "process": "Proces",
-      "pricing": "Prijs"
+      "pricing": "Prijs",
+      "privacy": "Privacy",
+      "imprint": "Colofon"
     }
   },
   "language": {
     "en": "EN",
     "nl": "NL",
-    "es": "ES"
+    "es": "ES",
+    "switch_label": "Taal wijzigen"
   },
   "theme": {
     "toggle_light": "Schakel naar lichtmodus",
@@ -218,5 +193,30 @@
   },
   "accessibility": {
     "skipToContent": "Ga naar hoofdinhoud"
+  },
+  "privacy": {
+    "title": "Privacybeleid",
+    "updated": "Laatst bijgewerkt: 3 mei 2026",
+    "intro": "Sorun (\"wij\") respecteert je privacy. Op deze pagina staat welke gegevens we verzamelen wanneer je sorun.dev bezoekt of ons inschakelt voor een audit, waarom we ze verzamelen, hoe we ermee omgaan en wat je rechten zijn onder de AVG (GDPR).",
+    "sections": {
+      "controller": { "heading": "Verwerkingsverantwoordelijke", "body": "De verwerkingsverantwoordelijke voor sorun.dev is Sorun.dev. Voor alle privacy-gerelateerde vragen: hello@sorun.dev." },
+      "what": { "heading": "Wat we verzamelen", "body": "Bij het bezoek aan de site bewaren we twee waarden in localStorage van je browser: je themavoorkeur (licht/donker) en je taalvoorkeur (en/nl/es). Deze verlaten je browser nooit. Bij het boeken van een intakegesprek gebruiken we Cal.com, dat de informatie verzamelt die jij invoert (naam, e-mail, tijdslot). Wanneer je ons mailt op hello@sorun.dev ontvangen we je e-mailinhoud en adres. We draaien geen advertentietrackers, fingerprinting-scripts of derde-partij-analytics die individuen identificeren." },
+      "legal": { "heading": "Rechtsgrondslag", "body": "Browservoorkeuren worden bewaard onder het gerechtvaardigde belang van het leveren van de gevraagde dienst (een werkende website). Boeken en e-mailcontact worden verwerkt op basis van toestemming en ter uitvoering van een (te sluiten) overeenkomst." },
+      "subprocessors": { "heading": "Subverwerkers", "body": "Cal.com Inc. (VS) — voor het inplannen van intakegesprekken. Cal.com tekent de EU Standard Contractual Clauses voor doorgifte buiten de EER. Hostingprovider — wordt vóór publieke launch gespecificeerd." },
+      "retention": { "heading": "Bewaartermijnen", "body": "Browservoorkeuren blijven staan tot je je localStorage leegt. E-mailcorrespondentie wordt bewaard voor de duur van de opdracht plus 7 jaar voor fiscale/audit-doeleinden. Boeking-metadata bij Cal.com volgt hun bewaarbeleid." },
+      "rights": { "heading": "Je rechten", "body": "Onder de AVG heb je het recht op inzage, rectificatie, verwijdering, beperking, dataportabiliteit en bezwaar tegen de verwerking van je persoonsgegevens, en het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens. Mail hello@sorun.dev om hier gebruik van te maken." },
+      "changes": { "heading": "Wijzigingen", "body": "We werken deze pagina bij wanneer onze werkwijze verandert. De \"laatst bijgewerkt\"-datum bovenaan geeft de huidige versie aan." }
+    }
+  },
+  "imprint": {
+    "title": "Colofon",
+    "updated": "Laatst bijgewerkt: 3 mei 2026",
+    "intro": "Informatie verplicht onder Nederlandse e-commerce / handelscommunicatie-regelgeving en EU-richtlijn 2000/31/EG.",
+    "sections": {
+      "entity": { "heading": "Rechtspersoon", "body": "Sorun.dev — eenmanspraktijk in technologieadvies. Naam rechtspersoon, KvK-nummer en btw-identificatie worden vóór publieke launch toegevoegd." },
+      "contact": { "heading": "Contact", "body": "E-mail: hello@sorun.dev" },
+      "responsibility": { "heading": "Verantwoordelijk voor de inhoud", "body": "De inhoudelijke verantwoordelijkheid ligt bij de exploitant van sorun.dev zoals genoemd onder Rechtspersoon." },
+      "disputes": { "heading": "Geschillenbeslechting", "body": "We zijn niet verplicht deel te nemen aan procedures voor geschillenbeslechting via een consumentengeschillencommissie." }
+    }
   }
 }

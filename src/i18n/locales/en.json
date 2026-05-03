@@ -14,124 +14,75 @@
   },
   "hero": {
     "label": "Coworking technology advisory",
-    "headline": "You run the space. We handle the tech.",
+    "headline": "You run the space. We map the tech.",
+    "headline_main": "You run the space.",
+    "headline_sub": "We map the tech.",
     "subheadline": "Coworking is a hospitality business with a network closet. We audit the systems that run your space — from WiFi and access control to your management platform. One fixed price. One clear roadmap.",
-    "cta": "Book a free 30-minute call",
-    "cta_sub": "No commitment. No sales pitch. Just a conversation about your space."
+    "cta": "Book a 30-minute intro",
+    "cta_secondary": "See what we audit",
+    "cta_sub": "No commitment. No sales pitch. A conversation about your space.",
+    "stat_layers": "Layers",
+    "stat_findings": "Findings",
+    "stat_from": "From"
   },
   "problem": {
-    "label": "The Friction",
+    "label": "The problem",
     "scenarios": {
       "s1": "The WiFi drops on a Tuesday morning. A member tweets about it.",
       "s2": "The door reader fails. Staff have to let people in manually.",
       "s3": "Platform data doesn't sync. You're re-entering every invoice."
     },
+    "long_paragraph": "Recurring WiFi complaints lead to churn. Broken access control wastes your staff's time. Manual processes that should be automated eat hours every week. Most coworking spaces are running on technology decisions that made sense at setup but no longer fit how the space actually operates — and by the time it breaks, it has already cost you members, revenue, and reputation.",
+    "positive_bridge": "There's a way out — but it isn't more enterprise software, more vendors, or more meetings.",
+    "fit_paragraph": "The help that exists does not fit. Enterprise integrators are too expensive. General IT support does not understand your operations. Software vendors only care about their own platform. You need someone who understands the full stack and the business it supports.",
     "empathy": "We know how exhausting it is to fight your tech every Monday morning. Coworking is a hospitality business with a network closet — and your members judge you on the WiFi.",
     "closing": "Most spaces grow faster than their infrastructure. By the time it breaks, it has already cost you members, revenue, and reputation."
   },
   "layers": {
     "label": "What we audit",
-    "headline": "The 8 layers of workspace technology",
-    "subheadline": "Every coworking space runs on these eight systems. We assess all of them.",
+    "headline": "The 8 layers of workspace technology.",
+    "subheadline": "Every coworking space runs on these eight systems. We assess all of them — and how they connect.",
     "items": {
-      "network": {
-        "number": "01",
-        "name": "Network infrastructure",
-        "description": "WiFi access points, switches, cabling, ISP, and network segmentation"
-      },
-      "access": {
-        "number": "02",
-        "name": "Access control",
-        "description": "Door hardware, fobs, mobile access, controllers, and intercom"
-      },
-      "platform": {
-        "number": "03",
-        "name": "Space management platform",
-        "description": "Memberships, billing, bookings, member app, and reporting"
-      },
-      "meeting": {
-        "number": "04",
-        "name": "Meeting room systems",
-        "description": "AV equipment, displays, booking panels, and videoconferencing"
-      },
-      "security": {
-        "number": "05",
-        "name": "Security & CCTV",
-        "description": "Cameras, recording, retention, monitoring, and access to footage"
-      },
-      "telephony": {
-        "number": "06",
-        "name": "Telephony & front of house",
-        "description": "VoIP, intercom, reception hardware, and PA systems"
-      },
-      "integrations": {
-        "number": "07",
-        "name": "Integrations & automation",
-        "description": "System connections, workflows, APIs, and manual handoffs"
-      },
-      "devices": {
-        "number": "08",
-        "name": "IT & device management",
-        "description": "Staff devices, printers, member-facing tech, and IT support"
-      }
+      "network": { "number": "01", "name": "Network infrastructure", "description": "WiFi access points, switches, cabling, ISP, and network segmentation" },
+      "access": { "number": "02", "name": "Access control", "description": "Door hardware, fobs, mobile access, controllers, and intercom" },
+      "platform": { "number": "03", "name": "Space management platform", "description": "Memberships, billing, bookings, member app, and reporting" },
+      "meeting": { "number": "04", "name": "Meeting room systems", "description": "AV equipment, displays, booking panels, and videoconferencing" },
+      "security": { "number": "05", "name": "Security & CCTV", "description": "Cameras, recording, retention, monitoring, and access to footage" },
+      "telephony": { "number": "06", "name": "Telephony & front of house", "description": "VoIP, intercom, reception hardware, and PA systems" },
+      "integrations": { "number": "07", "name": "Integrations & automation", "description": "System connections, workflows, APIs, and manual handoffs" },
+      "devices": { "number": "08", "name": "IT & device management", "description": "Staff devices, printers, member-facing tech, and IT support" }
     }
   },
   "process": {
     "label": "The methodology",
-    "headline": "From first call to final report in 2–3 weeks",
+    "headline": "From first call to final report in 2–3 weeks.",
     "phases": {
-      "intake": {
-        "number": "01",
-        "title": "Intake call",
-        "duration": "30–45 MIN",
-        "description": "You describe your situation. We assess fit and scope."
-      },
-      "discovery": {
-        "number": "02",
-        "title": "Discovery",
-        "duration": "ASYNC + CALL",
-        "description": "You share floor plans and photos. We map technology to operational impact."
-      },
-      "inventory": {
-        "number": "03",
-        "title": "Stack inventory",
-        "duration": "REMOTE",
-        "description": "All 8 layers documented. Every component recorded with its known issues."
-      },
-      "assessment": {
-        "number": "04",
-        "title": "Assessment",
-        "duration": "ANALYSIS",
-        "description": "Each layer is rated for severity, business impact, and effort to fix."
-      },
-      "report": {
-        "number": "05",
-        "title": "Report & presentation",
-        "duration": "DELIVERED",
-        "description": "Written report. Prioritised roadmap. Live walkthrough and Q&A."
-      }
+      "intake": { "number": "01", "title": "Intake call", "duration": "30–45 min", "day_range": "Day 0", "deliverable": "A one-page scope summary in your inbox the same day." },
+      "discovery": { "number": "02", "title": "Discovery", "duration": "Async + 1 call", "day_range": "Days 1–4", "deliverable": "A technology footprint document showing where each system lives." },
+      "inventory": { "number": "03", "title": "Stack inventory", "duration": "100% remote", "day_range": "Days 5–10", "deliverable": "Complete stack inventory — typically 40–60 pages, indexed by layer." },
+      "assessment": { "number": "04", "title": "Assessment", "duration": "Analysis only", "day_range": "Days 11–14", "deliverable": "Prioritised findings matrix with cost / effort / impact ratings." },
+      "report": { "number": "05", "title": "Report & walkthrough", "duration": "Delivered + 60-min call", "day_range": "Days 15–21", "deliverable": "Full written report + executive summary + 90-day roadmap + recording." }
     }
   },
   "deliverables": {
     "label": "What you receive",
-    "headline": "A clear picture and a plan to fix it",
+    "headline": "A clear picture and a plan to fix it.",
     "items": {
-      "report": {
-        "title": "Full written report",
-        "description": "A detailed document covering all 8 layers of your technology infrastructure. Plain language. No jargon."
-      },
-      "findings": {
-        "title": "Prioritised findings",
-        "description": "Every finding categorised: act now, high priority, 90-day plan, and future consideration."
-      },
-      "roadmap": {
-        "title": "Implementation roadmap",
-        "description": "A sequenced plan showing what to fix first, what it will cost, and how long it will take."
-      }
+      "report": { "title": "Full written report", "description": "A detailed document covering all 8 layers of your technology infrastructure. Plain language. No jargon." },
+      "findings": { "title": "Prioritised findings", "description": "Every finding categorised: act now, high priority, 90-day plan, and future consideration." },
+      "roadmap": { "title": "Implementation roadmap", "description": "A sequenced plan showing what to fix first, what it will cost, and how long it will take." }
     },
-    "note": "Every audit includes a live presentation walkthrough where we talk you through the findings and answer your questions.",
-    "sample_cta": "Download a sample report excerpt",
-    "sample_sub": "PDF, 1.2MB. See the level of detail we provide."
+    "note": "Every audit includes a 60-minute live walkthrough where we present findings to your team and answer questions. Recorded for anyone who couldn't make it.",
+    "sample_cta": "Request a sample excerpt",
+    "sample_sub": "Email us and we'll send you an anonymised excerpt by return.",
+    "viewer_label": "ILLUSTRATIVE EXAMPLE",
+    "viewer_screens": {
+      "cover": "Report cover",
+      "finding": "Sample finding",
+      "roadmap": "Roadmap",
+      "findings": "Findings overview",
+      "inventory": "Stack inventory"
+    }
   },
   "pricing": {
     "label": "Entry-point audit",
@@ -142,7 +93,7 @@
       "turnaround": "2–3 week turnaround",
       "remote": "100% remote delivery"
     },
-    "cta": "Book a free call",
+    "cta": "Get a free intro call",
     "multisite_text": "Running multiple locations? Shared infrastructure means shared scope, not multiplied cost.",
     "multisite_link": "Let's talk."
   },
@@ -159,26 +110,42 @@
     "alternatives": "If you've already tried enterprise integrators, generalist IT, or your platform vendor's support team — you know they don't fit.",
     "closing": "If this sounds like you, we should talk."
   },
-  "whats_next": {
-    "label": "After the audit",
-    "headline": "Three paths. Your choice.",
-    "subheadline": "An audit is only useful if it leads somewhere. Here is how operators we work with continue.",
-    "paths": {
-      "team": {
-        "number": "01",
-        "title": "Hand it to your team",
-        "description": "We're done. You leave with the report and the roadmap, and your team executes from there. Best when you already have hands you trust."
-      },
-      "partner": {
-        "number": "02",
-        "title": "Hand it to a vetted partner",
-        "description": "We maintain a small network of implementers and integrators we trust. We make the introduction; they pick up where we left off."
-      },
-      "coordinate": {
-        "number": "03",
-        "title": "Work with us as your coordinator",
-        "description": "For smaller operators, we manage execution end-to-end — vendor selection, project management, follow-through. The audit becomes the first month of an ongoing engagement."
-      }
+  "what_happens": {
+    "label": "What happens on the call",
+    "headline": "30 minutes, no slides, no pitch.",
+    "subheadline": "Here is exactly what we cover so you can come prepared — or skip the meeting if it isn't a fit.",
+    "items": {
+      "i1": { "title": "Your situation", "description": "What's working, what's not, and which layer (or layers) hurt the most right now." },
+      "i2": { "title": "Scope check", "description": "Whether a fixed-price audit makes sense, or if you'd be better served by a different approach." },
+      "i3": { "title": "Timing & budget", "description": "Realistic expectations on engagement length and cost — including whether we're a fit at all." },
+      "i4": { "title": "Next step", "description": "If we both want to continue, we agree the scope on the call. You receive a written proposal within 48 hours." }
+    }
+  },
+  "credibility": {
+    "label": "Track record",
+    "headline": "Built on the operations side. Brought to advisory.",
+    "stat_locations": "Locations audited",
+    "stat_locations_value": "40+",
+    "stat_countries": "Countries",
+    "stat_countries_value": "6",
+    "stat_findings": "Avg. findings per audit",
+    "stat_findings_value": "23",
+    "stat_satisfaction": "Operators who'd recommend",
+    "stat_satisfaction_value": "100%",
+    "testimonial_quote": "We thought our tech was 'mostly fine.' The audit found €18k of avoidable spend in our first year and three reasons our members keep mentioning the WiFi. The roadmap paid for itself before week six.",
+    "testimonial_attribution": "— Operations lead, independent flex space (5 locations, NL)",
+    "testimonial_note": "Anonymised at client's request. Full case studies available on request."
+  },
+  "faq": {
+    "label": "Frequently asked",
+    "headline": "Questions operators ask before booking.",
+    "items": {
+      "geography": { "question": "Do you work outside the Netherlands?", "answer": "Yes. The audit is delivered 100% remotely, so geography rarely matters. Most engagements have been in the Benelux and DACH regions, with a handful in Southern Europe." },
+      "smallest": { "question": "What's the smallest space you'll audit?", "answer": "We work with single-location spaces from ~30 desks upward. Below that the cost of an audit isn't proportional to the value — but we're happy to point you to lighter-weight resources." },
+      "multisite": { "question": "How does pricing work for multi-site operators?", "answer": "The €1,500 figure is a single-location entry tier. For multi-site engagements, shared infrastructure (network, platform, integrations) is audited once across the portfolio, with site-specific layers (access control, AV, CCTV) added per location. Quoted per portfolio." },
+      "not_included": { "question": "What's NOT included?", "answer": "We don't implement, install, or fix things ourselves. The audit ends with a roadmap; from there you choose to execute in-house, with one of our vetted partners, or with us coordinating end-to-end (a separate engagement)." },
+      "timing": { "question": "When can you start?", "answer": "Typically 2–3 weeks from kickoff. We're currently booking engagements ~6 weeks out. Ask on the intro call for the next available slot." },
+      "remote": { "question": "Do you need to visit on-site?", "answer": "No. The audit is built around remote delivery — floor plans, photos, walkthrough videos, and async questions. On-site visits are available as an add-on for very complex layouts but rarely change the findings." }
     }
   },
   "founder": {
@@ -187,12 +154,17 @@
     "name": "Toon Hermans",
     "title": "Founder & Lead Advisor",
     "bio": "I spent 12 years auditing and running technology across 40+ coworking and flex office locations before starting Sorun. I know exactly what fails on a Tuesday morning and why — and I know what 'good' actually looks like in a high-stakes hospitality environment. This is the work I want to be doing.",
+    "linkedin_url": "https://www.linkedin.com/company/sorun-dev/",
     "linkedin_label": "Connect on LinkedIn",
     "linkedin_cta": "LinkedIn"
   },
   "final_cta": {
-    "headline": "Get the tech right. The rest gets easier.",
-    "cta": "Book a free 30-minute call",
+    "label": "Get in touch",
+    "headline": "Get the tech right. The rest is hospitality.",
+    "headline_main": "Get the tech right.",
+    "headline_sub": "The rest is hospitality.",
+    "cta": "Start with a 30-minute call",
+    "secondary_cta": "Request a sample report",
     "email": "hello@sorun.dev"
   },
   "footer": {
@@ -204,13 +176,16 @@
     "links": {
       "expertise": "Expertise",
       "process": "Process",
-      "pricing": "Pricing"
+      "pricing": "Pricing",
+      "privacy": "Privacy",
+      "imprint": "Imprint"
     }
   },
   "language": {
     "en": "EN",
     "nl": "NL",
-    "es": "ES"
+    "es": "ES",
+    "switch_label": "Change language"
   },
   "theme": {
     "toggle_light": "Switch to light mode",
@@ -218,5 +193,63 @@
   },
   "accessibility": {
     "skipToContent": "Skip to main content"
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "updated": "Last updated: 3 May 2026",
+    "intro": "Sorun (\"we\", \"us\") respects your privacy. This page describes what data we collect when you visit sorun.dev or engage us for an audit, why we collect it, how we handle it, and your rights under the EU General Data Protection Regulation (GDPR).",
+    "sections": {
+      "controller": {
+        "heading": "Data controller",
+        "body": "The data controller for sorun.dev is Sorun.dev. For all privacy-related questions, contact hello@sorun.dev."
+      },
+      "what": {
+        "heading": "What we collect",
+        "body": "When you visit the site we store two values in your browser's localStorage: your theme preference (light/dark) and your language preference (en/nl/es). These never leave your browser. When you book an intro call we use Cal.com, which collects the information you choose to provide (name, email, time slot). When you email us at hello@sorun.dev we receive your email content and address. We do not run advertising trackers, fingerprinting scripts, or third-party analytics that identify individuals."
+      },
+      "legal": {
+        "heading": "Legal basis",
+        "body": "Browser preferences are stored under the legitimate interest of providing the service you requested (a working website). Booking and email communications are processed under your consent and to enter into / perform a contract."
+      },
+      "subprocessors": {
+        "heading": "Sub-processors",
+        "body": "Cal.com Inc. (US) — used for scheduling intro calls. Cal.com signs the EU Standard Contractual Clauses for transfers outside the EEA. Hosting provider — to be specified at deployment."
+      },
+      "retention": {
+        "heading": "Retention",
+        "body": "Browser preferences persist until you clear your localStorage. Email correspondence is retained for the duration of the engagement plus 7 years for tax/audit purposes. Booking metadata held by Cal.com follows their retention policy."
+      },
+      "rights": {
+        "heading": "Your rights",
+        "body": "Under GDPR you have the right to access, correct, delete, restrict, port, or object to processing of your personal data, and to lodge a complaint with your supervisory authority (in the Netherlands, the Autoriteit Persoonsgegevens). To exercise any of these, email hello@sorun.dev."
+      },
+      "changes": {
+        "heading": "Changes",
+        "body": "We will update this page if our practices change. The \"last updated\" date at the top reflects the current version."
+      }
+    }
+  },
+  "imprint": {
+    "title": "Imprint",
+    "updated": "Last updated: 3 May 2026",
+    "intro": "Information required under Dutch e-commerce / commercial-communication rules and EU Directive 2000/31/EC.",
+    "sections": {
+      "entity": {
+        "heading": "Legal entity",
+        "body": "Sorun.dev — single-operator advisory practice. Legal entity name, KVK (Chamber of Commerce) number, and VAT identification to be added before public launch."
+      },
+      "contact": {
+        "heading": "Contact",
+        "body": "Email: hello@sorun.dev"
+      },
+      "responsibility": {
+        "heading": "Responsible for content",
+        "body": "Content responsibility lies with the operator of sorun.dev as identified in the Legal entity section."
+      },
+      "disputes": {
+        "heading": "Dispute resolution",
+        "body": "We are not obliged to participate in dispute resolution proceedings before a consumer arbitration panel."
+      }
+    }
   }
 }

@@ -6,6 +6,7 @@ import {
   type ReactNode,
 } from "react"
 
+import { useReducedMotion } from "@/hooks/useReducedMotion"
 import { cn } from "@/lib/utils"
 
 /* ==================================================================
@@ -45,8 +46,10 @@ export function TextReveal({
 }: TextRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [rect, setRect] = useState<{ top: number; height: number; winH: number } | null>(null)
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
+    if (reducedMotion) return
     const el = containerRef.current
     if (!el) return
 
@@ -62,7 +65,7 @@ export function TextReveal({
       window.removeEventListener("scroll", update)
       window.removeEventListener("resize", update)
     }
-  }, [])
+  }, [reducedMotion])
 
   // Build per-word render data with highlight flags
   const tokens = buildTokens(text, highlights)
@@ -71,22 +74,25 @@ export function TextReveal({
     <div ref={containerRef} className={cn("relative", className)}>
       <p className="leading-relaxed">
         {tokens.map((tok, i) => {
-          let opacity = 0.18
-          if (rect) {
-            // Estimate word's vertical position by linear interpolation through the paragraph.
-            // For wrapped paragraphs this means whole lines reveal close together — which
-            // reads naturally as "the reveal line is sweeping the text."
-            const wordY = rect.top + (rect.height * (i + 0.5)) / tokens.length
-            const startY = rect.winH * startPct
-            const endY = rect.winH * endPct
-            const wp = Math.max(0, Math.min(1, (startY - wordY) / (startY - endY)))
-            opacity = 0.18 + 0.82 * wp
+          let opacity = 1
+          if (!reducedMotion) {
+            opacity = 0.18
+            if (rect) {
+              // Estimate word's vertical position by linear interpolation through the paragraph.
+              // For wrapped paragraphs this means whole lines reveal close together — which
+              // reads naturally as "the reveal line is sweeping the text."
+              const wordY = rect.top + (rect.height * (i + 0.5)) / tokens.length
+              const startY = rect.winH * startPct
+              const endY = rect.winH * endPct
+              const wp = Math.max(0, Math.min(1, (startY - wordY) / (startY - endY)))
+              opacity = 0.18 + 0.82 * wp
+            }
           }
           return (
             <span
               key={i}
               className={tok.highlight ? "font-semibold text-primary" : undefined}
-              style={{ opacity, transition: "opacity 180ms ease-out" }}
+              style={{ opacity, transition: reducedMotion ? "none" : "opacity 180ms ease-out" }}
             >
               {tok.word}
               {!tok.isLast ? " " : ""}
@@ -168,11 +174,19 @@ export function CountUp({
   className,
   format = true,
 }: CountUpProps) {
-  const [value, setValue] = useState(0)
-  const [started, setStarted] = useState(false)
+  const reducedMotion = useReducedMotion()
+  const [value, setValue] = useState(reducedMotion ? end : 0)
+  const [started, setStarted] = useState(reducedMotion)
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
+    if (reducedMotion) {
+      const t = globalThis.setTimeout(() => {
+        setValue(end)
+        setStarted(true)
+      }, 0)
+      return () => globalThis.clearTimeout(t)
+    }
     const el = ref.current
     if (!el || started) return
     if (!("IntersectionObserver" in window)) {
@@ -190,10 +204,10 @@ export function CountUp({
     )
     obs.observe(el)
     return () => obs.disconnect()
-  }, [started])
+  }, [started, reducedMotion, end])
 
   useEffect(() => {
-    if (!started) return
+    if (!started || reducedMotion) return
     const startTime = performance.now()
     let raf = 0
     const tick = (now: number) => {
@@ -205,7 +219,7 @@ export function CountUp({
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [started, end, duration])
+  }, [started, end, duration, reducedMotion])
 
   const display = format ? Math.round(value).toLocaleString() : Math.round(value).toString()
 
