@@ -7,6 +7,7 @@ import {
   MethodologyHorizontalTimeline,
   MethodologyMatrix,
   MethodologyMerged,
+  MethodologyOrbital,
   MethodologyOriginal,
   MethodologyVerticalStepper,
 } from "@/components/methodology/MethodologyVariants"
@@ -84,6 +85,15 @@ const variants: Variant[] = [
     pros: "Removes the duplicate-content overlap with the standalone What-You-Receive section (process and outputs are described in two places today). One narrative arc: cause → effect. Frees one full section's worth of vertical space for something more valuable later. Climax at the end is naturally where buyer attention should peak.",
     cons: "Tallest section by a margin. If a buyer needs to *scan* deliverables fast (without reading the methodology), the standalone deliverables section was easier to find. Picking this means dropping the 'What You Receive' section from the homepage entirely.",
     Component: MethodologyMerged,
+  },
+  {
+    id: "method-orbital",
+    letter: "7",
+    title: "Radial orbital timeline — 21st.dev component, brand-adapted",
+    tagline: "5 phases as nodes orbiting a central pulse. Auto-rotates while idle. Click any phase to pause rotation, expand a card with details, and pulse the connected phases. Theme-aware (works in both light and dark) — adapted from 21st.dev's white-on-black original to use brand-blue accents.",
+    pros: "Most distinctive variant on the page. Implies 'methodology revolves around the audit' literally. Click-to-expand is engaging without being noisy. Strong differentiator if you want a methodology section that visitors remember.",
+    cons: "Auto-rotation can be visually busy if the visitor is reading nearby copy. Less scannable than a static stepper — a buyer who wants to skim 5 phases in 5 seconds will work harder. Mobile experience needs verification (the 200px orbit radius may need to shrink at narrow widths).",
+    Component: MethodologyOrbital,
   },
 ]
 

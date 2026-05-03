@@ -6,6 +6,7 @@ import { AnimateIn } from "@/components/AnimateIn"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { RadialOrbitalTimeline, type OrbitalTimelineItem } from "@/components/ui/radial-orbital-timeline"
 import { phases } from "@/lib/utils"
 
 /**
@@ -422,6 +423,115 @@ export function MethodologyDeliverablesLed() {
             </AnimateIn>
           ))}
         </ol>
+      </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* 7 — RADIAL ORBITAL TIMELINE (21st.dev component, brand-adapted)     */
+/* ------------------------------------------------------------------ */
+
+const orbitalPhases: OrbitalTimelineItem[] = [
+  {
+    id: 1,
+    title: "Intake call",
+    date: "Day 0 · 30–45 min",
+    content:
+      "You describe your space and what's bothering you. We assess fit, scope the audit, agree on which locations are in. A one-page scope summary lands in your inbox the same day.",
+    category: "Kickoff",
+    icon: Phone,
+    relatedIds: [2],
+    status: "completed",
+    energy: 100,
+  },
+  {
+    id: 2,
+    title: "Discovery",
+    date: "Days 1–4 · ~2 hours",
+    content:
+      "You share floor plans, photos, vendor list. We map your technology to how the space actually operates. Output: a technology footprint document showing where each system lives and what it touches.",
+    category: "Mapping",
+    icon: FileText,
+    relatedIds: [1, 3],
+    status: "completed",
+    energy: 85,
+  },
+  {
+    id: 3,
+    title: "Stack inventory",
+    date: "Days 5–10 · ~3 hours",
+    content:
+      "All 8 layers documented in detail — every component, configuration, known issue captured. Roughly 40–60 pages, indexed by layer. 100% remote: access calls and Q&A with your IT contact.",
+    category: "Documentation",
+    icon: Send,
+    relatedIds: [2, 4],
+    status: "in-progress",
+    energy: 70,
+  },
+  {
+    id: 4,
+    title: "Assessment",
+    date: "Days 11–14 · we work",
+    content:
+      "Each layer rated for severity, business impact, effort, and dependency. The priority matrix is built. You step back and let us do the work — no input needed from you in this phase.",
+    category: "Analysis",
+    icon: Check,
+    relatedIds: [3, 5],
+    status: "pending",
+    energy: 55,
+  },
+  {
+    id: 5,
+    title: "Report & walkthrough",
+    date: "Days 15–21 · 60-min call",
+    content:
+      "Full written report + executive summary + 90-day roadmap delivered. We present findings live to your team and answer everything. Recording delivered for the people who couldn't make it.",
+    category: "Delivery",
+    icon: Mail,
+    relatedIds: [4],
+    status: "pending",
+    energy: 100,
+  },
+]
+
+export function MethodologyOrbital() {
+  return (
+    <section className="scroll-mt-24 bg-muted px-4 py-24 lg:px-6 lg:py-32">
+      <div className="mx-auto max-w-6xl">
+        <AnimateIn>
+          <p className="text-primary-text text-sm font-bold uppercase tracking-[0.35em]">THE METHODOLOGY</p>
+          <h2 className="mt-4 max-w-3xl font-display text-4xl font-black tracking-[-0.04em] text-foreground sm:text-5xl">
+            Five phases, orbiting one delivery. <span className="text-primary">Click any node</span>.
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+            The audit auto-rotates while you read. Click any phase to pause and expand it —
+            connected phases pulse to show what feeds in and what comes next.
+          </p>
+        </AnimateIn>
+
+        <AnimateIn delay={150}>
+          <div className="mt-12 overflow-hidden rounded-3xl border border-border/60">
+            <RadialOrbitalTimeline timelineData={orbitalPhases} />
+          </div>
+        </AnimateIn>
+
+        <AnimateIn delay={300}>
+          <div className="mt-8 grid gap-3 text-xs text-muted-foreground sm:grid-cols-3">
+            <div className="flex items-center gap-2">
+              <span className="size-3 rounded-full border-2 border-primary bg-primary" />
+              <span>Phases you delegate to us</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="size-3 rounded-full border-2 border-foreground bg-foreground" />
+              <span>Phases with active engagement</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="size-3 rounded-full border border-border bg-muted" />
+              <span>Phases ahead of where you are</span>
+            </div>
+          </div>
+        </AnimateIn>
       </div>
     </section>
   )
