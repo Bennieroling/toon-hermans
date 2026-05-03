@@ -101,7 +101,7 @@ export function RedesignHeader() {
             {theme === "dark" ? "Light" : "Dark"}
           </button>
           <a
-            className="inline-flex h-9 items-center gap-1.5 rounded-full bg-foreground px-4 text-sm font-semibold text-background transition hover:opacity-90"
+            className="inline-flex h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             href={bookingUrl}
             rel="noreferrer"
             target="_blank"
@@ -138,7 +138,7 @@ export function RedesignHero() {
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                className="inline-flex h-12 items-center gap-2 rounded-full bg-foreground px-7 text-sm font-semibold text-background transition hover:opacity-90"
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
                 href={bookingUrl}
                 rel="noreferrer"
                 target="_blank"
@@ -681,7 +681,7 @@ export function RedesignPricing() {
           </ul>
 
           <a
-            className="mt-10 inline-flex h-12 items-center gap-2 rounded-full bg-foreground px-7 text-sm font-semibold text-background transition hover:opacity-90"
+            className="mt-10 inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             href={bookingUrl}
             rel="noreferrer"
             target="_blank"
@@ -770,7 +770,7 @@ export function RedesignFinalCTA() {
           </h2>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-foreground px-7 text-sm font-semibold text-background transition hover:opacity-90"
+              className="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
               href={bookingUrl}
               rel="noreferrer"
               target="_blank"
