@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react"
 import type { ComponentType, ReactNode } from "react"
 
 import { HeroB } from "@/components/heroes/HeroB"
+import { HeroIsometric } from "@/components/heroes/HeroIsometric"
 import { HeroOriginal } from "@/components/heroes/HeroOriginal"
 import {
   HeroD,
@@ -35,6 +36,15 @@ const variants: HeroVariant[] = [
     pros: "Real, authentic floor plan — feels like an actual coworking space.",
     cons: "Visual style doesn't match V5's schematic in AuditLayers below; the right-edge fade between image and copy column is harsh in light mode.",
     Component: HeroOriginal,
+  },
+  {
+    id: "hero-isometric",
+    letter: "I",
+    title: "Isometric — Gemini-generated floor plan, theme-aware (RECOMMENDED)",
+    tagline: "Uses the same layout / type / CTA treatment as the redesign hero, but the right-column visual is the AI-generated isometric floor plan illustration. Light version on light theme, dark version on dark theme — auto-swap via the existing .dark class. Three data badges below (8 layers / 2–3 wk / from €1,500).",
+    pros: "Far more polished than the V5 schematic for a hero moment. Brand voice matches (north arrow, scale bar, blue accents). Works in both themes.",
+    cons: "Static (no auto-cycle / pulses). Files are 1.8MB / 2.3MB unoptimised — needs WebP conversion before shipping to production.",
+    Component: HeroIsometric,
   },
   {
     id: "hero-b-blueprint",
