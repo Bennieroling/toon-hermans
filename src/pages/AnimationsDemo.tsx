@@ -227,6 +227,13 @@ function AnimProblem() {
         <div className="mt-10">
           <TextReveal
             className="font-display text-2xl font-medium tracking-[-0.015em] text-foreground sm:text-3xl"
+            highlights={[
+              "WiFi complaints",
+              "access control",
+              "Manual processes",
+              "no longer fit",
+              "members, revenue, and reputation",
+            ]}
             text="Recurring WiFi complaints lead to churn. Broken access control wastes your staff's time. Manual processes that should be automated eat hours every week. Most coworking spaces are running on technology decisions that made sense at setup but no longer fit how the space actually operates — and by the time it breaks, it has already cost you members, revenue, and reputation."
           />
         </div>
@@ -479,10 +486,7 @@ function AnimPricing() {
             Entry-point audit
           </p>
           <p className="mt-7 font-display text-7xl font-black tracking-[-0.05em] text-foreground sm:text-8xl">
-            from{" "}
-            <span className="text-primary">
-              <CountUp end={1500} duration={1800} prefix="€" />
-            </span>
+            from <span className="text-primary">€1,500</span>
           </p>
           <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
             Fixed price for a single-location audit. No hourly billing, no surprises.

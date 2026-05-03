@@ -11,75 +11,134 @@ import { cn } from "@/lib/utils"
 /* ==================================================================
    TextReveal — word-by-word ghost-to-solid scroll reveal
    ==================================================================
-   Each word starts at 20% opacity. As the section scrolls through
-   the viewport, words resolve to full opacity one at a time, tied to
-   scroll progress. Linear / Apple-style reveal — calm, methodical,
-   reads as "we're walking you through this."
+   A horizontal "reveal line" sits at ~60% down the viewport. Each
+   word's opacity depends on how far above (or below) that line the
+   word sits — words below stay ghosted at 18%, words above resolve
+   to 100%. As you scroll the page down, the line effectively sweeps
+   up through the text, lighting it up line-by-line.
+
+   This is per-word position, not overall scroll progress. Means the
+   reveal feels tied to *the text you're actually reading*, not to
+   how far you've scrolled past the section.
+
+   highlights: pass an array of exact phrases (e.g. ["WiFi complaints",
+   "access control"]) to render those phrases in primary blue, bold.
 ================================================================== */
 
 interface TextRevealProps {
   text: string
   className?: string
-  /** Pixels of additional sticky scroll height to spread the reveal over.
-   *  Higher = slower / more deliberate reveal. */
-  scrollDistance?: number
+  /** Phrases (exact-match, case-sensitive) to highlight in primary blue */
+  highlights?: string[]
+  /** Viewport % (0–1) below which words are still ghosted. Default 0.7 */
+  startPct?: number
+  /** Viewport % (0–1) above which words are fully revealed. Default 0.35 */
+  endPct?: number
 }
 
-export function TextReveal({ text, className, scrollDistance = 600 }: TextRevealProps) {
+export function TextReveal({
+  text,
+  className,
+  highlights = [],
+  startPct = 0.7,
+  endPct = 0.35,
+}: TextRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [progress, setProgress] = useState(0)
+  const [rect, setRect] = useState<{ top: number; height: number; winH: number } | null>(null)
 
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
 
-    const onScroll = () => {
-      const rect = el.getBoundingClientRect()
-      const winH = window.innerHeight
-      // Map: when bottom of element enters viewport → 0, when top exits → 1
-      const total = rect.height + winH
-      const passed = winH - rect.top
-      const p = Math.max(0, Math.min(1, passed / total))
-      setProgress(p)
+    const update = () => {
+      const r = el.getBoundingClientRect()
+      setRect({ top: r.top, height: r.height, winH: window.innerHeight })
     }
 
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    window.addEventListener("resize", onScroll)
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    window.addEventListener("resize", update)
     return () => {
-      window.removeEventListener("scroll", onScroll)
-      window.removeEventListener("resize", onScroll)
+      window.removeEventListener("scroll", update)
+      window.removeEventListener("resize", update)
     }
   }, [])
 
-  const words = text.split(/\s+/)
-  // Spread reveal across scroll: word `i` starts revealing at p = i / words.length
-  // and is fully revealed at p = (i + 1) / words.length (with light overlap).
+  // Build per-word render data with highlight flags
+  const tokens = buildTokens(text, highlights)
+
   return (
-    <div
-      ref={containerRef}
-      className={cn("relative", className)}
-      style={{ minHeight: scrollDistance ? undefined : undefined }}
-    >
+    <div ref={containerRef} className={cn("relative", className)}>
       <p className="leading-relaxed">
-        {words.map((word, i) => {
-          const wordStart = i / words.length
-          const wordEnd = (i + 1.2) / words.length
-          const wordProgress = Math.max(0, Math.min(1, (progress - wordStart) / (wordEnd - wordStart)))
-          const opacity = 0.18 + 0.82 * wordProgress
+        {tokens.map((tok, i) => {
+          let opacity = 0.18
+          if (rect) {
+            // Estimate word's vertical position by linear interpolation through the paragraph.
+            // For wrapped paragraphs this means whole lines reveal close together — which
+            // reads naturally as "the reveal line is sweeping the text."
+            const wordY = rect.top + (rect.height * (i + 0.5)) / tokens.length
+            const startY = rect.winH * startPct
+            const endY = rect.winH * endPct
+            const wp = Math.max(0, Math.min(1, (startY - wordY) / (startY - endY)))
+            opacity = 0.18 + 0.82 * wp
+          }
           return (
             <span
               key={i}
-              style={{ opacity, transition: "opacity 200ms ease-out" }}
+              className={tok.highlight ? "font-semibold text-primary" : undefined}
+              style={{ opacity, transition: "opacity 180ms ease-out" }}
             >
-              {word}
-              {i < words.length - 1 ? " " : ""}
+              {tok.word}
+              {!tok.isLast ? " " : ""}
             </span>
           )
         })}
       </p>
     </div>
   )
+}
+
+interface RevealToken {
+  word: string
+  highlight: boolean
+  isLast: boolean
+}
+
+/** Walk the source text, marking words whose position falls inside any
+ *  highlighted phrase. Phrases are matched as exact substrings. */
+function buildTokens(text: string, highlights: string[]): RevealToken[] {
+  // Build a boolean per character: highlighted or not
+  const hl = new Array<boolean>(text.length).fill(false)
+  for (const phrase of highlights) {
+    if (!phrase) continue
+    let from = 0
+    while (from < text.length) {
+      const idx = text.indexOf(phrase, from)
+      if (idx === -1) break
+      for (let i = idx; i < idx + phrase.length; i++) hl[i] = true
+      from = idx + phrase.length
+    }
+  }
+
+  // Now split into words while tracking each word's source-character span.
+  const tokens: RevealToken[] = []
+  const re = /\S+/g
+  let m: RegExpExecArray | null = null
+  while ((m = re.exec(text)) !== null) {
+    const start = m.index
+    const end = start + m[0].length
+    // A word counts as highlighted if any of its characters are in a highlight span.
+    let isHighlighted = false
+    for (let i = start; i < end; i++) {
+      if (hl[i]) {
+        isHighlighted = true
+        break
+      }
+    }
+    tokens.push({ word: m[0], highlight: isHighlighted, isLast: false })
+  }
+  if (tokens.length > 0) tokens[tokens.length - 1].isLast = true
+  return tokens
 }
 
 /* ==================================================================
