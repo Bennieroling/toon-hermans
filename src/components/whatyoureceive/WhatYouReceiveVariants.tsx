@@ -616,11 +616,12 @@ export function WhatYouReceiveCombined() {
 
 /* ------------------------------------------------------------------ */
 /* 6 — INTERACTIVE REPORT VIEWER                                       */
-/*    Moody dark frame (mimicking the original photo's atmosphere     */
-/*    without using a literal photo). Inside, 5 different "screens"   */
-/*    cycle every 5s — report cover → sample finding → roadmap →     */
-/*    findings overview → stack inventory. Pause on hover, resume on  */
-/*    mouse-leave. Manual click-through dots at the bottom.           */
+/*    Theme-aware atmospheric frame. Inside, 5 different "screens"     */
+/*    cycle every 2.4s — report cover → sample finding → roadmap →    */
+/*    findings overview → stack inventory. Pause on hover, resume on   */
+/*    mouse-leave. Manual click-through dots at the bottom.            */
+/*    Dark theme: deep navy gradient, light grain.                     */
+/*    Light theme: cool architectural-paper gradient, dark grain.      */
 /* ------------------------------------------------------------------ */
 
 interface ReportScreen {
@@ -635,12 +636,12 @@ function ScreenCover() {
       <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary">
         SORUN · AUDIT REPORT
       </p>
-      <p className="mt-1.5 font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-400">
+      <p className="mt-1.5 font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground">
         [SPACE] · 8-LAYER ASSESSMENT
       </p>
-      <div className="mt-4 h-px w-full bg-zinc-700" />
+      <div className="mt-4 h-px w-full bg-border" />
       <div className="mt-6">
-        <p className="font-display text-3xl font-black leading-[1.05] tracking-[-0.04em] text-zinc-100 sm:text-4xl">
+        <p className="font-display text-3xl font-black leading-[1.05] tracking-[-0.04em] text-foreground sm:text-4xl">
           A clear
           <br />
           picture
@@ -650,7 +651,7 @@ function ScreenCover() {
         </p>
         <div className="mt-4 h-0.5 w-12 bg-primary" />
       </div>
-      <ul className="mt-7 grid gap-1 font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-300/85">
+      <ul className="mt-7 grid gap-1 font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/80">
         {[
           "01 NETWORK INFRASTRUCTURE",
           "02 ACCESS CONTROL",
@@ -664,7 +665,7 @@ function ScreenCover() {
           <li key={line}>{line}</li>
         ))}
       </ul>
-      <p className="mt-auto pt-4 font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">
+      <p className="mt-auto pt-4 font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">
         VERSION 1.0 · 47 PAGES · CONFIDENTIAL
       </p>
     </div>
@@ -675,47 +676,47 @@ function ScreenFinding() {
   return (
     <div className="flex h-full flex-col px-7 py-6">
       <div className="flex items-center justify-between">
-        <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-zinc-400">FINDING #07</p>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/20 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.18em] text-red-300">
-          <span className="size-1.5 rounded-full bg-red-400" />
+        <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground">FINDING #07</p>
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/15 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.18em] text-red-600 dark:text-red-300">
+          <span className="size-1.5 rounded-full bg-red-500" />
           HIGH PRIORITY
         </span>
       </div>
       <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.25em] text-primary">
         LAYER 02 · ACCESS CONTROL
       </p>
-      <p className="mt-4 font-display text-lg font-bold leading-snug text-zinc-100 sm:text-xl">
+      <p className="mt-4 font-display text-lg font-bold leading-snug text-foreground sm:text-xl">
         Door reader at meeting room 2 fails ~30% of access attempts.
       </p>
-      <div className="mt-5 space-y-3 text-xs leading-6 text-zinc-300/85">
+      <div className="mt-5 space-y-3 text-xs leading-6 text-muted-foreground">
         <div>
-          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">BUSINESS IMPACT</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">BUSINESS IMPACT</p>
           <p className="mt-1">
-            Estimated <span className="font-bold text-zinc-100">12 missed bookings/month</span> →{" "}
-            <span className="font-bold text-zinc-100">€2,400</span> in lost revenue.
+            Estimated <span className="font-bold text-foreground">12 missed bookings/month</span> →{" "}
+            <span className="font-bold text-foreground">€2,400</span> in lost revenue.
           </p>
         </div>
         <div>
-          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">RECOMMENDATION</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">RECOMMENDATION</p>
           <p className="mt-1">
-            Replace controller (Aperio kit) — <span className="font-bold text-zinc-100">€450</span>, 2-hour install.
+            Replace controller (Aperio kit) — <span className="font-bold text-foreground">€450</span>, 2-hour install.
           </p>
         </div>
       </div>
       <div className="mt-auto grid grid-cols-2 gap-3 pt-4">
         <div>
-          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">EFFORT</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">EFFORT</p>
           <div className="mt-1.5 flex gap-1">
             {[1, 2, 3, 4, 5].map((n) => (
-              <span className={`size-2 rounded-full ${n <= 2 ? "bg-primary" : "bg-zinc-700"}`} key={`e${n}`} />
+              <span className={`size-2 rounded-full ${n <= 2 ? "bg-primary" : "bg-muted"}`} key={`e${n}`} />
             ))}
           </div>
         </div>
         <div>
-          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">IMPACT</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">IMPACT</p>
           <div className="mt-1.5 flex gap-1">
             {[1, 2, 3, 4, 5].map((n) => (
-              <span className={`size-2 rounded-full ${n <= 4 ? "bg-primary" : "bg-zinc-700"}`} key={`i${n}`} />
+              <span className={`size-2 rounded-full ${n <= 4 ? "bg-primary" : "bg-muted"}`} key={`i${n}`} />
             ))}
           </div>
         </div>
@@ -728,75 +729,75 @@ function ScreenRoadmap() {
   return (
     <div className="flex h-full flex-col px-7 py-6">
       <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary">ROADMAP · 90 DAYS</p>
-      <p className="mt-1.5 font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">23 FINDINGS · €6,800 EST.</p>
+      <p className="mt-1.5 font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">23 FINDINGS · €6,800 EST.</p>
       <div className="mt-5 grid gap-4">
         <div>
-          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-300">NOW · WEEK 0–2</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-foreground/85">NOW · WEEK 0–2</p>
           <div className="mt-2 space-y-1">
             <div className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-red-400" />
-              <div className="h-1.5 flex-1 rounded-full bg-zinc-800">
+              <span className="size-1.5 rounded-full bg-red-500" />
+              <div className="h-1.5 flex-1 rounded-full bg-muted">
                 <div className="h-full w-3/4 rounded-full bg-primary" />
               </div>
-              <span className="font-mono text-[8px] text-zinc-400">€450</span>
+              <span className="font-mono text-[8px] text-muted-foreground">€450</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-red-400" />
-              <div className="h-1.5 flex-1 rounded-full bg-zinc-800">
+              <span className="size-1.5 rounded-full bg-red-500" />
+              <div className="h-1.5 flex-1 rounded-full bg-muted">
                 <div className="h-full w-3/5 rounded-full bg-primary" />
               </div>
-              <span className="font-mono text-[8px] text-zinc-400">€280</span>
+              <span className="font-mono text-[8px] text-muted-foreground">€280</span>
             </div>
           </div>
         </div>
         <div>
-          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-300">SOON · WEEK 3–6</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-foreground/85">SOON · WEEK 3–6</p>
           <div className="mt-2 space-y-1">
             <div className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-amber-400" />
-              <div className="h-1.5 flex-1 rounded-full bg-zinc-800">
+              <span className="size-1.5 rounded-full bg-amber-500" />
+              <div className="h-1.5 flex-1 rounded-full bg-muted">
                 <div className="h-full w-1/2 rounded-full bg-primary/70" />
               </div>
-              <span className="font-mono text-[8px] text-zinc-400">€1,200</span>
+              <span className="font-mono text-[8px] text-muted-foreground">€1,200</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-amber-400" />
-              <div className="h-1.5 flex-1 rounded-full bg-zinc-800">
+              <span className="size-1.5 rounded-full bg-amber-500" />
+              <div className="h-1.5 flex-1 rounded-full bg-muted">
                 <div className="h-full w-2/5 rounded-full bg-primary/70" />
               </div>
-              <span className="font-mono text-[8px] text-zinc-400">€890</span>
+              <span className="font-mono text-[8px] text-muted-foreground">€890</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-amber-400" />
-              <div className="h-1.5 flex-1 rounded-full bg-zinc-800">
+              <span className="size-1.5 rounded-full bg-amber-500" />
+              <div className="h-1.5 flex-1 rounded-full bg-muted">
                 <div className="h-full w-3/5 rounded-full bg-primary/70" />
               </div>
-              <span className="font-mono text-[8px] text-zinc-400">€640</span>
+              <span className="font-mono text-[8px] text-muted-foreground">€640</span>
             </div>
           </div>
         </div>
         <div>
-          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-300">LATER · WEEK 7–12</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-foreground/85">LATER · WEEK 7–12</p>
           <div className="mt-2 space-y-1">
             <div className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-zinc-500" />
-              <div className="h-1.5 flex-1 rounded-full bg-zinc-800">
+              <span className="size-1.5 rounded-full bg-muted-foreground" />
+              <div className="h-1.5 flex-1 rounded-full bg-muted">
                 <div className="h-full w-1/3 rounded-full bg-primary/40" />
               </div>
-              <span className="font-mono text-[8px] text-zinc-500">€2,400</span>
+              <span className="font-mono text-[8px] text-muted-foreground/70">€2,400</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-zinc-500" />
-              <div className="h-1.5 flex-1 rounded-full bg-zinc-800">
+              <span className="size-1.5 rounded-full bg-muted-foreground" />
+              <div className="h-1.5 flex-1 rounded-full bg-muted">
                 <div className="h-full w-1/4 rounded-full bg-primary/40" />
               </div>
-              <span className="font-mono text-[8px] text-zinc-500">€940</span>
+              <span className="font-mono text-[8px] text-muted-foreground/70">€940</span>
             </div>
           </div>
         </div>
       </div>
       <div className="mt-auto pt-4">
-        <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">
+        <p className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">
           SEQUENCED · COSTED · DEPENDENCY-AWARE
         </p>
       </div>
@@ -806,42 +807,42 @@ function ScreenRoadmap() {
 
 function ScreenFindingsOverview() {
   const findings = [
-    { sev: "HIGH", color: "bg-red-400", title: "Door reader fails 30% of attempts", layer: "L02" },
-    { sev: "HIGH", color: "bg-red-400", title: "WiFi VLAN segmentation absent", layer: "L01" },
-    { sev: "HIGH", color: "bg-red-400", title: "Bookings → access control unwired", layer: "L07" },
-    { sev: "MED", color: "bg-amber-400", title: "Camera retention exceeds GDPR", layer: "L05" },
-    { sev: "MED", color: "bg-amber-400", title: "Print server lacks per-member auth", layer: "L08" },
-    { sev: "MED", color: "bg-amber-400", title: "Meeting rooms — no occupancy data", layer: "L04" },
-    { sev: "LOW", color: "bg-zinc-500", title: "Reception phone old firmware", layer: "L06" },
+    { sev: "HIGH", color: "bg-red-500", title: "Door reader fails 30% of attempts", layer: "L02" },
+    { sev: "HIGH", color: "bg-red-500", title: "WiFi VLAN segmentation absent", layer: "L01" },
+    { sev: "HIGH", color: "bg-red-500", title: "Bookings → access control unwired", layer: "L07" },
+    { sev: "MED", color: "bg-amber-500", title: "Camera retention exceeds GDPR", layer: "L05" },
+    { sev: "MED", color: "bg-amber-500", title: "Print server lacks per-member auth", layer: "L08" },
+    { sev: "MED", color: "bg-amber-500", title: "Meeting rooms — no occupancy data", layer: "L04" },
+    { sev: "LOW", color: "bg-muted-foreground", title: "Reception phone old firmware", layer: "L06" },
   ]
 
   return (
     <div className="flex h-full flex-col px-7 py-6">
       <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary">PRIORITISED FINDINGS · 23 TOTAL</p>
       <div className="mt-4 grid grid-cols-3 gap-2">
-        <div className="rounded-md border border-red-400/30 bg-red-500/10 p-2">
-          <p className="font-display text-2xl font-black text-red-300">5</p>
-          <p className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.2em] text-red-300/80">HIGH</p>
+        <div className="rounded-md border border-red-500/30 bg-red-500/10 p-2">
+          <p className="font-display text-2xl font-black text-red-600 dark:text-red-300">5</p>
+          <p className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.2em] text-red-600/80 dark:text-red-300/80">HIGH</p>
         </div>
-        <div className="rounded-md border border-amber-400/30 bg-amber-500/10 p-2">
-          <p className="font-display text-2xl font-black text-amber-300">11</p>
-          <p className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.2em] text-amber-300/80">MED</p>
+        <div className="rounded-md border border-amber-500/30 bg-amber-500/10 p-2">
+          <p className="font-display text-2xl font-black text-amber-600 dark:text-amber-300">11</p>
+          <p className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.2em] text-amber-600/80 dark:text-amber-300/80">MED</p>
         </div>
-        <div className="rounded-md border border-zinc-500/30 bg-zinc-700/30 p-2">
-          <p className="font-display text-2xl font-black text-zinc-300">7</p>
-          <p className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.2em] text-zinc-400">LOW</p>
+        <div className="rounded-md border border-border bg-muted/40 p-2">
+          <p className="font-display text-2xl font-black text-foreground">7</p>
+          <p className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground">LOW</p>
         </div>
       </div>
       <ul className="mt-5 flex flex-1 flex-col gap-1.5 overflow-hidden">
         {findings.map((f) => (
-          <li className="flex items-center gap-3 border-b border-zinc-800/80 pb-1.5 last:border-b-0" key={f.title}>
+          <li className="flex items-center gap-3 border-b border-border pb-1.5 last:border-b-0" key={f.title}>
             <span className={`size-1.5 shrink-0 rounded-full ${f.color}`} />
-            <p className="flex-1 truncate text-[10px] leading-4 text-zinc-200">{f.title}</p>
-            <span className="font-mono text-[9px] tracking-wider text-zinc-500">{f.layer}</span>
+            <p className="flex-1 truncate text-[10px] leading-4 text-foreground">{f.title}</p>
+            <span className="font-mono text-[9px] tracking-wider text-muted-foreground/70">{f.layer}</span>
           </li>
         ))}
       </ul>
-      <p className="mt-3 font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">+ 16 MORE</p>
+      <p className="mt-3 font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">+ 16 MORE</p>
     </div>
   )
 }
@@ -850,29 +851,29 @@ function ScreenStackInventory() {
   return (
     <div className="flex h-full flex-col px-7 py-6">
       <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary">LAYER 01 · NETWORK INFRASTRUCTURE</p>
-      <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">PAGE 04 / 47</p>
-      <div className="mt-4 grid grid-cols-3 gap-2 border-b border-zinc-800 pb-2 font-mono text-[8px] uppercase tracking-[0.2em] text-zinc-500">
+      <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">PAGE 04 / 47</p>
+      <div className="mt-4 grid grid-cols-3 gap-2 border-b border-border pb-2 font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground/70">
         <span>Component</span>
         <span>Vendor / Model</span>
         <span>Status</span>
       </div>
       {[
-        { c: "Core switch", v: "Cisco Catalyst 9300", s: "OK", color: "text-emerald-400" },
-        { c: "WAP · Floor 1", v: "Ubiquiti U6 Pro", s: "OK", color: "text-emerald-400" },
-        { c: "WAP · Floor 2 ", v: "Ubiquiti U6 Pro", s: "DEGRADED", color: "text-amber-300" },
-        { c: "Firewall", v: "Fortigate 60F", s: "OK", color: "text-emerald-400" },
-        { c: "ISP primary", v: "KPN 1Gb fibre", s: "OK", color: "text-emerald-400" },
-        { c: "ISP failover", v: "Vodafone 4G", s: "MISSING", color: "text-red-400" },
-        { c: "VLAN tagging", v: "Untagged", s: "AT RISK", color: "text-red-400" },
-        { c: "Cabling Cat 6", v: "Mixed era", s: "REVIEW", color: "text-amber-300" },
+        { c: "Core switch", v: "Cisco Catalyst 9300", s: "OK", color: "text-emerald-600 dark:text-emerald-400" },
+        { c: "WAP · Floor 1", v: "Ubiquiti U6 Pro", s: "OK", color: "text-emerald-600 dark:text-emerald-400" },
+        { c: "WAP · Floor 2 ", v: "Ubiquiti U6 Pro", s: "DEGRADED", color: "text-amber-600 dark:text-amber-300" },
+        { c: "Firewall", v: "Fortigate 60F", s: "OK", color: "text-emerald-600 dark:text-emerald-400" },
+        { c: "ISP primary", v: "KPN 1Gb fibre", s: "OK", color: "text-emerald-600 dark:text-emerald-400" },
+        { c: "ISP failover", v: "Vodafone 4G", s: "MISSING", color: "text-red-600 dark:text-red-400" },
+        { c: "VLAN tagging", v: "Untagged", s: "AT RISK", color: "text-red-600 dark:text-red-400" },
+        { c: "Cabling Cat 6", v: "Mixed era", s: "REVIEW", color: "text-amber-600 dark:text-amber-300" },
       ].map((row) => (
-        <div className="grid grid-cols-3 gap-2 border-b border-zinc-900 py-1.5 text-[10px] leading-4 last:border-b-0" key={row.c}>
-          <span className="text-zinc-200">{row.c}</span>
-          <span className="text-zinc-400">{row.v}</span>
+        <div className="grid grid-cols-3 gap-2 border-b border-border/50 py-1.5 text-[10px] leading-4 last:border-b-0" key={row.c}>
+          <span className="text-foreground">{row.c}</span>
+          <span className="text-muted-foreground">{row.v}</span>
           <span className={`font-mono text-[9px] uppercase tracking-[0.18em] ${row.color}`}>{row.s}</span>
         </div>
       ))}
-      <p className="mt-auto pt-3 font-mono text-[8px] uppercase tracking-[0.25em] text-zinc-500">
+      <p className="mt-auto pt-3 font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground/70">
         + 14 ADDITIONAL ROWS · 5 KNOWN ISSUES LOGGED
       </p>
     </div>
@@ -892,12 +893,12 @@ function InteractiveReportViewer() {
   const [autoPlaying, setAutoPlaying] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  /* auto-cycle every 5s when playing */
+  /* auto-cycle every 2.4s when playing — matches V5e cadence */
   useEffect(() => {
     if (!autoPlaying) return
     const interval = window.setInterval(() => {
       setActiveIdx((i) => (i + 1) % reportScreens.length)
-    }, 5000)
+    }, 2400)
     return () => window.clearInterval(interval)
   }, [autoPlaying])
 
@@ -910,19 +911,19 @@ function InteractiveReportViewer() {
 
   return (
     <div className="space-y-3" onMouseEnter={handleEnter} onMouseLeave={handleLeave} ref={containerRef}>
-      {/* Moody dark frame */}
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-border bg-gradient-to-br from-[#0a0e1a] via-[#101524] to-[#0d1422] shadow-2xl shadow-black/40">
+      {/* Atmospheric frame — light architectural paper / dark deep navy */}
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-border bg-gradient-to-br from-slate-100 via-blue-50/60 to-slate-200 shadow-2xl shadow-black/10 dark:from-[#0a0e1a] dark:via-[#101524] dark:to-[#0d1422] dark:shadow-black/40">
         {/* ambient blue glow */}
-        <div className="pointer-events-none absolute -right-12 -top-12 size-72 rounded-full bg-primary/15 blur-[100px]" />
-        <div className="pointer-events-none absolute -bottom-12 -left-12 size-64 rounded-full bg-primary/10 blur-[80px]" />
-        {/* subtle grain */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:radial-gradient(rgba(255,255,255,0.5)_0.5px,transparent_0.5px)] [background-size:3px_3px]" />
+        <div className="pointer-events-none absolute -right-12 -top-12 size-72 rounded-full bg-primary/20 blur-[100px] dark:bg-primary/15" />
+        <div className="pointer-events-none absolute -bottom-12 -left-12 size-64 rounded-full bg-primary/15 blur-[80px] dark:bg-primary/10" />
+        {/* subtle grain — dark dots on light, light dots on dark */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(rgba(0,0,0,0.5)_0.5px,transparent_0.5px)] [background-size:3px_3px] dark:opacity-[0.05] dark:[background-image:radial-gradient(rgba(255,255,255,0.5)_0.5px,transparent_0.5px)]" />
 
         {/* floating screens — fade transition between them */}
         <div className="absolute inset-5 sm:inset-7">
           {reportScreens.map((screen, i) => (
             <div
-              className="absolute inset-0 overflow-hidden rounded-2xl border border-zinc-700/60 bg-zinc-900/80 backdrop-blur-sm transition-all duration-700 ease-out"
+              className="absolute inset-0 overflow-hidden rounded-2xl border border-border/80 bg-card/95 shadow-xl shadow-black/5 backdrop-blur-sm transition-all duration-700 ease-out dark:border-border/60 dark:bg-card/85 dark:shadow-black/20"
               key={screen.id}
               style={{
                 opacity: i === activeIdx ? 1 : 0,
@@ -936,8 +937,8 @@ function InteractiveReportViewer() {
         </div>
 
         {/* live label top-right */}
-        <div className="absolute right-5 top-5 flex items-center gap-1.5 rounded-full border border-zinc-700/50 bg-zinc-900/70 px-2.5 py-1 text-[9px] font-mono uppercase tracking-[0.25em] text-zinc-400 backdrop-blur-sm">
-          <span className={`size-1.5 rounded-full ${autoPlaying ? "animate-pulse bg-primary" : "bg-zinc-500"}`} />
+        <div className="absolute right-5 top-5 flex items-center gap-1.5 rounded-full border border-border/60 bg-card/80 px-2.5 py-1 text-[9px] font-mono uppercase tracking-[0.25em] text-muted-foreground backdrop-blur-sm">
+          <span className={`size-1.5 rounded-full ${autoPlaying ? "animate-pulse bg-primary" : "bg-muted-foreground/60"}`} />
           {autoPlaying ? "LIVE PREVIEW" : "PAUSED"}
         </div>
       </div>
