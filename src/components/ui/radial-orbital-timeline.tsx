@@ -160,6 +160,7 @@ export function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTimelinePro
             const isRelated = isRelatedToActive(item.id)
             const isPulsing = Boolean(pulseEffect[item.id])
             const Icon = item.icon
+            const sequenceNumber = String(index + 1).padStart(2, "0")
 
             const nodeStyle = {
               transform: `translate(${position.x}px, ${position.y}px)`,
@@ -193,9 +194,9 @@ export function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTimelinePro
                   }}
                 />
 
-                {/* Node circle */}
+                {/* Node circle — shows sequence number for clear ordering */}
                 <div
-                  className={`flex size-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
+                  className={`flex size-11 items-center justify-center rounded-full border-2 font-display font-black tracking-[-0.04em] transition-all duration-300 ${
                     isExpanded
                       ? "scale-150 border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/30"
                       : isRelated
@@ -203,14 +204,15 @@ export function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTimelinePro
                       : "border-border bg-background text-foreground"
                   }`}
                 >
-                  <Icon size={16} />
+                  <span className="text-sm">{sequenceNumber}</span>
                 </div>
 
                 <div
-                  className={`absolute top-12 whitespace-nowrap text-xs font-semibold tracking-wider transition-all duration-300 ${
+                  className={`absolute top-12 flex items-center gap-1.5 whitespace-nowrap text-xs font-semibold tracking-wider transition-all duration-300 ${
                     isExpanded ? "scale-125 text-foreground" : "text-muted-foreground"
                   }`}
                 >
+                  <Icon size={11} />
                   {item.title}
                 </div>
 
@@ -228,7 +230,9 @@ export function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTimelinePro
                         </Badge>
                         <span className="font-mono text-xs text-muted-foreground">{item.date}</span>
                       </div>
-                      <CardTitle className="mt-2 text-sm font-bold tracking-tight text-foreground">
+                      <CardTitle className="mt-2 flex items-center gap-2 text-sm font-bold tracking-tight text-foreground">
+                        <span className="font-mono text-[11px] text-primary">{sequenceNumber}</span>
+                        <Icon size={14} className="text-primary" />
                         {item.title}
                       </CardTitle>
                     </CardHeader>
