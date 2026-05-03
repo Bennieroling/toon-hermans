@@ -8,7 +8,6 @@ import "@fontsource/space-grotesk/700.css"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 
-import App from "./App"
 import { ThemeProvider } from "./components/ThemeProvider"
 import { AnimationsDemo } from "./pages/AnimationsDemo"
 import { DiagramDemo } from "./pages/DiagramDemo"
@@ -51,7 +50,8 @@ createRoot(document.getElementById("root")!).render(
       ) : isAnimationsDemo ? (
         <AnimationsDemo />
       ) : (
-        <App />
+        // preview-3: the animations-demo page is now the production homepage.
+        <AnimationsDemo />
       )}
     </ThemeProvider>
   </StrictMode>,
