@@ -14,6 +14,7 @@ import { DiagramDemo } from "./pages/DiagramDemo"
 import { HeroDemo } from "./pages/HeroDemo"
 import { MethodologyDemo } from "./pages/MethodologyDemo"
 import { ProblemDemo } from "./pages/ProblemDemo"
+import { RedesignDemo } from "./pages/RedesignDemo"
 import { WhatYouReceiveDemo } from "./pages/WhatYouReceiveDemo"
 import { WhoWeHelpDemo } from "./pages/WhoWeHelpDemo"
 import "./i18n"
@@ -26,6 +27,7 @@ const isProblemDemo = path.startsWith("/demo/problems")
 const isWhoWeHelpDemo = path.startsWith("/demo/whowehelp")
 const isMethodologyDemo = path.startsWith("/demo/methodology")
 const isWhatYouReceiveDemo = path.startsWith("/demo/whatyoureceive")
+const isRedesignDemo = path.startsWith("/demo/redesign")
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -42,6 +44,8 @@ createRoot(document.getElementById("root")!).render(
         <MethodologyDemo />
       ) : isWhatYouReceiveDemo ? (
         <WhatYouReceiveDemo />
+      ) : isRedesignDemo ? (
+        <RedesignDemo />
       ) : (
         <App />
       )}
