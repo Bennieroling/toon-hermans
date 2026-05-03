@@ -11,6 +11,7 @@ import {
   V5bTopTabs,
   V5cCompact,
   V5dCappedNoLegend,
+  V5eAutoCycleIdle,
 } from "@/components/diagrams/V5Variants"
 import { V6Iceberg } from "@/components/diagrams/V6Iceberg"
 import { V7Honeycomb } from "@/components/diagrams/V7Honeycomb"
@@ -98,6 +99,14 @@ const variants: Variant[] = [
     pros: "Most likely to fit a 1080p laptop without scrolling",
     cons: "Floor plan is smaller than V5a; loses some of the wow-factor of the wide rendering",
     Component: V5dCappedNoLegend,
+  },
+  {
+    id: "v5e-autocycle-idle",
+    title: "V5e — Auto-cycling (pauses on interact, resumes after 20s idle)",
+    tagline: "V5b layout (chip strip + capped floor plan, no bottom legend) plus an auto-advance through 01–08 every 2.4s. The moment a visitor clicks, hovers, or keyboard-selects any layer (chip, hotspot, or legend), auto-cycle pauses. After 20 seconds of no further interaction, it resumes from where the user left off (next layer in sequence — not back to 01).",
+    pros: "Demonstrates the layers passively for visitors who don't engage. Hands control to anyone who does. Resumes naturally so the section is never frozen on a single layer if a visitor leaves the tab open.",
+    cons: "Auto-cycle in a section that's already information-dense competes with reading nearby copy. The 2.4s cadence + 20s idle window are guesses — real visitors might want slower / longer.",
+    Component: V5eAutoCycleIdle,
   },
   {
     id: "v6-iceberg",

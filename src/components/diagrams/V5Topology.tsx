@@ -116,6 +116,10 @@ interface V5TopologyProps {
   /** Auto-advance activeLayer through the 8 layers on a timer.
    *  Pairs with bareFloorPlan to give an "always running" hero feel. */
   autoCycle?: boolean
+  /** When set, autoCycle pauses on any user interaction (click/hover/keyboard)
+   *  and resumes after this many milliseconds of no interaction.
+   *  Implies autoCycle: true. */
+  autoCycleIdleMs?: number
   /** Disable the hover/click interactions on layer nodes (use with bareFloorPlan). */
   disableInteractions?: boolean
 }
@@ -127,12 +131,37 @@ export function V5Topology({
   compact = false,
   bareFloorPlan = false,
   autoCycle = false,
+  autoCycleIdleMs,
   disableInteractions = false,
 }: V5TopologyProps = {}) {
   const { t } = useTranslation()
   const [activeLayer, setActiveLayer] = useState<string | null>(null)
   const [entered, setEntered] = useState(false)
+  /** Whether the auto-cycle interval is currently advancing.
+   *  Starts true if autoCycle or autoCycleIdleMs is set.
+   *  Pauses when the user interacts (in idle-resume mode), then resumes after the timeout. */
+  const [autoPlaying, setAutoPlaying] = useState(autoCycle || autoCycleIdleMs !== undefined)
+  const idleTimerRef = useRef<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  /** Pause auto-cycle and schedule resume after idle window. */
+  const pauseAndScheduleResume = () => {
+    if (autoCycleIdleMs === undefined) return
+    setAutoPlaying(false)
+    if (idleTimerRef.current !== null) {
+      globalThis.clearTimeout(idleTimerRef.current)
+    }
+    idleTimerRef.current = globalThis.setTimeout(() => {
+      setAutoPlaying(true)
+      idleTimerRef.current = null
+    }, autoCycleIdleMs) as unknown as number
+  }
+
+  useEffect(() => () => {
+    if (idleTimerRef.current !== null) {
+      globalThis.clearTimeout(idleTimerRef.current)
+    }
+  }, [])
 
   useEffect(() => {
     const el = containerRef.current
@@ -156,10 +185,15 @@ export function V5Topology({
 
   const activeLayerData = activeLayer ? layers.find((l) => l.key === activeLayer) : null
 
-  /* auto-cycle through layers (used by hero variants) */
+  /* auto-cycle through layers — runs when autoPlaying is true */
   useEffect(() => {
-    if (!autoCycle) return
-    let i = 0
+    if (!autoPlaying) return
+    /* Resume from the active layer's index so the cycle continues from
+       where the user left off rather than restarting at 01. */
+    const startIdx = activeLayer
+      ? Math.max(0, layers.findIndex((l) => l.key === activeLayer))
+      : -1
+    let i = startIdx + 1
     const tick = () => {
       const layer = layers[i % layers.length]
       if (layer) setActiveLayer(layer.key)
@@ -168,7 +202,10 @@ export function V5Topology({
     tick()
     const interval = window.setInterval(tick, 2400)
     return () => window.clearInterval(interval)
-  }, [autoCycle])
+    // activeLayer intentionally omitted — including it would restart the
+    // interval on every tick. We only want to read its value at start.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoPlaying])
 
   return (
     <div
@@ -253,8 +290,14 @@ export function V5Topology({
               <button
                 className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs transition ${isActive ? "border-primary bg-primary/15 text-foreground" : "border-border bg-background/40 text-muted-foreground hover:border-primary/40 hover:text-foreground"}`}
                 key={layer.key}
-                onClick={() => setActiveLayer(activeLayer === layer.key ? null : layer.key)}
-                onMouseEnter={() => setActiveLayer(layer.key)}
+                onClick={() => {
+                  pauseAndScheduleResume()
+                  setActiveLayer(activeLayer === layer.key ? null : layer.key)
+                }}
+                onMouseEnter={() => {
+                  pauseAndScheduleResume()
+                  setActiveLayer(layer.key)
+                }}
                 type="button"
               >
                 <span className="font-display font-black text-primary">
@@ -648,8 +691,22 @@ export function V5Topology({
                     opacity: isInactive ? 0.35 : 1,
                     transitionDelay: entered ? `${1100 + i * 90}ms` : "0ms",
                   }}
-                  onClick={disableInteractions ? undefined : () => setActiveLayer(activeLayer === layer.key ? null : layer.key)}
-                  onMouseEnter={disableInteractions ? undefined : () => setActiveLayer(layer.key)}
+                  onClick={
+                    disableInteractions
+                      ? undefined
+                      : () => {
+                          pauseAndScheduleResume()
+                          setActiveLayer(activeLayer === layer.key ? null : layer.key)
+                        }
+                  }
+                  onMouseEnter={
+                    disableInteractions
+                      ? undefined
+                      : () => {
+                          pauseAndScheduleResume()
+                          setActiveLayer(layer.key)
+                        }
+                  }
                   role={disableInteractions ? undefined : "button"}
                   tabIndex={disableInteractions ? -1 : 0}
                   onKeyDown={
@@ -658,6 +715,7 @@ export function V5Topology({
                       : (e) => {
                           if (e.key === "Enter" || e.key === " ") {
                             e.preventDefault()
+                            pauseAndScheduleResume()
                             setActiveLayer(activeLayer === layer.key ? null : layer.key)
                           }
                         }
@@ -792,13 +850,20 @@ export function V5Topology({
             <li
               className={`flex cursor-pointer gap-3 rounded-lg px-2 py-1 transition ${isActive ? "bg-primary/10" : "hover:bg-primary/5"}`}
               key={layer.key}
-              onClick={() => setActiveLayer(activeLayer === layer.key ? null : layer.key)}
-              onMouseEnter={() => setActiveLayer(layer.key)}
+              onClick={() => {
+                pauseAndScheduleResume()
+                setActiveLayer(activeLayer === layer.key ? null : layer.key)
+              }}
+              onMouseEnter={() => {
+                pauseAndScheduleResume()
+                setActiveLayer(layer.key)
+              }}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault()
+                  pauseAndScheduleResume()
                   setActiveLayer(activeLayer === layer.key ? null : layer.key)
                 }
               }}
