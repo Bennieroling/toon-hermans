@@ -235,15 +235,12 @@ function AnimHero() {
             <div className="relative">
               <div className="pointer-events-none absolute -right-10 -top-10 size-72 rounded-full bg-primary/12 blur-[100px]" />
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-border bg-background/50 shadow-lg shadow-black/5 dark:shadow-black/30">
-                <picture>
-                  <source media="(prefers-color-scheme: dark)" srcSet="/images/floorplan-iso-dark.png" />
-                  <img
-                    alt="Isometric floor plan of a coworking space"
-                    className="block h-full w-full object-cover dark:hidden"
-                    fetchPriority="high"
-                    src="/images/floorplan-iso-light.png"
-                  />
-                </picture>
+                <img
+                  alt="Isometric floor plan of a coworking space"
+                  className="block h-full w-full object-cover dark:hidden"
+                  fetchPriority="high"
+                  src="/images/floorplan-iso-light.png"
+                />
                 <img
                   alt=""
                   aria-hidden="true"
