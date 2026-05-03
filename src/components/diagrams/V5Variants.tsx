@@ -24,11 +24,14 @@ export function V5dCappedNoLegend() {
 
 /** V5e — V5b config (chip strip + floor plan + capped width) PLUS auto-cycle.
  *  Auto-advances through 01–08 every 2.4s. Pauses on any user interaction
- *  (click, hover, keyboard). Resumes after 20s of no interaction. */
+ *  (click, hover, keyboard). Resumes immediately when the cursor leaves the
+ *  section (mouse-leave on the container) — best-practice for autoplay UI.
+ *  The 6s idle timeout is a fallback for touch devices that don't fire
+ *  mouse-leave events. */
 export function V5eAutoCycleIdle() {
   return (
     <V5Topology
-      autoCycleIdleMs={20000}
+      autoCycleIdleMs={6000}
       capFloorHeight
       hideBottomLegend
       showTopTabs

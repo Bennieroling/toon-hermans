@@ -102,10 +102,10 @@ const variants: Variant[] = [
   },
   {
     id: "v5e-autocycle-idle",
-    title: "V5e — Auto-cycling (pauses on interact, resumes after 20s idle)",
-    tagline: "V5b layout (chip strip + capped floor plan, no bottom legend) plus an auto-advance through 01–08 every 2.4s. The moment a visitor clicks, hovers, or keyboard-selects any layer (chip, hotspot, or legend), auto-cycle pauses. After 20 seconds of no further interaction, it resumes from where the user left off (next layer in sequence — not back to 01).",
-    pros: "Demonstrates the layers passively for visitors who don't engage. Hands control to anyone who does. Resumes naturally so the section is never frozen on a single layer if a visitor leaves the tab open.",
-    cons: "Auto-cycle in a section that's already information-dense competes with reading nearby copy. The 2.4s cadence + 20s idle window are guesses — real visitors might want slower / longer.",
+    title: "V5e — Auto-cycling (pause-on-interact, resume on mouse-leave)",
+    tagline: "V5b layout (chip strip + capped floor plan, no bottom legend) plus auto-advance through 01–08 every 2.4s. Pauses on any user interaction (click/hover/keyboard). Resumes the moment the cursor leaves the section. A 6s idle timer runs as a fallback for touch devices.",
+    pros: "Best-practice autoplay UI — same pattern YouTube and Linear use. Cycle hands control to anyone who engages, then resumes the second they walk away. Section never freezes on a single layer when the visitor scrolls past.",
+    cons: "Touch devices fall back to the 6s timer (no mouse-leave). The 2.4s tick cadence is a guess — could be slower if it competes with reading nearby copy.",
     Component: V5eAutoCycleIdle,
   },
   {

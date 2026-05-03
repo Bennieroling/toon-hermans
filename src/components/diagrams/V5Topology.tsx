@@ -207,9 +207,24 @@ export function V5Topology({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlaying])
 
+  /**
+   * When mouse leaves the section, resume auto-cycle immediately.
+   * The idle timeout still runs as a fallback for touch devices that
+   * never fire mouse-leave. Whichever happens first wins.
+   */
+  const handleMouseLeave = () => {
+    if (autoCycleIdleMs === undefined) return
+    if (idleTimerRef.current !== null) {
+      globalThis.clearTimeout(idleTimerRef.current)
+      idleTimerRef.current = null
+    }
+    setAutoPlaying(true)
+  }
+
   return (
     <div
       className={bareFloorPlan ? "h-full w-full" : `mx-auto mt-10 ${compact ? "max-w-5xl" : "max-w-7xl"}`}
+      onMouseLeave={handleMouseLeave}
       ref={containerRef}
     >
       <SceneStyles />

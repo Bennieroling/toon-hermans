@@ -319,7 +319,9 @@ function AnimAuditLayers() {
           </div>
         </AnimateIn>
         <div className="mt-14">
-          <V5Topology capFloorHeight hideBottomLegend showTopTabs />
+          {/* Auto-cycles 01–08 every 2.4s. Pauses on interact, resumes on mouse-leave.
+              6s timer is a touch-device fallback. */}
+          <V5Topology autoCycleIdleMs={6000} capFloorHeight hideBottomLegend showTopTabs />
         </div>
       </div>
     </section>
