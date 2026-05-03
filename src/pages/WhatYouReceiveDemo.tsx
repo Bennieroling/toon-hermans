@@ -5,6 +5,7 @@ import {
   WhatYouReceiveBetterImage,
   WhatYouReceiveCombined,
   WhatYouReceiveFourCards,
+  WhatYouReceiveInteractive,
   WhatYouReceiveOriginal,
   WhatYouReceiveQuantified,
   WhatYouReceiveSampleFinding,
@@ -69,11 +70,20 @@ const variants: Variant[] = [
   {
     id: "wyr-combined",
     letter: "5",
-    title: "Combined — 4 cards + report mockup + sample-finding peek + download (RECOMMENDED)",
+    title: "Combined — 4 cards + report mockup + sample-finding peek + download",
     tagline: "Best of variants 1, 2, 3. Two-column layout: left has 4 deliverable cards with quantifier badges (walkthrough included). Right has the line-art report mockup + a 'PEEK INSIDE' expandable showing a real sample finding + the existing sample-report download in its own dashed-border block.",
     pros: "Hits the buyer's three concerns: what (4 cards), what does it look like (report mockup), how detailed (peek-inside finding). Brand-consistent visual language. Walkthrough finally gets equal billing.",
     cons: "Tallest section of the lot. The 'peek inside' details element requires interaction — visitors who don't click won't see the sample. Could be made always-visible if testing shows people don't click.",
     Component: WhatYouReceiveCombined,
+  },
+  {
+    id: "wyr-interactive",
+    letter: "6",
+    title: "Interactive Report Viewer — moody frame + cycling screens (RECOMMENDED)",
+    tagline: "Original 3-card layout on the left. Right side is a moody dark frame (mimicking the original photo's atmosphere via gradients + grain, no actual photo) with a 'screen' that cycles through 5 different report views every 5 seconds: 01 cover · 02 sample finding · 03 roadmap · 04 findings overview · 05 stack inventory. Pauses on hover, resumes on mouse-leave. Click the indicator chips below to jump to any screen. A 'LIVE PREVIEW' status pip top-right shows whether the cycle is running.",
+    pros: "Tour of what they're getting without making them click. Atmospheric mood preserved without the wrong-signal developer photo. Far more compelling than any static image — visitor sees actual report depth (severity colours, finding details, roadmap costs, inventory tables). Best 'wow' moment of the section.",
+    cons: "Most complex variant — five distinct screens to maintain. Numbers in the screens (€2,400, €450, 23 findings, 47 pages, etc.) are illustrative; verify they match real audits. Touch devices fall back to autoplay-only since hover doesn't fire on touch.",
+    Component: WhatYouReceiveInteractive,
   },
 ]
 
