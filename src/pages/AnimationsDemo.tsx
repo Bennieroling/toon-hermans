@@ -8,6 +8,7 @@ import { Logo } from "@/components/shared/Logo"
 import { Badge } from "@/components/ui/badge"
 import { CountUp, FlowButton, TextReveal } from "@/components/ui/animations"
 import { Card, CardContent } from "@/components/ui/card"
+import { InteractiveReportViewer } from "@/components/whatyoureceive/WhatYouReceiveVariants"
 import { useTheme } from "@/hooks/useTheme"
 import { bookingUrl, deliverables } from "@/lib/utils"
 
@@ -449,7 +450,7 @@ function AnimMethodology() {
 }
 
 /* ==================================================================
-   WHAT YOU RECEIVE — Variant 3 (sample finding) + CountUp on numbers
+   WHAT YOU RECEIVE — Variant 6 (interactive cycling report viewer)
 ================================================================== */
 
 function AnimWhatYouReceive() {
@@ -516,95 +517,9 @@ function AnimWhatYouReceive() {
           </div>
         </AnimateIn>
 
-        {/* Sample finding card with CountUp on numbers */}
         <AnimateIn delay={120}>
           <div className="lg:sticky lg:top-24">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-              SAMPLE FINDING · ILLUSTRATIVE
-            </p>
-            <div className="relative mt-4 overflow-hidden rounded-3xl border border-border bg-background/60 p-8 shadow-lg shadow-black/10 lg:p-10">
-              <div className="pointer-events-none absolute -left-10 -top-10 h-64 w-64 rounded-full bg-primary/10 blur-[80px]" />
-              <div className="relative">
-                <div className="flex items-center justify-between">
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                    FINDING #07
-                  </p>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-destructive/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-destructive">
-                    <span className="size-1.5 rounded-full bg-destructive" /> HIGH PRIORITY
-                  </span>
-                </div>
-                <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-primary">
-                  LAYER 02 · ACCESS CONTROL
-                </p>
-                <h3 className="mt-5 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl">
-                  Door reader at meeting room 2 fails ~30% of access attempts.
-                </h3>
-
-                <dl className="mt-8 space-y-5">
-                  <div>
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                      BUSINESS IMPACT
-                    </dt>
-                    <dd className="mt-1 text-sm leading-7 text-foreground sm:text-[15px]">
-                      Estimated{" "}
-                      <span className="font-bold text-foreground">
-                        <CountUp end={12} duration={1200} format={false} /> missed bookings/month
-                      </span>{" "}
-                      →{" "}
-                      <span className="font-bold text-foreground">
-                        <CountUp end={2400} duration={1500} prefix="€" />
-                      </span>{" "}
-                      in lost revenue + member friction.
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                      RECOMMENDATION
-                    </dt>
-                    <dd className="mt-1 text-sm leading-7 text-foreground sm:text-[15px]">
-                      Replace controller (Aperio kit) —{" "}
-                      <span className="font-bold text-foreground">
-                        <CountUp end={450} duration={1300} prefix="€" />
-                      </span>
-                      , 2-hour install. Vendor: ASSA ABLOY.
-                    </dd>
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                        EFFORT
-                      </dt>
-                      <dd className="mt-1 flex gap-1">
-                        {[1, 2, 3, 4, 5].map((n) => (
-                          <span
-                            className={`size-3 rounded-full ${n <= 2 ? "bg-primary" : "bg-border"}`}
-                            key={`e-${n}`}
-                          />
-                        ))}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                        IMPACT
-                      </dt>
-                      <dd className="mt-1 flex gap-1">
-                        {[1, 2, 3, 4, 5].map((n) => (
-                          <span
-                            className={`size-3 rounded-full ${n <= 4 ? "bg-primary" : "bg-border"}`}
-                            key={`i-${n}`}
-                          />
-                        ))}
-                      </dd>
-                    </div>
-                  </div>
-                </dl>
-              </div>
-            </div>
-            <p className="mt-3 text-xs leading-6 text-muted-foreground">
-              Every finding follows this format. Roughly{" "}
-              <CountUp end={20} duration={1400} format={false} suffix="–30" /> findings per
-              audit, all severity-rated.
-            </p>
+            <InteractiveReportViewer />
           </div>
         </AnimateIn>
       </div>

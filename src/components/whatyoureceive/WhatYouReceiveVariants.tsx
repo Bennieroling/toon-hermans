@@ -888,7 +888,7 @@ const reportScreens: ReportScreen[] = [
   { id: "inventory", label: "Stack inventory", render: () => <ScreenStackInventory /> },
 ]
 
-function InteractiveReportViewer() {
+export function InteractiveReportViewer() {
   const [activeIdx, setActiveIdx] = useState(0)
   const [autoPlaying, setAutoPlaying] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
