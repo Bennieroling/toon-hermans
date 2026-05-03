@@ -665,23 +665,6 @@ function AnimFooter() {
 ================================================================== */
 
 export function AnimationsDemo(): ReactNode {
-  useEffect(() => {
-    const root = document.documentElement
-    const prevDark = root.classList.contains("dark")
-    const prevLight = root.classList.contains("light")
-    const prevStored = window.localStorage.getItem("sorun-theme")
-
-    root.classList.remove("dark")
-    root.classList.add("light")
-
-    return () => {
-      root.classList.remove("light", "dark")
-      if (prevDark) root.classList.add("dark")
-      if (prevLight) root.classList.add("light")
-      if (prevStored !== null) window.localStorage.setItem("sorun-theme", prevStored)
-    }
-  }, [])
-
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <AnimHeader />
